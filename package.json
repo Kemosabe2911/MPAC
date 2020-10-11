@@ -1,10 +1,11 @@
 {
-  "name": "MPAC",
+  "name": "mpac",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/Kemosabe2911/MPAC/issues"
   },
-  "homepage": "https://github.com/Kemosabe2911/MPAC#readme"
+  "homepage": "https://github.com/Kemosabe2911/MPAC#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
 }
