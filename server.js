@@ -1,7 +1,17 @@
 const express= require('express');
 const app = express();
-const { pool }= require("./dbConfig");
+//const { pool }= require("./dbConfig");
+const { Pool, Client } = require('pg')
 const bcrypt= require('bcrypt');
+
+
+const pool = new Pool({
+    user: 'mpac_user',
+    host: 'localhost',
+    database: 'mpac_db',
+    password: 'password',
+    port: 5432,
+  })
 
 const PORT = process.env.PORT || 5000;
 
@@ -42,7 +52,20 @@ app.post('/register', async (req,res)=>{
     if(errors.length>0){
         res.render('register',{ errors });
     }
-    let hashedPassword = await bcrypt.hash(password);
+    else{
+    let hashedPassword = await bcrypt.hash(password, 10);
+    console.log('Hello');
+    pool.query(
+        `SELECT * FROM users
+         WHERE email= $1`,[email], (err, res)=>{
+             if(err){
+                 throw err;
+             }
+             console.log('reaches here');
+             console.log(res.rows);
+         }
+    )
+    }
 });
 
 app.listen(PORT, () =>{
