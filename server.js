@@ -49,7 +49,7 @@ app.get('/register',(req,res) =>{
 });
 
 app.get('/home',(req,res) =>{
-    res.render("index",{user: "Stevin"});
+    res.render("index",{user: req.user.name});
 });
 
 app.post('/register', async (req,res)=>{
