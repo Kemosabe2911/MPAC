@@ -1,5 +1,6 @@
 const express= require('express');
 const app = express();
+const { pool }= require("./dbConfig");
 
 const PORT = process.env.PORT || 5000;
 
