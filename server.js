@@ -1,6 +1,7 @@
 const express= require('express');
 const app = express();
 const { pool }= require("./dbConfig");
+const bcrypt= require('bcrypt');
 
 const PORT = process.env.PORT || 5000;
 
@@ -19,7 +20,7 @@ app.get('/home',(req,res) =>{
     res.render("index",{user: "Stevin"});
 });
 
-app.post('/register',(req,res)=>{
+app.post('/register', async (req,res)=>{
 
     let {name, email, password, password2} = req.body;
     console.log({name,email,password,password2});
@@ -41,6 +42,7 @@ app.post('/register',(req,res)=>{
     if(errors.length>0){
         res.render('register',{ errors });
     }
+    let hashedPassword = await bcrypt.hash(password);
 });
 
 app.listen(PORT, () =>{
