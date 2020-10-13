@@ -30,6 +30,8 @@ app.use(
     })
 );
 
+app.use(flash());
+
 app.get('/',(req,res) =>{
     res.render("login");
 });
@@ -44,12 +46,12 @@ app.get('/home',(req,res) =>{
 
 app.post('/register', async (req,res)=>{
 
-    let {name, email, password, password2} = req.body;
+    let {name, email, phno, password, password2} = req.body;
     console.log({name,email,password,password2});
     //Error validation
     let errors= [];
 
-    if(!name || !email || !password || !password2){
+    if(!name || !email || !password || !password2 || !phno){
         errors.push({message: "Please enter all fields"});
     }
 
@@ -69,19 +71,19 @@ app.post('/register', async (req,res)=>{
     console.log('Hello');
     pool.query(
         `SELECT * FROM users
-         WHERE email= $1`,[email], (err, res)=>{
+         WHERE email= $1`,[email], (err, results)=>{
              if(err){
                  throw err;
              }
-             console.log('reaches here');
-             console.log(res.rows);
+             console.log(results.rows);
 
-             if( res.rows.length > 0){
+             if( results.rows.length > 0){
                  errors.push({ message: "Email already registered"});
+                 console.log('reaches here');
                  res.render('register', { errors });
              }
          }
-    )
+    );
     }
 });
 
