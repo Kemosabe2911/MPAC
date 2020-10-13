@@ -17,6 +17,11 @@
                       <li><%= messages.success_msg %></li>
                     <% } %>  
                   </ul>
+                  <ul>
+                    <% if(messages.error){ %>
+                      <li><%= messages.error %></li>
+                    <% } %>
+                  </ul>
                   <form action="/" class="form-container" method="POST">
                     <div class="form-group">
                         <label for="email">E-mail Id</label>

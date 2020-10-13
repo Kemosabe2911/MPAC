@@ -41,8 +41,8 @@ app.get('/',(req,res) =>{
     res.render("login");
 });
 
-app.use(passport.initialize);
-app.use(passport.session);
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.get('/register',(req,res) =>{
     res.render("register");
