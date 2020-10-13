@@ -48,6 +48,14 @@ app.get('/register',(req,res) =>{
     res.render("register");
 });
 
+
+app.get('/logout',(req,res) =>{
+    req.logout();
+    req.flash("success_msg", "You have logged out");
+    res.redirect('/');
+});
+
+
 app.get('/home',(req,res) =>{
     res.render("index",{user: req.user.name});
 });
