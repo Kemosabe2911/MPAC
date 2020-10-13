@@ -52,6 +52,8 @@ app.get('/home',(req,res) =>{
     res.render("index",{user: req.user.name});
 });
 
+//User Registration
+
 app.post('/register', async (req,res)=>{
 
     let {name, email, phno, password, password2} = req.body;
@@ -107,6 +109,8 @@ app.post('/register', async (req,res)=>{
     );
     }
 });
+
+//Login Validation
 
 app.post('/',passport.authenticate("local",{
     successRedirect: '/home',
