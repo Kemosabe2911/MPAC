@@ -84,13 +84,13 @@ app.post('/register', async (req,res)=>{
              }else{
                  pool.query(
                      `INSERT INTO users (name, email, password, phno)
-                     VALUES ($1, $2, $3)
-                     RETURNING id, password`, [name, email, phno, hashedPassword], (err, results)=>{
+                     VALUES ($1, $2, $3, $4)
+                     RETURNING u_id, password`, [name, email, hashedPassword, phno], (err, results)=>{
                          if(err){
                              throw err;
                          }
                          console.log(results.row);
-                         req.flash('Success_msg',"You are now registered. Please Login");
+                         req.flash('success_msg',"You are now registered. Please Login");
                          res.redirect('/');
                      }
                  )

@@ -12,6 +12,11 @@
           <div class="container-fluid">
               <div class="row justify-content-center">
                 <div class="col-12 col-sm-6 col-md-3">
+                  <ul>
+                    <% if(messages.success_msg) { %>
+                      <li><%= messages.success_msg %></li>
+                    <% } %>  
+                  </ul>
                   <form action="/" class="form-container" method="POST">
                     <div class="form-group">
                         <label for="email">E-mail Id</label>
