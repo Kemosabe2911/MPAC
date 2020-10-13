@@ -37,6 +37,10 @@ app.post('/register',(req,res)=>{
     if(password != password2){
         errors.push({message: "Passwords do not match"});
     }
+
+    if(errors.length>0){
+        res.render('register',{ errors });
+    }
 });
 
 app.listen(PORT, () =>{

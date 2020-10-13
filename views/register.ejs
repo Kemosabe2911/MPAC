@@ -14,6 +14,13 @@
                 <div class="col-12 col-sm-6 col-md-3">
                   <form action="/register" class="form-container" method="POST">
                     <div class="form-group">
+                      <ul>
+                        <% if(typeof errors != 'undefined') { %>
+                          <% errors.forEach(error =>{ %>
+                            <li><%= error.message %></li>
+                          <% }) %>  
+                        <% } %>
+                      </ul>
                         <label for="name">Name</label>
                       <input type="name" name="name" id="name" class="form-control" value="<%= typeof name != 'undefined' ? name : ''%>" 
                       placeholder="Enter Name">
