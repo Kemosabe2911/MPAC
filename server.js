@@ -5,6 +5,11 @@ const { Pool, Client } = require('pg')
 const bcrypt= require('bcrypt');
 const session= require('express-session');
 const flash= require('express-flash');
+const passport= require('passport');
+
+const initializePassport = require("./passportConfig");
+
+initializePassport(passport);
 
 
 const pool = new Pool({
@@ -35,6 +40,9 @@ app.use(flash());
 app.get('/',(req,res) =>{
     res.render("login");
 });
+
+app.use(passport.initialize);
+app.use(passport.session);
 
 app.get('/register',(req,res) =>{
     res.render("register");
@@ -99,6 +107,12 @@ app.post('/register', async (req,res)=>{
     );
     }
 });
+
+app.post('/',passport.authenticate("local",{
+    successRedirect: '/home',
+    failureRedirect: '/',
+    failureFlash: true
+}));
 
 app.listen(PORT, () =>{
     console.log(`Server Running on port ${PORT}`);
