@@ -3,6 +3,8 @@ const app = express();
 //const { pool }= require("./dbConfig");
 const { Pool, Client } = require('pg')
 const bcrypt= require('bcrypt');
+const session= require('express-session');
+const flash= require('express-flash');
 
 
 const pool = new Pool({
@@ -17,6 +19,16 @@ const PORT = process.env.PORT || 5000;
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: false}));
+
+app.use(
+    session({
+        secret: "secret",
+
+        resave: false,
+
+        saveUninitialized: false
+    })
+);
 
 app.get('/',(req,res) =>{
     res.render("login");
