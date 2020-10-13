@@ -81,6 +81,19 @@ app.post('/register', async (req,res)=>{
                  errors.push({ message: "Email already registered"});
                  console.log('reaches here');
                  res.render('register', { errors });
+             }else{
+                 pool.query(
+                     `INSERT INTO users (name, email, password, phno)
+                     VALUES ($1, $2, $3)
+                     RETURNING id, password`, [name, email, phno, hashedPassword], (err, results)=>{
+                         if(err){
+                             throw err;
+                         }
+                         console.log(results.row);
+                         req.flash('Success_msg',"You are now registered. Please Login");
+                         res.redirect('/');
+                     }
+                 )
              }
          }
     );
