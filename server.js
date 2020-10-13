@@ -37,14 +37,14 @@ app.use(
 
 app.use(flash());
 
-app.get('/',(req,res) =>{
+app.get('/',checkAuthenticated,(req,res) =>{
     res.render("login");
 });
 
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.get('/register',(req,res) =>{
+app.get('/register',checkAuthenticated,(req,res) =>{
     res.render("register");
 });
 
@@ -56,7 +56,7 @@ app.get('/logout',(req,res) =>{
 });
 
 
-app.get('/home',(req,res) =>{
+app.get('/home',checkNotAuthenticated,(req,res) =>{
     res.render("index",{user: req.user.name});
 });
 
@@ -125,6 +125,21 @@ app.post('/',passport.authenticate("local",{
     failureRedirect: '/',
     failureFlash: true
 }));
+
+function checkAuthenticated(req, res, next) {
+    if(req.isAuthenticated()){
+        return res.redirect("/home");
+    }
+    next();
+}
+
+function checkNotAuthenticated(req, res, next) {
+    if(req.isAuthenticated()) {
+        return next();
+    }
+    res.redirect('/');
+}
+
 
 app.listen(PORT, () =>{
     console.log(`Server Running on port ${PORT}`);
