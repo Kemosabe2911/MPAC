@@ -84,7 +84,7 @@ html {
   }
   
   
-  .login-box button:hover {
+  .login-box form button:hover {
     background: #03e9f4;
     color: #fff;
     border-radius: 5px;
