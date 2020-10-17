@@ -1,5 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/login.css" type="text/css"/>
+  </head>
+  <body>
+    <div class="login-box">
+      <h2>MPAC Register</h2>
+      <form action="/register" method="POST">
+        <div class="user-box">
+          <input type="name" name="name" id="name"value="<%= typeof name != 'undefined' ? name : ''%>" required="" />
+        <label>Name</label>
+        </div>
+        <div class="user-box">
+          <input type="email" name="email" id="email" value="<%= typeof email != 'undefined' ? email : ''%>" required="" />
+          <label>E-mail Id</label>
+        </div>
+        <div class="user-box">
+          <input type="text" name="phno" id="phno" value="<%= typeof phno != 'undefined' ? phno : ''%>" required="" /> 
+          <label>Phone No:</label>
+        </div>
+        <div class="user-box">
+          <input type="password" name="password" id="password" value="<%= typeof password != 'undefined' ? password : ''%>" required="" />
+          <label>Password</label>
+        </div>
+        <div class="user-box">
+          <input type="password" name="password2" id="password2" value="<%= typeof password2 != 'undefined' ? password2 : ''%>" required="" />          <label>Confirm Password</label>
+        </div>
+        <div  class="form-group">
+          Already Registered &nbsp; &nbsp;<a href="/">Login</a>
+        </div>
+        <div class="login-btn">
+          <button type="submit" class="btn btn-primary text-center">Register</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
+
+
+<!--<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,3 +106,4 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>   
 </body>
 </html>
+-->
