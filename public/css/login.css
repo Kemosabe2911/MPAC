@@ -98,3 +98,6 @@ html {
       text-decoration: none;
       color: #33ffff;
   }
+  .login-box .form-group a:hover{
+      color: #ffffff;
+  }
