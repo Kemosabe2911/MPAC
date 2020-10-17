@@ -153,7 +153,6 @@ nav ul li:hover a{
 
 
 
-
 /*Tiles Section*/
 #tiles .container{
     display: flex;
@@ -203,10 +202,17 @@ nav ul li:hover a{
     #showcase{
         min-height: 100px;
     }
+    #showcase h1{
+        font-size: 40px;
+    } 
     #tiles .container{
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+    #tiles .container .btile, #tiles .container .stile{
+        height: 210px;
+        width: 210px;
     }
     #tiles .container .stile{
         margin-top: 30px;
