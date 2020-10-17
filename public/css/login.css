@@ -62,10 +62,17 @@ html {
     font-size: 12px;
   }
   
+  .login-box form .login-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .login-box form button {
     position: relative;
-    display: inline-block;
     padding: 10px 20px;
+    border: none;
+    background: none;
     color: #03e9f4;
     font-size: 16px;
     text-decoration: none;
@@ -85,5 +92,9 @@ html {
       0 0 100px #03e9f4;
   }
   .login-box .form-group{
-      color: #03e9f4;
+      color: #ffffff;
+  }
+  .login-box .form-group a{
+      text-decoration: none;
+      color: #33ffff;
   }
