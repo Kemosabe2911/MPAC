@@ -12,7 +12,7 @@ const initializePassport = require("./passportConfig");
 initializePassport(passport);
 
 //Public Folder
-app.use(express.static('/public'));
+app.use(express.static(__dirname+'/public'));
 
 const pool = new Pool({
     user: 'mpac_user',
