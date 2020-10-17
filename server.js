@@ -81,7 +81,6 @@ app.post('/register', async (req,res)=>{
 
     if(password != password2){
         errors.push({message: "Passwords do not match"});
-        console.log("Dont Match");
     }
 
     if(errors.length>0){
