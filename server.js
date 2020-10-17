@@ -11,6 +11,8 @@ const initializePassport = require("./passportConfig");
 
 initializePassport(passport);
 
+//Public Folder
+app.use(express.static('/public'));
 
 const pool = new Pool({
     user: 'mpac_user',

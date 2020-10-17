@@ -1,0 +1,214 @@
+/*Font family*/
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: url('images/ecommerce-3546296.jpg') no-repeat 
+}
+nav{
+    background: #151515;
+    padding: 5px 40px;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav ul li{
+    padding: 15px 0;
+}
+
+nav ul li.items{
+    position: relative;
+    width: auto;
+    margin: 0 16px;
+    text-align: center;
+    transition: 0.5s;
+    font-family: 'Roboto Slab', serif;
+}
+nav ul li.items::after{
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 5px;
+    height: 2px;
+    width: 100%;
+    background: #33ffff;
+    opacity: 0;
+    transition: all 0.5s linear;
+}
+
+nav ul li.items:hover::after{
+    opacity: 1;
+    bottom: 10px;
+}
+
+nav ul li.logo{
+    flex: 1;
+    color: #ffffff;
+    font-family: 'Roboto Slab', serif;
+    font-size: 30px;
+    font-weight: 900;
+    cursor: default;
+    user-select: none;
+}
+nav ul li a{
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none;
+    transition: 0.4s;
+}
+nav ul li:hover a{
+    color: #33ffff;
+}
+
+/*Media Queries*/
+@media all and (max-width: 900px){
+    nav{
+        padding: 5px 30px;
+    }
+    nav ul li.logo{
+        order: 1;
+    }
+    nav ul li.items{
+        width: 100%;
+        order: 3;
+        display: none;
+        transition: 0.5s;
+    }
+    nav ul li.items.show{
+        display: block;
+    }
+    nav ul li.items:hover{
+        border-radius: 5px;
+        box-shadow: 0 0 5px #33ffff,
+                    0 0 10px #66ffff;
+    }
+    nav ul li.items:hover::after{
+        opacity: 0;
+    }
+    .toggle{
+        order: 1;
+        transition: 0.5s;
+        cursor: pointer;
+        margin-bottom: 5px;
+    }
+    .bars{
+        background: #ffffff ;
+        display: inline-block;
+        height: 3.5px;
+        position: relative;
+        width: 22px;
+        transition: 0.5s;
+    }
+    .bars::before,.bars::after{
+        background: #ffffff;
+        content: '';
+        display: inline-block;
+        height: 3.5px;
+        position: absolute;
+        width: 22px;
+        transition: 0.5s;
+    }
+    .bars::before{
+        top: 6px;
+    }
+    .bars::after{
+        top: -6px;
+    }
+    
+    .toggle.close .bars{
+        background: rgba(0, 0, 0, 0);
+    }
+    .toggle.close .bars::before{
+        top: 0;
+        transform: rotate(45deg);
+    }
+    .toggle.close .bars::after{
+        top: 0;
+        transform: rotate(135deg);
+    }
+}
+
+
+
+/*Showcase*/
+#showcase{
+    min-height: 230px;
+    color: #ffffff;
+    text-align: center;
+}
+#showcase h1{
+    margin-top: 100px;
+    font-size: 50px;
+    font-family: 'Cabin', sans-serif;
+    margin-bottom: 10px;
+}
+
+
+
+
+/*Tiles Section*/
+#tiles .container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+#tiles .container .btile{
+    height: 260px;
+    width: 250px;
+    background: #ffffff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: #151515;
+    transition: all 0.2s;
+}
+#tiles .container .stile{
+    height: 260px;
+    width: 250px;
+    background: #ffffff;
+    border-radius: 20px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#tiles .container h2{
+    font-family: 'Roboto Slab', serif;
+    font-size: 30px;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+#tiles .container .btile:hover{
+    transform: scale(1.02);
+}
+#tiles .container .stile:hover{
+    transform: scale(1.02);
+}
+
+@media (max-width: 768px){
+    #showcase{
+        min-height: 100px;
+    }
+    #tiles .container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #tiles .container .stile{
+        margin-top: 30px;
+    }
+}
