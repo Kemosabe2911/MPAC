@@ -7,29 +7,32 @@
     <title>Sell-Y3-CS-SS</title>
 </head>
 <body>
-    <form action="/sell-y3-cs-ss" method="POST" enctype="multipart/form-data">
-        <div class="form-group">
-          <label for="b_name">Book Name</label>
-          <input type="text" name="b_name" id="b_name" value="<%= typeof b_name != 'undefined' ? b_name : ''%>" required="" />
-        </div>
-        <div class="form-group">
-          <label for="author">Author</label>
-          <input type="text" name="author" id="author" value="<%= typeof author != 'undefined' ? author : ''%>" required="" />
-        </div>
-        <div class="form-group">
-            <label for="pages">No. of Pages</label>
-            <input type="text" name="pages" id="pages" value="<%= typeof pages != 'undefined' ? pages : ''%>" required="" />
-        </div>
-        <div class="form-group">
-            <label for="price">Expected Price</label>
-            <input type="text" name="price" id="price" value="<%= typeof price != 'undefined' ? price : ''%>" required="" />
-        </div>
-        <div class="custom-file">
-            <input type="file" class="custom-file-input" id="pImage">
-            <label class="custom-file-label" for="pImage">Choose file</label>
-          </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+    <div class="container">
+        <form action="/sell-y3-cs-ss" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="b_name">Book Name</label>
+              <input type="text" name="b_name" id="b_name" value="<%= typeof b_name != 'undefined' ? b_name : ''%>" required="" />
+            </div>
+            <div class="form-group">
+              <label for="author">Author</label>
+              <input type="text" name="author" id="author" value="<%= typeof author != 'undefined' ? author : ''%>" required="" />
+            </div>
+            <div class="form-group">
+                <label for="pages">No. of Pages</label>
+                <input type="text" name="pages" id="pages" value="<%= typeof pages != 'undefined' ? pages : ''%>" required="" />
+            </div>
+            <div class="form-group">
+                <label for="price">Expected Price</label>
+                <input type="text" name="price" id="price" value="<%= typeof price != 'undefined' ? price : ''%>" required="" />
+            </div>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="pImage">
+                <label class="custom-file-label" for="pImage">Choose file</label>
+              </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+    
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
