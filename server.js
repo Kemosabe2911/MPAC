@@ -14,6 +14,7 @@ initializePassport(passport);
 //Public Folder
 app.use(express.static(__dirname+'/public'));
 
+//DB Connect
 const pool = new Pool({
     user: 'mpac_user',
     host: 'localhost',
