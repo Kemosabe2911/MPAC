@@ -8,10 +8,10 @@
 </head>
 <body>
     <div class="container">
-        <form action="/sell-y3-cs-ss" method="POST" enctype="multipart/form-data">
+        <form action="/sell-y3-cs-ss" method="POST">
             <div class="form-group">
-              <label for="b_name">Book Name</label>
-              <input type="text" name="b_name" id="b_name" value="<%= typeof b_name != 'undefined' ? b_name : ''%>" required="" />
+              <label for="bname">Book Name</label>
+              <input type="text" name="bname" id="bname" value="<%= typeof bname != 'undefined' ? bname : ''%>" required="" />
             </div>
             <div class="form-group">
               <label for="author">Author</label>
@@ -25,10 +25,10 @@
                 <label for="price">Expected Price</label>
                 <input type="text" name="price" id="price" value="<%= typeof price != 'undefined' ? price : ''%>" required="" />
             </div>
-            <div class="custom-file">
+            <!--<div class="custom-file">
                 <input type="file" class="custom-file-input" id="pImage">
                 <label class="custom-file-label" for="pImage">Choose file</label>
-              </div>
+              </div>-->
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
     </div>

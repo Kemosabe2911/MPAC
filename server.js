@@ -150,7 +150,11 @@ app.get('/sell-y3-cs-ss',(req,res)=>{
     res.render('sell-y3-cs-ss');
 });
 
+app.post('/sell-y3-cs-ss',(req,res) =>{
+    let {bname, author, pages, price} = req.body;
+    console.log({bname,author,pages,price});
 
+});
 
 //Port Console Log
 app.listen(PORT, () =>{
