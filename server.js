@@ -147,6 +147,17 @@ function checkNotAuthenticated(req, res, next) {
     res.redirect('/');
 }
 
+
+
+
+//Set Storage Engine
+const storage= multer.diskStorage({
+    destination: './public/uploads',
+    filename: function(req,file,cb){
+        cb(null,file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+    }
+});
+
 //Get Requet Page: Sell-y3-cs-ss
 app.get('/sell-y3-cs-ss',(req,res)=>{
     res.render('sell-y3-cs-ss');
