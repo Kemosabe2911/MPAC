@@ -145,9 +145,12 @@ function checkNotAuthenticated(req, res, next) {
     res.redirect('/');
 }
 
+//Get Requet Page: Sell-y3-cs-ss
 app.get('/sell-y3-cs-ss',(req,res)=>{
     res.render('sell-y3-cs-ss');
 });
+
+
 
 //Port Console Log
 app.listen(PORT, () =>{
