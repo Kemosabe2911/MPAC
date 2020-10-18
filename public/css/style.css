@@ -262,7 +262,8 @@ nav ul li:hover a{
 @media (max-width: 768px){
     #user-info .container{
         margin-top: 20px;
-        height: 400px;
+        width: 500px;
+        height: 300px;
     }
     #user-info .container .user-profile{
         display: flex;
@@ -273,7 +274,7 @@ nav ul li:hover a{
         margin: 20px;
     }
     #user-info .container .u-data{
-        margin: 20px;
+        margin: 0px;
     }
     #user-info .container h2{
         font-size: 20px;
