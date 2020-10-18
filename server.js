@@ -191,6 +191,28 @@ app.post('/sell-y3-cs-ss',(req,res) =>{
     let {bname, author, pages, price} = req.body;
     console.log({bname,author,pages,price});
 
+
+
+
+    upload(req,res,(err) =>{
+        if(err){
+            res.render('sell-y3-cs-ss',{msg:err});
+        }
+        else{
+            if(req.file == undefined){
+                res.render('sell-y3-cs-ss',{
+                    msg: 'Error: No File Selected!'
+                });
+            }else{
+                console.log(req.file.filename);
+                res.render('sell-y3-cs-ss',{
+                    msg: 'File Uploaded',
+                    img: `/uploads/${req.file.filename}`
+                });
+            }
+        }
+    });
+
 });
 
 //Port Console Log
