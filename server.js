@@ -166,6 +166,22 @@ const upload= multer({
     }
 }).single('pImage');
 
+//Check File Type
+function checkFileType(file,cb){
+    //Allowed ext
+    const filetypes= /jpeg|jpg|png|gif/;
+    //Check ext
+    const extname= filetypes.test(path.extname(file.originalname).toLowerCase());
+    //Check mime
+    const mimetype= filetypes.test(file.mimetype);
+
+    if(mimetype && extname){
+        return cb(null, true);
+    }else{
+        cb("Error: Only Images!!!");
+    }
+}
+
 //Get Requet Page: Sell-y3-cs-ss
 app.get('/sell-y3-cs-ss',(req,res)=>{
     res.render('sell-y3-cs-ss');
