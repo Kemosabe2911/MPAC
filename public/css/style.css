@@ -237,7 +237,7 @@ nav ul li:hover a{
     align-items: center;
     flex-wrap: wrap;
     margin: 40px;
-    background-color: #ffffff;
+    background-color: #e8e8e8;
     border-radius: 20px;
 }
 #user-info .container .user-profile{
