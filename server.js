@@ -158,6 +158,14 @@ const storage= multer.diskStorage({
     }
 });
 
+//Init Upload
+const upload= multer({
+    storage: storage,
+    fileFilter: function(req,file,cb){
+        checkFileType(file,cb);
+    }
+}).single('pImage');
+
 //Get Requet Page: Sell-y3-cs-ss
 app.get('/sell-y3-cs-ss',(req,res)=>{
     res.render('sell-y3-cs-ss');
