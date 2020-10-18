@@ -67,6 +67,10 @@ app.get('/home',checkNotAuthenticated,(req,res) =>{
     res.render("index",{user: req.user.name});
 });
 
+app.get('/dashboard',(req,res) =>{
+    res.render("dashboard");
+});
+
 //User Registration
 
 app.post('/register', async (req,res)=>{
