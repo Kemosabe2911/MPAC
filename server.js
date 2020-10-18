@@ -45,6 +45,7 @@ app.get('/',checkAuthenticated,(req,res) =>{
     res.render("login");
 });
 
+//Passport Initialization
 app.use(passport.initialize());
 app.use(passport.session());
 
