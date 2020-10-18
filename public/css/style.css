@@ -222,8 +222,28 @@ nav ul li:hover a{
 
 
 /*User Info Section*/
+#user-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #user-info .container{
-    color: #ffffff;
+    color: #000000;
+    height: 300px;
+    width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 40px;
+    background-color: #ffffff;
+    border-radius: 20px;
+}
+#user-info .container .user-profile{
+    align-items: center;
+}
+#user-info .container .user-data{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -242,6 +262,12 @@ nav ul li:hover a{
 @media (max-width: 768px){
     #user-info .container{
         margin-top: 20px;
+        height: 400px;
+    }
+    #user-info .container .user-profile{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     #user-info .container .u-items{
         margin: 20px;
@@ -250,6 +276,13 @@ nav ul li:hover a{
         margin: 20px;
     }
     #user-info .container h2{
+        font-size: 20px;
         padding: 10px;
     }
+    #user-info .container .user-data{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
 }
