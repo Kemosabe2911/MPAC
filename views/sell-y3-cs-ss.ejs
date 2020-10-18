@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <%= typeof msg !='undefined'? msg : '' %>
-        <form action="/sell-y3-cs-ss" method="POST">
+        <form action="/sell-y3-cs-ss" method="POST" enctype="multipart/form-data">
             <div class="form-group">
               <label for="bname">Book Name</label>
               <input type="text" name="bname" id="bname" value="<%= typeof bname != 'undefined' ? bname : ''%>" required="" />
