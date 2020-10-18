@@ -7,6 +7,17 @@
     <title>Sell-Y3-CS-SS</title>
 </head>
 <body>
-    
+    <form action="/sell-y3-cs-ss" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="b_name">Book Name</label>
+          <input type="text" name="b_name" id="b_name" value="<%= typeof b_name != 'undefined' ? b_name : ''%>" required="" />
+        </div>
+        <div class="form-group">
+          <label for="author">Author</label>
+          <input type="text" name="author" id="author" value="<%= typeof author != 'undefined' ? author : ''%>" required="" />
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
 </body>
 </html>
