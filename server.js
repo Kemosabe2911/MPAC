@@ -145,7 +145,7 @@ function checkNotAuthenticated(req, res, next) {
     res.redirect('/');
 }
 
-
+//Port Console Log
 app.listen(PORT, () =>{
     console.log(`Server Running on port ${PORT}`);
 })
