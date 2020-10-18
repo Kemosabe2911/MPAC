@@ -187,12 +187,7 @@ app.get('/sell-y3-cs-ss',(req,res)=>{
     res.render('sell-y3-cs-ss');
 });
 
-app.post('/sell-y3-cs-ss',(req,res) =>{
-    
-
-
-
-
+app.post('/sell-y3-cs-ss',(req,res) =>{    
     upload(req,res,(err) =>{
         if(err){
             res.render('sell-y3-cs-ss',{msg:err});
@@ -206,10 +201,22 @@ app.post('/sell-y3-cs-ss',(req,res) =>{
                 let {bname, author, pages, price} = req.body;
                 console.log({bname,author,pages,price});
                 console.log(req.file.filename);
-                res.render('sell-y3-cs-ss',{
-                    msg: 'File Uploaded',
-                    img: `/uploads/${req.file.filename}`
-                });
+                let file= req.file.filename;
+                //Error validation
+                let errors= [];
+
+                if(!bname || !author || !price || !pages || !file){
+                    errors.push({message: "Please enter all fields"});
+                }
+                if(typeof price !='number'){
+                    errors.push({message: "Enter price in number"});
+                }
+                if(typeof pages !='number'){
+                    errors.push({message: "Enter pages in number"});
+                }
+
+                res.render('sell-y3-cs-ss',{ errors ,                     
+                    img: `/uploads/${req.file.filename}`});
             }
         }
     });

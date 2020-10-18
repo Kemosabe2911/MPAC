@@ -9,7 +9,16 @@
 </head>
 <body>
     <div class="container">
-        <%= typeof msg !='undefined'? msg : '' %>
+        <% if(typeof errors != 'undefined') { %>
+            <% errors.forEach(error =>{ %>
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <%= error.message %>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            <% }) %>  
+          <% } %>
         <form action="/sell-y3-cs-ss" method="POST" enctype="multipart/form-data">
             <div class="form-group">
               <label for="bname">Book Name</label>
@@ -40,6 +49,7 @@
             --> 
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
+          <img src="<%= typeof img !='undefined'? img : 'Not displaying' %>" alt="Image Not availabale" class="responsive-image">
     </div>
     
     <!--Jquery CDN-->
