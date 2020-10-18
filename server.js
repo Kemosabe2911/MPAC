@@ -68,8 +68,14 @@ app.get('/home',checkNotAuthenticated,(req,res) =>{
 });
 
 app.get('/dashboard',(req,res) =>{
-    res.render("dashboard");
+    res.render("dashboard",{
+        name: req.user.name,
+        email: req.user.email,
+        phno: req.user.phno
+    });
 });
+
+
 
 //User Registration
 

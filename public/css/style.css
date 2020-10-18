@@ -218,3 +218,23 @@ nav ul li:hover a{
         margin-top: 30px;
     }
 }
+
+
+
+/*User Info Section*/
+#user-info .container{
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#user-info .container .u-items{
+    margin: 40px;
+}
+#user-info .container .u-data{
+    margin: 40px;
+    font-style: italic;
+}
+#user-info .container h2{
+    padding: 20px;
+}
