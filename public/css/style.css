@@ -238,3 +238,18 @@ nav ul li:hover a{
 #user-info .container h2{
     padding: 20px;
 }
+
+@media (max-width: 768px){
+    #user-info .container{
+        margin-top: 20px;
+    }
+    #user-info .container .u-items{
+        margin: 20px;
+    }
+    #user-info .container .u-data{
+        margin: 20px;
+    }
+    #user-info .container h2{
+        padding: 10px;
+    }
+}
