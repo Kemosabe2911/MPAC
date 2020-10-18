@@ -208,15 +208,8 @@ app.post('/sell-y3-cs-ss',(req,res) =>{
                 if(!bname || !author || !price || !pages || !file){
                     errors.push({message: "Please enter all fields"});
                 }
-                if(typeof price !='number'){
-                    errors.push({message: "Enter price in number"});
-                }
-                if(typeof pages !='number'){
-                    errors.push({message: "Enter pages in number"});
-                }
 
-                res.render('sell-y3-cs-ss',{ errors ,                     
-                    img: `/uploads/${req.file.filename}`});
+                res.render('sell-y3-cs-ss',{ errors });
             }
         }
     });
