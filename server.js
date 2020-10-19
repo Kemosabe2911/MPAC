@@ -208,8 +208,8 @@ app.post('/sell-y3-cs-ss',(req,res) =>{
                     msg: 'Error: No File Selected!'
                 });
             }else{
-                let {bname, author, pages, price} = req.body;
-                console.log({bname,author,pages,price});
+                let {bname, author, year, pages, price} = req.body;
+                console.log({bname,author,year,pages,price});
                 console.log(req.file.filename);
                 let file= req.file.filename;
                 //Error validation
