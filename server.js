@@ -211,7 +211,9 @@ app.post('/sell-y3-cs-ss',(req,res) =>{
                 let {bname, author, pages, price} = req.body;
                 let year=1;
                 let branch="Computer Science";
-                console.log({bname,author,year,branch,pages,price});
+                let price_int=parseInt(price);
+                let pages_int= parseInt(pages);
+                console.log({bname,author,year,branch,pages_int,price_int});
                 console.log(req.file.filename);
                 let file= req.file.filename;
                 //Error validation
