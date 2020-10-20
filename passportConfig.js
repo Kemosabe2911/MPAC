@@ -19,6 +19,9 @@ function initialize(passport){
                     throw err;
                 }
                 console.log(results.rows);
+                //let Userid= results.rows[0].u_id;
+                //console.log(Userid);
+                
 
                 if(results.rows.length >0) {
                     const user = results.rows[0];
@@ -70,3 +73,4 @@ function initialize(passport){
 }  
 
 module.exports= initialize;
+

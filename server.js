@@ -10,6 +10,8 @@ const multer= require('multer');
 const path= require('path');
 
 const initializePassport = require("./passportConfig");
+const User_id = require('./passportConfig');
+
 
 initializePassport(passport);
 
@@ -65,6 +67,7 @@ app.get('/logout',(req,res) =>{
 
 app.get('/home',checkNotAuthenticated,(req,res) =>{
     res.render("index",{user: req.user.name});
+    console.log(req.user.u_id);
 });
 
 app.get('/dashboard',(req,res) =>{
@@ -213,6 +216,7 @@ app.post('/sell-y3-cs-ss',(req,res) =>{
                 let branch="Computer Science";
                 let price_int=parseInt(price);
                 let pages_int= parseInt(pages);
+                
                 console.log({bname,author,year,branch,pages_int,price_int});
                 console.log(req.file.filename);
                 let file= req.file.filename;
