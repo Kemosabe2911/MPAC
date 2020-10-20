@@ -78,6 +78,10 @@ app.get('/dashboard',(req,res) =>{
     });
 });
 
+app.get('/sell',(req,res) =>{
+    res.render("sell");
+});
+
 
 
 //User Registration
