@@ -200,22 +200,25 @@ function checkFileType(file,cb){
 }
 
 //Get Requet Page: Sell-y3-cs-ss
-app.get('/sell-y3-cs-ss',(req,res)=>{
-    res.render('sell-y3-cs-ss');
+app.get('/sell-y1-books',(req,res)=>{
+    res.render('sell-y1-books');
 });
 
-app.post('/sell-y3-cs-ss',(req,res) =>{    
+app.post('/sell-y1-books',(req,res) =>{    
     upload(req,res,(err) =>{
         if(err){
-            res.render('sell-y3-cs-ss',{msg:err});
+            console.log('Here1');
+            res.render('sell-y1-books',{msg:err});
         }
         else{
             if(req.file == undefined){
-                res.render('sell-y3-cs-ss',{
+                console.log('Here2');
+                res.render('sell-y1-books',{
                     msg: 'Error: No File Selected!'
                 });
             }else{
                 let {bname, author, pages, price} = req.body;
+                console.log('Here3');
                 //console.log(req.body.selectpicker);
                 let subject= req.body.selectpicker;
                 let year=1;
@@ -236,7 +239,7 @@ app.post('/sell-y3-cs-ss',(req,res) =>{
                     errors.push({message: "Price and Pages must be numbers"});
                 }
 
-                res.render('sell-y3-cs-ss',{ errors });
+                res.render('sell-y1-books',{ errors });
             }
         }
     });
