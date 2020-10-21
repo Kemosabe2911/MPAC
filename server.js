@@ -207,7 +207,7 @@ app.get('/sell-y1-books',(req,res)=>{
 
 app.post('/sell-y1-books',(req,res) =>{    
     upload(req,res,(err) =>{
-        //console.log('Working');
+        console.log('Working');
         if(err){
             console.log('Here1');
             res.render('sell-y1-books',{msg:err});
@@ -243,6 +243,7 @@ app.post('/sell-y1-books',(req,res) =>{
                 }
                 //console.log('Here 4');
                 //Insert into db
+                console.log("Shit");
                 pool.query(
                     `INSERT INTO books (b_name, author, pages, year, branch, subject, image, price, user_id )
                     VALUES ($1, $2, $#, $4, $5, $6, $7, $8, $9)
