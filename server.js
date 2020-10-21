@@ -206,6 +206,7 @@ app.get('/sell-y1-books',(req,res)=>{
 
 app.post('/sell-y1-books',(req,res) =>{    
     upload(req,res,(err) =>{
+        //console.log('Working');
         if(err){
             console.log('Here1');
             res.render('sell-y1-books',{msg:err});
@@ -217,12 +218,13 @@ app.post('/sell-y1-books',(req,res) =>{
                     msg: 'Error: No File Selected!'
                 });
             }else{
+                //console.log('Here3');
                 let {bname, author, pages, price} = req.body;
-                console.log('Here3');
+                //console.log('Here3');
                 //console.log(req.body.selectpicker);
                 let subject= req.body.selectpicker;
                 let year=1;
-                let branch="Computer Science";
+                let branch="General";
                 let price_int=parseInt(price);
                 let pages_int= parseInt(pages);
                 
@@ -238,7 +240,7 @@ app.post('/sell-y1-books',(req,res) =>{
                 if(pages_int === NaN || price_int === NaN){
                     errors.push({message: "Price and Pages must be numbers"});
                 }
-
+                //console.log('Here 4');
                 res.render('sell-y1-books',{ errors });
             }
         }
