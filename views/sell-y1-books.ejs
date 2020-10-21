@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPAC</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="form.css">
+    <!--icons api-->
+    <a href="https://icons8.com/icon/3260/sell"></a>
+    <script src="https://kit.fontawesome.com/087042e108.js" crossorigin="anonymous"></script>
+    <!--Jquery cdn-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <!--Home Section-->
+    <section id="home-form">
+        <!--Navbar-->
+        <nav id="navbar">
+            <ul>
+                <li class="logo">MPAC</li>
+                <li class="items"><a href="#">Home</a></li>
+                <li class="items"><a href="#">Dashboard</a></li>
+                <li class="items"><a href="#">About Us..</a></li>
+                <li class="items"><a href="#">Contact Us</a></li>
+                <li class="toggle"><span class="bars"></span></li>
+            </ul>
+        </nav>
+        <form action="" method="POST" enctype="multipart/form-data">
+            <div id="form-body">
+                <h1>First year Textbooks</h1>
+                <div class="book-name">
+                    Book Name <input type="text" class="input-box">
+                </div>
+                <div class="book-subject">
+                    Subject <br>
+                    <SELECT name="selectpicker" class="input-box" maxlength=12>
+                        <option name="NONE" selected >--NONE--
+                        <option name="Linear Algebra and Calculus">Linear Algebra and Calculus(MAT101)
+                        <option name="Vector Calculus Differential Equations and transforms">Vector Calculus Differential Equations and transforms(MAT102)
+                        <option name="Engineering Physics A">Engineering Physics A(PHT100)
+                        <option name="Engineering  Physics B">Engineering  Physics B(PHT110)
+                        <option name="Engineering Chemistry">Engineering Chemistry(CYT100)
+                        <option name="Engineering Mechanics">Engineering Mechanics(EST100)
+                        <option name="Engineering Graphics">Engineering Graphics(EST110)	
+                        <option name="Basics Of Civil & Mechanical Engineering">Basics Of Civil & Mechanical Engineering(EST120)	
+                        <option name="Basics Of Electrical & Electronics Engineering">Basics Of Electrical & Electronics Engineering(EST130)
+                        <option name="Life Skills">Life Skills(HUT101)
+                        <option name="Proffessional Communication">Proffessional Communication(HUT102)	
+                        <option name="Programming In C">Programming In C(EST102)
+                    </SELECT>
+                </div>
+                <div class="book-author">
+                    Author <input type="text"  class="input-box">
+                </div>
+                <div class="book-pages">
+                    Pages <input type="number"  class="input-box">
+                </div>
+                <div class="book-price">
+                    Price <input type="number"  class="input-box">
+                </div>
+                <div class="input-file">
+                    <!-- actual upload which is hidden -->
+                    <input type="file" id="actual-btn" hidden/>
+
+                    <!-- our custom upload button -->
+                    <label class="choose" for="actual-btn">Choose Image</label>
+
+                    <!-- name of file chosen -->
+                    <span id="file-chosen">No Image chosen</span>
+                  
+                </div>
+                <div class="submit-div">
+                    <div class="submit">
+                        <button class="sub-button">Submit</button>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </form>
+    </section>
+    <script src="/js/main.js"></script>
+    <script src='/js/jquery.js'></script>
+</body> 
