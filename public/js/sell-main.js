@@ -17,12 +17,12 @@ document.getElementById('books').addEventListener('click',()  =>{
 
 
 //Year1
-//document.getElementById('year1').addEventListener('click',()  =>{
-    //window.location.href="#tiles.sell";
+document.getElementById('year1').addEventListener('click',()  =>{
+    window.location.href="/sell-y1-books";
     //var elmnt = document.getElementById("year-section");
     //display(elmnt);
   //elmnt.scrollIntoView();
- // });
+ });
 
 //Year2
 document.getElementById('year2').addEventListener('click',()  =>{
