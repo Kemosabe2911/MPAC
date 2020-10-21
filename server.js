@@ -216,12 +216,14 @@ app.post('/sell-y3-cs-ss',(req,res) =>{
                 });
             }else{
                 let {bname, author, pages, price} = req.body;
+                //console.log(req.body.selectpicker);
+                let subject= req.body.selectpicker;
                 let year=1;
                 let branch="Computer Science";
                 let price_int=parseInt(price);
                 let pages_int= parseInt(pages);
                 
-                console.log({bname,author,year,branch,pages_int,price_int});
+                console.log({bname,author,subject,year,branch,pages_int,price_int});
                 console.log(req.file.filename);
                 let file= req.file.filename;
                 //Error validation
