@@ -70,7 +70,7 @@ app.get('/home',checkNotAuthenticated,(req,res) =>{
     console.log(req.user.u_id);
 });
 
-app.get('/dashboard',(req,res) =>{
+app.get('/dashboard',checkNotAuthenticated,(req,res) =>{
     res.render("dashboard",{
         name: req.user.name,
         email: req.user.email,
@@ -78,7 +78,7 @@ app.get('/dashboard',(req,res) =>{
     });
 });
 
-app.get('/sell',(req,res) =>{
+app.get('/sell',checkNotAuthenticated,(req,res) =>{
     res.render("sell");
 });
 
