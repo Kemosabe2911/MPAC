@@ -31,11 +31,14 @@
             <div id="form-body">
                 <h1>First year Textbooks</h1>
                 <div class="book-name">
-                    Book Name <input type="text" class="input-box">
+                    Book Name <input type="text" class="input-box" name="bname" id="bname" value="<%= typeof bname != 'undefined' ? bname : ''%>" required="" />
+                </div>
+                <div class="book-author">
+                    Author <input type="text"  class="input-box" name="author" id="author" value="<%= typeof author != 'undefined' ? author : ''%>" required="" />
                 </div>
                 <div class="book-subject">
                     Subject <br>
-                    <SELECT name="selectpicker" class="input-box" maxlength=12>
+                    <SELECT id="subject" name="selectpicker" class="input-box" maxlength=12>
                         <option name="NONE" selected >--NONE--
                         <option name="Linear Algebra and Calculus">Linear Algebra and Calculus(MAT101)
                         <option name="Vector Calculus Differential Equations and transforms">Vector Calculus Differential Equations and transforms(MAT102)
@@ -50,9 +53,6 @@
                         <option name="Proffessional Communication">Proffessional Communication(HUT102)	
                         <option name="Programming In C">Programming In C(EST102)
                     </SELECT>
-                </div>
-                <div class="book-author">
-                    Author <input type="text"  class="input-box">
                 </div>
                 <div class="book-pages">
                     Pages <input type="number"  class="input-box">
