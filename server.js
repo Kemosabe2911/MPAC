@@ -241,9 +241,8 @@ app.post('/sell-y1-books',(req,res) =>{
                 if(pages_int === NaN || price_int === NaN){
                     errors.push({message: "Price and Pages must be numbers"});
                 }
-                //console.log('Here 4');
+                console.log('Here 4');
                 //Insert into db
-                console.log("Shit");
                 pool.query(
                     `INSERT INTO books (b_name, author, pages, year, branch, subject, image, price, user_id )
                     VALUES ($1, $2, $#, $4, $5, $6, $7, $8, $9)
