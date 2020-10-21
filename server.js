@@ -67,6 +67,7 @@ app.get('/logout',(req,res) =>{
 
 app.get('/home',checkNotAuthenticated,(req,res) =>{
     res.render("index",{user: req.user.name});
+    const user_id= req.user.u_id;
     console.log(req.user.u_id);
 });
 
@@ -241,6 +242,18 @@ app.post('/sell-y1-books',(req,res) =>{
                     errors.push({message: "Price and Pages must be numbers"});
                 }
                 //console.log('Here 4');
+                //Insert into db
+                pool.query(
+                    `INSERT INTO books (b_name, author, pages, year, branch, subject, image, price, user_id )
+                    VALUES ($1, $2, $#, $4, $5, $6, $7, $8, $9)
+                    RETURNING b_id`,[bname, author, pages_int, year, branch, subject, req.file.filename, price_int, req.user.u_id],(err,results) =>{
+                        if(err){
+                            throw err;
+                        }
+                        console.log(results.row);
+                        console.log("success");
+                    }
+                )
                 res.render('sell-y1-books',{ errors });
             }
         }
