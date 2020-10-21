@@ -27,7 +27,7 @@ const pool = new Pool({
     port: 5432,
   })
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4000;
 
 //EJS
 app.set('view engine', 'ejs');
