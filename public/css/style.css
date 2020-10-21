@@ -287,3 +287,100 @@ nav ul li:hover a{
     }
 
 }
+
+
+/*Forms*/
+#home-form{
+    width: 100%;
+    height: 100vh;
+    background: url('images/ecommerce-3546296.jpg') no-repeat;
+    overflow: auto;
+    transition: 1s;
+    scroll-behavior: smooth;
+}
+
+#form-body {
+    font-family: 'Roboto Slab', serif;
+    position: relative;
+    top: 65%;
+    left: 50%;
+    width: 80%;
+    max-height: min-content;
+    padding: 40px;
+    transform: translate(-50%, 5%);
+    background: rgba(255, 255, 255, 0.767);
+    box-sizing: 0;
+    border-radius: 10px;
+  }
+
+#form-body h1{
+   margin: 0 0 20px;
+   padding: 0;
+   color: rgb(0, 0, 0);
+   text-align: center;
+}
+
+#form-body .input-box{
+        width: 100%;
+        padding: 10px 0;
+        font-size: 16px;
+        color: rgb(20, 20, 20);
+        margin-bottom: 30px;
+        border: none;
+        border-bottom: 1px solid rgb(119, 119, 119);
+        outline: none;
+        background: transparent;
+      }
+      
+#form-body .input-file{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: rgb(20, 20, 20);
+    margin-bottom: 30px;
+    border: none;
+}
+#form-body .choose {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 0.5rem;
+    font-family: sans-serif;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+#form-body .choose:hover{
+    border: #000000;
+    color: #33ffff;
+    background: #000000;
+}   
+  
+  #file-chosen{
+    margin-left: 0.3rem;
+    font-family: sans-serif;
+  }
+
+#form-body .submit-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+
+#form-body .sub-button{
+    height: 50px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.5s;
+    font-weight: 800;
+    border-radius: 10%;
+  }
+
+  #form-body .sub-button:hover{
+      background-color: black;
+      color: white;
+} 
