@@ -32,6 +32,14 @@ document.getElementById('year1').addEventListener('click',()  =>{
   //elmnt.scrollIntoView();
   });
 
+   //Year2 CE
+   document.getElementById('ce-2').addEventListener('click',()  =>{
+    window.location.href="/sell-y2-ce";
+    //var elmnt = document.getElementById("year-section");
+    //display(elmnt);
+  //elmnt.scrollIntoView();
+  });
+
 //Year2
 document.getElementById('year2').addEventListener('click',()  =>{
     //window.location.href="#tiles.sell";
