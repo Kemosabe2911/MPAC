@@ -48,9 +48,17 @@ document.getElementById('year1').addEventListener('click',()  =>{
   //elmnt.scrollIntoView();
   });
 
-  //Year2 ME
+  //Year2 EE
   document.getElementById('ee-2').addEventListener('click',()  =>{
     window.location.href="/sell-y2-ee";
+    //var elmnt = document.getElementById("year-section");
+    //display(elmnt);
+  //elmnt.scrollIntoView();
+  });
+
+  //Year2 EC
+  document.getElementById('ec-2').addEventListener('click',()  =>{
+    window.location.href="/sell-y2-ec";
     //var elmnt = document.getElementById("year-section");
     //display(elmnt);
   //elmnt.scrollIntoView();
