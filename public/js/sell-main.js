@@ -13,7 +13,13 @@ document.getElementById('books').addEventListener('click',()  =>{
   elmnt.scrollIntoView();
   });
 
-
+//Tools
+document.getElementById('tools').addEventListener('click',()  =>{
+    window.location.href="/sell-tools";
+    //var elmnt = document.getElementById("year-section");
+    //display(elmnt);
+  //elmnt.scrollIntoView();
+ });
 
 
 //Year1
