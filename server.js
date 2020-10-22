@@ -1380,9 +1380,9 @@ app.post('/sell-exts',(req,res) =>{
                 console.log('Here 4');
                 //Insert into db
                 pool.query(
-                    `INSERT INTO calculators (e_name, image, price, user_id)
+                    `INSERT INTO extras (e_name, image, price, user_id)
                     VALUES ($1, $2, $3, $4)
-                    RETURNING c_id`,[bname, req.file.filename, price_int, req.user.u_id],(err,results) =>{
+                    RETURNING e_id`,[bname, req.file.filename, price_int, req.user.u_id],(err,results) =>{
                         if(err){
                             throw err;
                         }

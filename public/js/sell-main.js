@@ -30,6 +30,14 @@ document.getElementById('calcs').addEventListener('click',()  =>{
   //elmnt.scrollIntoView();
  });
 
+//Extras
+document.getElementById('extras').addEventListener('click',()  =>{
+    window.location.href="/sell-exts";
+    //var elmnt = document.getElementById("year-section");
+    //display(elmnt);
+  //elmnt.scrollIntoView();
+ }); 
+
 //Year1
 document.getElementById('year1').addEventListener('click',()  =>{
     window.location.href="/sell-y1-books";
