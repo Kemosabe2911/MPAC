@@ -24,6 +24,14 @@ document.getElementById('year1').addEventListener('click',()  =>{
   //elmnt.scrollIntoView();
  });
 
+  //Year2 CS
+  document.getElementById('cs-2').addEventListener('click',()  =>{
+    window.location.href="/sell-y2-cs";
+    //var elmnt = document.getElementById("year-section");
+    //display(elmnt);
+  //elmnt.scrollIntoView();
+  });
+
 //Year2
 document.getElementById('year2').addEventListener('click',()  =>{
     //window.location.href="#tiles.sell";
@@ -115,10 +123,3 @@ document.getElementById('home-btn2').addEventListener('click',()  =>{
   });*/
 
 
-  //Year2 CS
-document.getElementById('cs-2').addEventListener('click',()  =>{
-  window.location.href="/sell-y2-cs";
-  //var elmnt = document.getElementById("year-section");
-  //display(elmnt);
-//elmnt.scrollIntoView();
-});
