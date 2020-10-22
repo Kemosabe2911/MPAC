@@ -254,7 +254,8 @@ app.post('/sell-y1-books',(req,res) =>{
                         console.log("success");
                     }
                 )
-                res.render('sell-y1-books',{ errors });
+                res.redirect('/home');
+                //res.render('sell-y1-books',{ errors });
             }
         }
     });
