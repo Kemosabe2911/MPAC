@@ -642,6 +642,69 @@ app.post('/sell-y3-cs',(req,res) =>{
 });
 
 
+//Sell Year3 CE Books
+app.get('/sell-y3-ce',(req,res)=>{
+    res.render('sell-y3-ce');
+});
+
+app.post('/sell-y3-ce',(req,res) =>{    
+    upload(req,res,(err) =>{
+        console.log('Working');
+        if(err){
+            console.log('Here1');
+            res.render('sell-y3-ce',{msg:err});
+        }
+        else{
+            if(req.file == undefined){
+                console.log('Here2');
+                res.render('sell-y3-ce',{
+                    msg: 'Error: No File Selected!'
+                });
+            }else{
+                //console.log('Here3');
+                let {bname, author, pages, price} = req.body;
+                //console.log('Here3');
+                //console.log(req.body.selectpicker);
+                let subject= req.body.selectpicker;
+                let year=3;
+                let branch="Civil Engineering";
+                let price_int=parseInt(price);
+                let pages_int= parseInt(pages);
+                
+                console.log({bname,author,subject,year,branch,pages_int,price_int});
+                console.log(req.file.filename);
+                let file= req.file.filename;
+                //Error validation
+                let errors= [];
+
+                if(!bname || !author || !price || !pages || !file){
+                    errors.push({message: "Please enter all fields"});
+                }
+                if(pages_int === NaN || price_int === NaN){
+                    errors.push({message: "Price and Pages must be numbers"});
+                }
+                console.log('Here 4');
+                //Insert into db
+                pool.query(
+                    `INSERT INTO books (b_name, author, pages, year, branch, subject, image, price, user_id )
+                    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+                    RETURNING b_id`,[bname, author, pages_int, year, branch, subject, req.file.filename, price_int, req.user.u_id],(err,results) =>{
+                        if(err){
+                            throw err;
+                        }
+                        console.log(results.row);
+                        console.log("success");
+                    }
+                )
+                res.redirect('/home');
+                //res.render('sell-y1-books',{ errors });
+            }
+        }
+    });
+
+});
+
+
 
 //Port Console Log
 app.listen(PORT, () =>{
