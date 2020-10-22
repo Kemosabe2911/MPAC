@@ -1206,6 +1206,12 @@ app.post('/sell-y4-ec',(req,res) =>{
 });
 
 
+//Sell Tools
+
+app.get('/sell-tools',(req,res)=>{
+    res.render('sell-tools');
+});
+
 
 //Port Console Log
 app.listen(PORT, () =>{
