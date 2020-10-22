@@ -113,3 +113,12 @@ document.getElementById('home-btn2').addEventListener('click',()  =>{
     var elmnt = document.getElementById("top");
   elmnt.scrollIntoView();
   });*/
+
+
+  //Year2 CS
+document.getElementById('cs-2').addEventListener('click',()  =>{
+  window.location.href="/sell-y2-cs";
+  //var elmnt = document.getElementById("year-section");
+  //display(elmnt);
+//elmnt.scrollIntoView();
+});
