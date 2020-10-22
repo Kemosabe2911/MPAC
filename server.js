@@ -1292,7 +1292,7 @@ app.post('/sell-calcs',(req,res) =>{
                 });
             }else{
                 //console.log('Here3');
-                let {bname, price} = req.body;
+                let {bname, pages, price} = req.body;
                 //console.log('Here3');
                 //console.log(req.body.selectpicker);
                 let type= req.body.selectpicker;
@@ -1301,7 +1301,7 @@ app.post('/sell-calcs',(req,res) =>{
                 let price_int=parseInt(price);
                 //let pages_int= parseInt(pages);
                 
-                console.log({bname,branch,price_int});
+                console.log({bname,pages,price_int});
                 console.log(req.file.filename);
                 let file= req.file.filename;
                 //Error validation
@@ -1316,9 +1316,9 @@ app.post('/sell-calcs',(req,res) =>{
                 console.log('Here 4');
                 //Insert into db
                 pool.query(
-                    `INSERT INTO tools (t_name, branch, image, price, user_id )
-                    VALUES ($1, $2, $3, $4, $5)
-                    RETURNING t_id`,[bname, branch, req.file.filename, price_int, req.user.u_id],(err,results) =>{
+                    `INSERT INTO calculators (c_name, power, image, price, user_id, c_type )
+                    VALUES ($1, $2, $3, $4, $5, $6)
+                    RETURNING c_id`,[bname, pages, req.file.filename, price_int, req.user.u_id, type],(err,results) =>{
                         if(err){
                             throw err;
                         }
