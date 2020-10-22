@@ -90,11 +90,13 @@ app.get('/sell',checkNotAuthenticated,(req,res) =>{
 app.post('/register', async (req,res)=>{
 
     let {name, email, phno, password, password2} = req.body;
-    console.log({name,email,password,password2});
+    phno_int= parseInt(phno);
+    console.log({name,email,password,password2,phno_int});
+    
     //Error validation
     let errors= [];
 
-    if(!name || !email || !password || !password2 || !phno){
+    if(!name || !email || !password || !password2 || !phno_int){
         errors.push({message: "Please enter all fields"});
     }
 
@@ -128,7 +130,7 @@ app.post('/register', async (req,res)=>{
                  pool.query(
                      `INSERT INTO users (name, email, password, phno)
                      VALUES ($1, $2, $3, $4)
-                     RETURNING u_id, password`, [name, email, hashedPassword, phno], (err, results)=>{
+                     RETURNING u_id, password`, [name, email, hashedPassword, phno_int], (err, results)=>{
                          if(err){
                              throw err;
                          }
