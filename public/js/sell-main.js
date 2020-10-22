@@ -105,7 +105,47 @@ document.getElementById('year1').addEventListener('click',()  =>{
   //elmnt.scrollIntoView();
   });
 
-  
+
+  //Year4 CS
+  document.getElementById('cs-4').addEventListener('click',()  =>{
+    window.location.href="/sell-y4-cs";
+    //var elmnt = document.getElementById("year-section");
+    //display(elmnt);
+  //elmnt.scrollIntoView();
+  });
+
+   //Year4 CE
+   document.getElementById('ce-4').addEventListener('click',()  =>{
+    window.location.href="/sell-y4-ce";
+    //var elmnt = document.getElementById("year-section");
+    //display(elmnt);
+  //elmnt.scrollIntoView();
+  });
+
+   //Year4 ME
+   document.getElementById('me-4').addEventListener('click',()  =>{
+    window.location.href="/sell-y4-me";
+    //var elmnt = document.getElementById("year-section");
+    //display(elmnt);
+  //elmnt.scrollIntoView();
+  });
+
+  //Year4 EE
+  document.getElementById('ee-4').addEventListener('click',()  =>{
+    window.location.href="/sell-y4-ee";
+    //var elmnt = document.getElementById("year-section");
+    //display(elmnt);
+  //elmnt.scrollIntoView();
+  });
+
+  //Year4 EC
+  document.getElementById('ec-4').addEventListener('click',()  =>{
+    window.location.href="/sell-y4-ec";
+    //var elmnt = document.getElementById("year-section");
+    //display(elmnt);
+  //elmnt.scrollIntoView();
+  });
+
 //Year2
 document.getElementById('year2').addEventListener('click',()  =>{
     //window.location.href="#tiles.sell";
