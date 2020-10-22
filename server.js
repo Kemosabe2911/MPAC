@@ -1213,6 +1213,63 @@ app.get('/sell-tools',(req,res)=>{
 });
 
 
+app.post('/sell-tools',(req,res) =>{    
+    upload(req,res,(err) =>{
+        console.log('Working');
+        if(err){
+            console.log('Here1');
+            res.render('sell-tools',{msg:err});
+        }
+        else{
+            if(req.file == undefined){
+                console.log('Here2');
+                res.render('sell-tools',{
+                    msg: 'Error: No File Selected!'
+                });
+            }else{
+                //console.log('Here3');
+                let {bname, price} = req.body;
+                //console.log('Here3');
+                //console.log(req.body.selectpicker);
+                let branch= req.body.selectpicker;
+                //let year=4;
+                //let branch="Electronics and Communication";
+                let price_int=parseInt(price);
+                //let pages_int= parseInt(pages);
+                
+                console.log({bname,branch,price_int});
+                console.log(req.file.filename);
+                let file= req.file.filename;
+                //Error validation
+                let errors= [];
+
+                if(!bname || !price || !file){
+                    errors.push({message: "Please enter all fields"});
+                }
+                if(price_int === NaN){
+                    errors.push({message: "Price and Pages must be numbers"});
+                }
+                console.log('Here 4');
+                //Insert into db
+                pool.query(
+                    `INSERT INTO tools (t_name, branch, image, price, user_id )
+                    VALUES ($1, $2, $3, $4, $5)
+                    RETURNING t_id`,[bname, branch, req.file.filename, price_int, req.user.u_id],(err,results) =>{
+                        if(err){
+                            throw err;
+                        }
+                        console.log(results.row);
+                        console.log("success");
+                    }
+                )
+                res.redirect('/home');
+                //res.render('sell-y1-books',{ errors });
+            }
+        }
+    });
+
+});
+
 //Port Console Log
 app.listen(PORT, () =>{
     console.log(`Server Running on port ${PORT}`);
