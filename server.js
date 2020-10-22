@@ -1270,7 +1270,7 @@ app.post('/sell-tools',(req,res) =>{
 
 });
 
-//Sell Tools
+//Sell Calcs
 
 app.get('/sell-calcs',(req,res)=>{
     res.render('sell-calcs');
@@ -1319,6 +1319,70 @@ app.post('/sell-calcs',(req,res) =>{
                     `INSERT INTO calculators (c_name, power, image, price, user_id, c_type )
                     VALUES ($1, $2, $3, $4, $5, $6)
                     RETURNING c_id`,[bname, pages, req.file.filename, price_int, req.user.u_id, type],(err,results) =>{
+                        if(err){
+                            throw err;
+                        }
+                        console.log(results.row);
+                        console.log("success");
+                    }
+                )
+                res.redirect('/home');
+                //res.render('sell-y1-books',{ errors });
+            }
+        }
+    });
+
+});
+
+//Sell extras
+
+app.get('/sell-exts',(req,res)=>{
+    res.render('sell-exts');
+});
+
+
+app.post('/sell-exts',(req,res) =>{    
+    upload(req,res,(err) =>{
+        console.log('Working');
+        if(err){
+            console.log('Here1');
+            res.render('sell-exts',{msg:err});
+        }
+        else{
+            if(req.file == undefined){
+                console.log('Here2');
+                res.render('sell-exts',{
+                    msg: 'Error: No File Selected!'
+                });
+            }else{
+                //console.log('Here3');
+                let {bname, price} = req.body;
+                //console.log('Here3');
+                //console.log(req.body.selectpicker);
+                //let type= req.body.selectpicker;
+                //let year=4;
+                //let branch="Electronics and Communication";
+                let price_int=parseInt(price);
+                //let pages_int= parseInt(pages);
+                
+                console.log({bname,price_int});
+                console.log(req.file.filename);
+                let file= req.file.filename;
+                //Error validation
+                let errors= [];
+
+                if(!bname || !price || !file){
+                    errors.push({message: "Please enter all fields"});
+                }
+                if(price_int === NaN){
+                    errors.push({message: "Price and Pages must be numbers"});
+                }
+                console.log('Here 4');
+                //Insert into db
+                pool.query(
+                    `INSERT INTO calculators (e_name, image, price, user_id)
+                    VALUES ($1, $2, $3, $4)
+                    RETURNING c_id`,[bname, req.file.filename, price_int, req.user.u_id],(err,results) =>{
                         if(err){
                             throw err;
                         }
