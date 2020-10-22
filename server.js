@@ -200,7 +200,8 @@ function checkFileType(file,cb){
     }
 }
 
-//Get Requet Page: Sell-y3-cs-ss
+
+//Sell Year1 Books
 app.get('/sell-y1-books',(req,res)=>{
     res.render('sell-y1-books');
 });
