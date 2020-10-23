@@ -9,7 +9,7 @@ Users are able to buy and sell pre-owned student accessories.
 
 ◾ Nodejs  🚩🚩🚩
 
-◾ Express  
+◾ Express  ✔️✔️✔️
 
 ◾ Postgres    🐘🐘🐘
 
