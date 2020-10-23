@@ -11,6 +11,7 @@ const path= require('path');
 
 const initializePassport = require("./passportConfig");
 const User_id = require('./passportConfig');
+const { prependOnceListener } = require('process');
 
 
 initializePassport(passport);
@@ -1412,7 +1413,21 @@ app.get('/buy-y1-books',(req,res)=>{
 app.post('/buy-y1-books',(req,res) =>{    
     let subject= req.body.selectpicker;
     console.log({subject});
-    res.render('buy-y1-books');
+    pool.query(
+        `SELECT * FROM books
+        WHERE year=1 AND subject='${subject}'`,(err,results)=>{
+            if(err){
+                throw err;
+            }
+            console.log(results.rows);
+            res.render('buy-y1-books');
+            /*res.render("index",{
+                imgs: results.rows
+                //img: `/uploads/${results.rows[0].img}`
+            });*/
+        }
+    );
+
 });
 
 
