@@ -1405,7 +1405,9 @@ app.post('/sell-exts',(req,res) =>{
 });
 
 //Buy Section
-
+app.get('/buy-y1-books',(req,res)=>{
+    res.render('buy-y1-books');
+});
 
 
 
