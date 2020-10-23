@@ -1409,6 +1409,12 @@ app.get('/buy-y1-books',(req,res)=>{
     res.render('buy-y1-books');
 });
 
+app.post('/buy-y1-books',(req,res) =>{    
+    let subject= req.body.selectpicker;
+    console.log({subject});
+    res.render('buy-y1-books');
+});
+
 
 
 
