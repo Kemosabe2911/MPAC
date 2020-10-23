@@ -11,4 +11,4 @@ A website for pre-owned student accessories.
 
 [*] Postgres    🐘🐘🐘
 
-[*] ejs
+[*] ejs 🟡🟡🟡
