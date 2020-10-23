@@ -7,8 +7,8 @@ A website for pre-owned student accessories.
 
 ◾ Nodejs  🚩🚩🚩
 
-[*] Express  
+◾ Express  
 
-[*] Postgres    🐘🐘🐘
+◾ Postgres    🐘🐘🐘
 
-[*] ejs 🟡🟡🟡
+◾ ejs 🟡🟡🟡
