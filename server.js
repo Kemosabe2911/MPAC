@@ -83,6 +83,10 @@ app.get('/sell',checkNotAuthenticated,(req,res) =>{
     res.render("sell");
 });
 
+app.get('/buy',checkNotAuthenticated,(req,res) =>{
+    res.render("buy");
+});
+
 
 
 //User Registration
