@@ -384,3 +384,41 @@ nav ul li:hover a{
       background-color: black;
       color: white;
 } 
+
+
+/* Product Cards*/
+.prod-container {
+    padding: 40px 0;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-gap: 20px;
+    align-items: stretch;
+    transition: 2s;
+  }
+  
+  .grid > article {
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+  }
+
+  .grid > article:hover{
+    transform: scale(1.02);
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+  }
+  
+  .grid > article img {
+    max-width: 100%;
+  }
+  
+  .grid .text {
+    padding: 20px;
+  }
+
+  ul{
+    font-size: 16px;
+    font-style: italic;
+  }
