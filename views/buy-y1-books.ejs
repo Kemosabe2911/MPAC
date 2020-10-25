@@ -74,10 +74,10 @@
                         <img src="<%= typeof data.image !='undefined'? `/uploads/${data.image}` : 'Not displaying' %>" alt="Sample photo">
                         <div class="text">
                           <ul>
-                            <li>Book Name: Book1</li>
-                            <li>Book Name</li>
-                            <li>Book Name</li>
-                            <li>Book Name</li>
+                            <li><%= data.b_name %></li>
+                            <li><%= data.author %></li>
+                            <li><%= data.pages %></li>
+                            <li><b>Rs.<%= data.price %></b></li>
                           </ul>
                           <a href="https://codepen.io/collection/XdWJOQ/" class="btn btn-primary btn-block">Purchase Now</a>
                         </div>
