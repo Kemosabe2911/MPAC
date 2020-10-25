@@ -13,6 +13,9 @@ const initializePassport = require("./passportConfig");
 const User_id = require('./passportConfig');
 const { prependOnceListener } = require('process');
 
+const test= require('./public/js/temp');
+console.log(test);
+
 
 initializePassport(passport);
 

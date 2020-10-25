@@ -1,3 +1,5 @@
+
+
 //Function display
 function display(p){
     p.style.display='flex';
@@ -257,5 +259,3 @@ document.getElementById('home-btn2').addEventListener('click',()  =>{
     var elmnt = document.getElementById("top");
   elmnt.scrollIntoView();
   });*/
-
-
