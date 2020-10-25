@@ -1420,7 +1420,9 @@ app.post('/buy-y1-books',(req,res) =>{
                 throw err;
             }
             console.log(results.rows);
-            res.render('buy-y1-books');
+            res.render('buy-y1-books',{
+                data: results.rows
+            });
             /*res.render("index",{
                 imgs: results.rows
                 //img: `/uploads/${results.rows[0].img}`
