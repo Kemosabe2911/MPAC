@@ -1421,7 +1421,7 @@ app.post('/buy-y1-books',(req,res) =>{
             }
             console.log(results.rows);
             res.render('buy-y1-books',{
-                data: results.rows
+                datas: results.rows
             });
             /*res.render("index",{
                 imgs: results.rows
