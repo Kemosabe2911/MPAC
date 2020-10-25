@@ -389,8 +389,10 @@ nav ul li:hover a{
 /* Product Cards*/
 .prod-container {
     padding: 40px 0;
+    width: 90%;
+    margin-left: 5%;
   }
-  
+
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
