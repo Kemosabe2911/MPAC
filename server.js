@@ -1458,6 +1458,7 @@ app.post('/purchase',(req,res) =>{
         <li>Pages: ${req.body.pages}</li>
         <li>Price: ${req.body.price}</li>
     </ul>
+    <img style="width:300px; height: 300px;"  src="cid:logo">
     `;
 
     let transporter = nodemailer.createTransport({
@@ -1480,6 +1481,11 @@ app.post('/purchase',(req,res) =>{
         subject: "MPAC Purchase Confirmation", // Subject line
         text: "Hello world?", // plain text body
         html: output,
+        attachments: [{
+            filename: `${req.body.image}`,
+            path: __dirname +`/public/uploads/${req.body.image}`,
+            cid: 'logo' //my mistake was putting "cid:logo@cid" here! 
+       }]
     });
 
     console.log("Message sent: %s", info.messageId);
