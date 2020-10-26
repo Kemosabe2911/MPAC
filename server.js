@@ -8,6 +8,10 @@ const flash= require('express-flash');
 const passport= require('passport');
 const multer= require('multer');
 const path= require('path');
+const bodyParser= require('body-parser');
+const nodemailer= require('nodemailer');
+
+
 
 const initializePassport = require("./passportConfig");
 const User_id = require('./passportConfig');
