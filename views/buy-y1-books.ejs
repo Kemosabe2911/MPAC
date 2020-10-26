@@ -69,24 +69,26 @@
         </form>
         <div class="prod-container">
             <main class="grid">
-                <% datas.forEach(function(data){ %>
-                    <article>
-                        <img src="<%= typeof data.image !='undefined'? `/uploads/${data.image}` : 'Not displaying' %>" alt="Sample photo">
-                        <div class="text">
-                          <ul>
-                            <li><%= data.b_name %></li>
-                            <li><%= data.author %></li>
-                            <li><%= data.pages %></li>
-                            <li><b>Rs.<%= data.price %></b></li>
-                          </ul>
-                        <form action="/purchase"  method="POST">
-                            <input type="hidden" name="prod" value="<%= data.b_id %>" />
-                            <input type="submit" class="btn btn-primary" formaction="/purchase" name="purchase" value="Purchase">
-                            <input type="submit" class="btn btn-primary" formaction="/cart" name="cart" value="Add to Cart">
-                        </form>
-                        </div>
-                      </article>
-                <%}); %>
+                <% if(typeof datas != 'undefined') { %>
+                    <% datas.forEach(function(data){ %>
+                        <article>
+                            <img src="<%= typeof data.image !='undefined'? `/uploads/${data.image}` : 'Not displaying' %>" alt="Sample photo">
+                            <div class="text">
+                            <ul>
+                                <li><%= data.b_name %></li>
+                                <li><%= data.author %></li>
+                                <li><%= data.pages %></li>
+                                <li><b>Rs.<%= data.price %></b></li>
+                            </ul>
+                            <form action="/purchase"  method="POST">
+                                <input type="hidden" name="prod" value="<%= data.b_id %>" />
+                                <input type="submit" class="btn btn-primary" formaction="/purchase" name="purchase" value="Purchase">
+                                <input type="submit" class="btn btn-primary" formaction="/cart" name="cart" value="Add to Cart">
+                            </form>
+                            </div>
+                        </article>
+                    <%}); %>
+                 <%} %>   
             </main>
         </div>
     </section>

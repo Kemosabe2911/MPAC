@@ -1435,6 +1435,11 @@ app.post('/buy-y1-books',(req,res) =>{
 
 });
 
+//Purchase
+app.post('/purchase',(req,res) =>{
+ let prod= req.body.prod;
+    console.log(prod);
+});
 
 
 
