@@ -8,7 +8,7 @@ const flash= require('express-flash');
 const passport= require('passport');
 const multer= require('multer');
 const path= require('path');
-const bodyParser= require('body-parser');
+const bodyparser= require('body-parser');
 const nodemailer= require('nodemailer');
 
 
@@ -34,6 +34,11 @@ const pool = new Pool({
     password: 'password',
     port: 5432,
   })
+
+// Body-parser middleware 
+app.use(bodyparser.urlencoded({extended:false})) 
+app.use(bodyparser.json()) 
+
 
 const PORT = process.env.PORT || 4000;
 
