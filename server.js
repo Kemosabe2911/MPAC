@@ -1449,6 +1449,13 @@ app.post('/purchase',(req,res) =>{
     //let prod= req.body.prod;
     console.log(req.user);
     console.log(req.body);
+    pool.query(`SELECT * FROM users WHERE u_id= $1`,[req.body.user], (err, results) =>{
+        if(err){
+            throw err;
+        }
+        let seller=results.rows
+        console.log(seller[0]);
+        
     const output= `
     <h2> MPAC Purchase Confirmation Mail</h2>
     <ul>
@@ -1459,8 +1466,20 @@ app.post('/purchase',(req,res) =>{
         <li>Price: ${req.body.price}</li>
     </ul>
     <img style="width:300px; height: 300px;"  src="cid:logo">
+    <h3>Seller Info:<h3>
+    <ul>
+        <li>Seller Name: ${seller[0].name}</li>
+        <li>Seller Email: ${seller[0].email}</li>
+        <li>Seller Ph.No: ${seller[0].phno}</li>
+    </ul>
+    <br>
+    <h3>Buyer Info:<h3>
+    <ul>
+        <li>Buyer Name: ${req.user.name}</li>
+        <li>Buyer Email: ${req.user.email}</li>
+        <li>Buyer Ph.No: ${req.user.phno}</li>
+    </ul>
     `;
-
     let transporter = nodemailer.createTransport({
         host: 'smtp.googlemail.com',
         port: 465,
@@ -1477,7 +1496,7 @@ app.post('/purchase',(req,res) =>{
     // send mail with defined transport object
     let info = transporter.sendMail({
         from: '"MPAC" <itsmestevin29@gmail.com>', // sender address
-        to: `${req.user.email}`, // list of receivers
+        to: `${req.user.email}, ${seller[0].email}`, // list of receivers
         subject: "MPAC Purchase Confirmation", // Subject line
         text: "Hello world?", // plain text body
         html: output,
@@ -1495,6 +1514,8 @@ app.post('/purchase',(req,res) =>{
     console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
 
     res.render("buy-y1-books");
+
+    });
 });
 
 
