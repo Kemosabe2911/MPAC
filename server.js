@@ -1446,8 +1446,17 @@ app.post('/buy-y1-books',(req,res) =>{
 
 //Purchase
 app.post('/purchase',(req,res) =>{
- let prod= req.body.prod;
-    console.log(prod);
+    //let prod= req.body.prod;
+    console.log(req.body);
+    const output= `
+    <h2> MPAC Purchase Confirmation Mail</h2>
+    <ul>
+        <li>Product Name: ${req.body.bname}</li>
+        <li>Author: ${req.body.author}</li>
+        <li>Pages: ${req.body.pages}</li>
+        <li>Price: ${req.body.price}</li>
+    </ul>
+    `;
 });
 
 
