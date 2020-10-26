@@ -79,7 +79,11 @@
                             <li><%= data.pages %></li>
                             <li><b>Rs.<%= data.price %></b></li>
                           </ul>
-                          <a href="https://codepen.io/collection/XdWJOQ/" class="btn btn-primary btn-block">Purchase Now</a>
+                        <form action="/purchase"  method="POST">
+                            <input type="hidden" name="prod" value="<%= data.b_id %>" />
+                            <input type="submit" class="btn btn-primary" formaction="/purchase" name="purchase" value="Purchase">
+                            <input type="submit" class="btn btn-primary" formaction="/cart" name="cart" value="Add to Cart">
+                        </form>
                         </div>
                       </article>
                 <%}); %>
