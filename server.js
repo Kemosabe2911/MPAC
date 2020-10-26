@@ -1474,7 +1474,7 @@ app.post('/purchase',(req,res) =>{
 
     // send mail with defined transport object
     let info = transporter.sendMail({
-        from: '"<PAC" <itsmestevin29@gmail.com>', // sender address
+        from: '"MPAC" <itsmestevin29@gmail.com>', // sender address
         to: `${req.user.email}`, // list of receivers
         subject: "MPAC Purchase Confirmation", // Subject line
         text: "Hello world?", // plain text body
