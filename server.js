@@ -1454,6 +1454,7 @@ app.post('/purchase',(req,res) =>{
     <ul>
         <li>Product Name: ${req.body.bname}</li>
         <li>Author: ${req.body.author}</li>
+        <li>Price: ${req.body.subject}</li>
         <li>Pages: ${req.body.pages}</li>
         <li>Price: ${req.body.price}</li>
     </ul>
