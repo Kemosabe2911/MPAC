@@ -1447,6 +1447,7 @@ app.post('/buy-y1-books',(req,res) =>{
 //Purchase
 app.post('/purchase',(req,res) =>{
     //let prod= req.body.prod;
+    console.log(req.user);
     console.log(req.body);
     const output= `
     <h2> MPAC Purchase Confirmation Mail</h2>
@@ -1473,7 +1474,7 @@ app.post('/purchase',(req,res) =>{
 
     // send mail with defined transport object
     let info = transporter.sendMail({
-        from: '"Template Email" <itsmestevin29@gmail.com>', // sender address
+        from: '"<PAC" <itsmestevin29@gmail.com>', // sender address
         to: `${req.user.email}`, // list of receivers
         subject: "MPAC Purchase Confirmation", // Subject line
         text: "Hello world?", // plain text body
