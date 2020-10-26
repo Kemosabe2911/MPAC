@@ -1442,6 +1442,12 @@ app.post('/purchase',(req,res) =>{
 });
 
 
+//Cart
+app.post('/cart',(req,res) =>{
+    let prod= req.body.prod;
+    console.log(prod);
+   });
+
 
 
 
