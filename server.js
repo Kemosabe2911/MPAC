@@ -1458,7 +1458,6 @@ app.post('/purchase',(req,res) =>{
         <li>Pages: ${req.body.pages}</li>
         <li>Price: ${req.body.price}</li>
     </ul>
-    <img src="public/uploads/${req.body.image}">
     `;
 
     let transporter = nodemailer.createTransport({
@@ -1480,7 +1479,7 @@ app.post('/purchase',(req,res) =>{
         to: `${req.user.email}`, // list of receivers
         subject: "MPAC Purchase Confirmation", // Subject line
         text: "Hello world?", // plain text body
-        html: output, // html body
+        html: output,
     });
 
     console.log("Message sent: %s", info.messageId);
