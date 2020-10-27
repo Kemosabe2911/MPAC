@@ -1449,13 +1449,6 @@ app.post('/purchase-books',(req,res) =>{
     //let prod= req.body.prod;
     let prod= req.body.prod;
     console.log(prod);
-    pool.query(` DELETE FROM books WHERE b_id = $1`, [prod], (err, results) =>{
-        if(err){
-            throw err;
-        }
-        console.log(results.rows);
-        res.redirect("/home");
-    });
 
     console.log(req.user);
     console.log(req.body);
@@ -1464,8 +1457,7 @@ app.post('/purchase-books',(req,res) =>{
             throw err;
         }
         let seller=results.rows
-        console.log(seller[0]);
-        
+        console.log(seller[0]);   
     const output= `
     <h2> MPAC Purchase Confirmation Mail</h2>
     <ul>
@@ -1523,8 +1515,14 @@ app.post('/purchase-books',(req,res) =>{
     // Preview only available when sending through an Ethereal account
     console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
 
-    res.redirect("/home");
 
+    });
+    pool.query(` DELETE FROM books WHERE b_id = $1`, [prod], (err, results) =>{
+        if(err){
+            throw err;
+        }
+        console.log(results.rows);
+        res.redirect("/home");
     });
 });
 
