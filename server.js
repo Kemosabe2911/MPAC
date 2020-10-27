@@ -1563,6 +1563,11 @@ app.get('/buy-y3-ce',(req,res)=>{
     res.render('buy-y3-ce');
 });
 
+//Buy Year3 CS Books
+app.get('/buy-y3-cs',(req,res)=>{
+    res.render('buy-y3-cs');
+});
+
 app.post('/buy-y3',(req,res) =>{    
     let subject= req.body.selectpicker;
     console.log({subject});
