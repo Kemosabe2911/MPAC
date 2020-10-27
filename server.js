@@ -1447,6 +1447,16 @@ app.post('/buy-y1-books',(req,res) =>{
 //Purchase
 app.post('/purchase-books',(req,res) =>{
     //let prod= req.body.prod;
+    let prod= req.body.prod;
+    console.log(prod);
+    pool.query(` DELETE FROM books WHERE b_id = $1`, [prod], (err, results) =>{
+        if(err){
+            throw err;
+        }
+        console.log(results.rows);
+        res.redirect("/home");
+    });
+
     console.log(req.user);
     console.log(req.body);
     pool.query(`SELECT * FROM users WHERE u_id= $1`,[req.body.user], (err, results) =>{
@@ -1465,7 +1475,7 @@ app.post('/purchase-books',(req,res) =>{
         <li>Pages: ${req.body.pages}</li>
         <li>Price: ${req.body.price}</li>
     </ul>
-    <img style="width:300px; height: 300px;"  src="cid:logo">
+    <img style="width:300px; height: 300px;"  src="cid:logo" alt="Image Not available">
     <h3>Seller Info:<h3>
     <ul>
         <li>Seller Name: ${seller[0].name}</li>
