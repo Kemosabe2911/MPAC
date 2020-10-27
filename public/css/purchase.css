@@ -60,9 +60,9 @@
 }
 
 .prod-card .btns .cart{
-    background: #00e600;
+    background: #f6830f;
     color: #ffffff;
-    border: 1px solid  #00e600;
+    border: 1px solid  #f6830f;
     transition: 1s;
 }
 
