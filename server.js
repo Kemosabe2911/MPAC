@@ -1558,6 +1558,32 @@ app.get('/buy-y2-me',(req,res)=>{
     res.render('buy-y2-me');
 });
 
+//Buy Year3 CE Books
+app.get('/buy-y3-ce',(req,res)=>{
+    res.render('buy-y3-ce');
+});
+
+app.post('/buy-y3',(req,res) =>{    
+    let subject= req.body.selectpicker;
+    console.log({subject});
+    pool.query(
+        `SELECT * FROM books
+        WHERE year=3 AND subject='${subject}'`,(err,results)=>{
+            if(err){
+                throw err;
+            }
+            console.log(results.rows);
+            res.render('purchase-books',{
+                datas: results.rows
+            });
+            /*res.render("index",{
+                imgs: results.rows
+                //img: `/uploads/${results.rows[0].img}`
+            });*/
+        }
+    );
+});
+
 
 
 
