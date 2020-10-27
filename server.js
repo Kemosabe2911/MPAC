@@ -1558,6 +1558,8 @@ app.get('/buy-y2-me',(req,res)=>{
     res.render('buy-y2-me');
 });
 
+
+
 //Buy Year3 CE Books
 app.get('/buy-y3-ce',(req,res)=>{
     res.render('buy-y3-ce');
@@ -1589,6 +1591,53 @@ app.post('/buy-y3',(req,res) =>{
     pool.query(
         `SELECT * FROM books
         WHERE year=3 AND subject='${subject}'`,(err,results)=>{
+            if(err){
+                throw err;
+            }
+            console.log(results.rows);
+            res.render('purchase-books',{
+                datas: results.rows
+            });
+            /*res.render("index",{
+                imgs: results.rows
+                //img: `/uploads/${results.rows[0].img}`
+            });*/
+        }
+    );
+});
+
+
+//Buy Year4 CE Books
+app.get('/buy-y4-ce',(req,res)=>{
+    res.render('buy-y4-ce');
+});
+
+//Buy Year4 CS Books
+app.get('/buy-y4-cs',(req,res)=>{
+    res.render('buy-y4-cs');
+});
+
+//Buy Year4 EC Books
+app.get('/buy-y4-ec',(req,res)=>{
+    res.render('buy-y4-ec');
+});
+
+//Buy Year4 EE Books
+app.get('/buy-y4-ee',(req,res)=>{
+    res.render('buy-y4-ee');
+});
+
+//Buy Year4 ME Books
+app.get('/buy-y4-me',(req,res)=>{
+    res.render('buy-y4-me');
+});
+
+app.post('/buy-y4',(req,res) =>{    
+    let subject= req.body.selectpicker;
+    console.log({subject});
+    pool.query(
+        `SELECT * FROM books
+        WHERE year=4 AND subject='${subject}'`,(err,results)=>{
             if(err){
                 throw err;
             }
