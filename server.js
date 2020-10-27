@@ -1432,7 +1432,7 @@ app.post('/buy-y1-books',(req,res) =>{
                 throw err;
             }
             console.log(results.rows);
-            res.render('buy-y1-books',{
+            res.render('purchase-books',{
                 datas: results.rows
             });
             /*res.render("index",{
@@ -1445,7 +1445,7 @@ app.post('/buy-y1-books',(req,res) =>{
 });
 
 //Purchase
-app.post('/purchase',(req,res) =>{
+app.post('/purchase-books',(req,res) =>{
     //let prod= req.body.prod;
     console.log(req.user);
     console.log(req.body);
@@ -1513,14 +1513,14 @@ app.post('/purchase',(req,res) =>{
     // Preview only available when sending through an Ethereal account
     console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
 
-    res.render("buy-y1-books");
+    res.render("purchase-books");
 
     });
 });
 
 
 //Cart
-app.post('/cart',(req,res) =>{
+app.post('/cart-books',(req,res) =>{
     let prod= req.body.prod;
     console.log(prod);
    });

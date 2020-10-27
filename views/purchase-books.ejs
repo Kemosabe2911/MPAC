@@ -36,7 +36,7 @@
                         <img src="<%= typeof data.image !='undefined'? `/uploads/${data.image}` : 'Not displaying' %>" alt="Sample photo">
                         <p>Author: <%= data.author %></p>
                         <p>Pages: <%= data.pages %></p>
-                        <p>Price: Rs.Rs.<%= data.price %></p>
+                        <p>Price: Rs.<%= data.price %></p>
                     </div>
                     <form action="/purchase"  method="POST">
                         <input type="hidden" name="prod" value="<%= data.b_id %>" />
@@ -48,8 +48,8 @@
                         <input type="hidden" name="price" value="<%= data.price %>" />
                         <input type="hidden" name="user" value="<%= data.user_id %>" />
                         <div class="btns">
-                            <input type="submit" class="purchase" formaction="/purchase" name="purchase" value="Purchase">
-                            <input type="submit" class="cart" formaction="/cart" name="cart" value="Add to Cart">
+                            <input type="submit" class="purchase" formaction="/purchase-books" name="purchase" value="Purchase">
+                            <input type="submit" class="cart" formaction="/cart-books" name="cart" value="Add to Cart">
                         </div>
                     </form>
                 </div>

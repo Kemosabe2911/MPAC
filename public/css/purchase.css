@@ -7,10 +7,10 @@
 
 .container{
     width: 90vw;
-    background: #ffffff;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
+    margin-top: 20px;
 }
 
 .prod-card{
