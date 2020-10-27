@@ -1573,6 +1573,11 @@ app.get('/buy-y3-ec',(req,res)=>{
     res.render('buy-y3-ec');
 });
 
+//Buy Year3 EE Books
+app.get('/buy-y3-ee',(req,res)=>{
+    res.render('buy-y3-ee');
+});
+
 app.post('/buy-y3',(req,res) =>{    
     let subject= req.body.selectpicker;
     console.log({subject});
