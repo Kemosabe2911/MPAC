@@ -1531,7 +1531,18 @@ app.post('/purchase-books',(req,res) =>{
 app.post('/cart-books',(req,res) =>{
     let prod= req.body.prod;
     console.log(prod);
-   });
+    pool.query(
+        `INSERT INTO bookcart (user_id,p_id)
+        VALUES ($1, $2)
+        RETURNING bc_id`, [req.user.u_id, prod], (err, results)=>{
+            if(err){
+                throw err;
+            }
+            console.log(results.row);
+            res.redirect('/home');
+        }
+    );
+});
 
 
 
