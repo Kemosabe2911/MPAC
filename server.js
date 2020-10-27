@@ -1553,6 +1553,11 @@ app.post('/buy-y2-ee',(req,res) =>{
     );
 });
 
+//Buy Year2 ME Books
+app.get('/buy-y2-me',(req,res)=>{
+    res.render('buy-y2-me');
+});
+
 
 
 
