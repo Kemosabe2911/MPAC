@@ -50,7 +50,7 @@ document.getElementById('year1').addEventListener('click',()  =>{
 
   //Year2 CS
   document.getElementById('cs-2').addEventListener('click',()  =>{
-    window.location.href="/sell-y2-cs";
+    window.location.href="/buy-y2-cs";
     //var elmnt = document.getElementById("year-section");
     //display(elmnt);
   //elmnt.scrollIntoView();

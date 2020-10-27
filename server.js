@@ -1419,7 +1419,7 @@ app.post('/sell-exts',(req,res) =>{
 
 //Buy Section
 
-//Bou Year1 Books
+//Buy Year1 Books
 app.get('/buy-y1-books',(req,res)=>{
     res.render('buy-y1-books');
 });
@@ -1445,6 +1445,38 @@ app.post('/buy-y1-books',(req,res) =>{
     );
 
 });
+
+//Bou Year1 Books
+app.get('/buy-y2-ce',(req,res)=>{
+    res.render('buy-y2-ce');
+});
+
+app.post('/buy-y2-ce',(req,res) =>{    
+    let subject= req.body.selectpicker;
+    console.log({subject});
+    pool.query(
+        `SELECT * FROM books
+        WHERE year=2 AND subject='${subject}'`,(err,results)=>{
+            if(err){
+                throw err;
+            }
+            console.log(results.rows);
+            res.render('purchase-books',{
+                datas: results.rows
+            });
+            /*res.render("index",{
+                imgs: results.rows
+                //img: `/uploads/${results.rows[0].img}`
+            });*/
+        }
+    );
+
+});
+
+
+
+
+
 
 //Purchase Books
 app.post('/purchase-books',(req,res) =>{
