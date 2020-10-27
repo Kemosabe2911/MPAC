@@ -28,19 +28,33 @@
         </nav>
         <!--Product Display-->
         <div class="container">
-            <div class="prod-card">
-                <div class="text">
-                    <h2>Book Name</h2>
-                    <img src="../home-page/images/dp-home-img1.jpg">
-                    <p>Author</p>
-                    <p>Pages</p>
-                    <p>Price</p>
+            <% if(typeof datas != 'undefined') { %>
+                <% datas.forEach(function(data){ %>
+                <div class="prod-card">
+                    <div class="text">
+                        <h2><%= data.b_name %></h2>
+                        <img src="<%= typeof data.image !='undefined'? `/uploads/${data.image}` : 'Not displaying' %>" alt="Sample photo">
+                        <p>Author: <%= data.author %></p>
+                        <p>Pages: <%= data.pages %></p>
+                        <p>Price: Rs.Rs.<%= data.price %></p>
+                    </div>
+                    <form action="/purchase"  method="POST">
+                        <input type="hidden" name="prod" value="<%= data.b_id %>" />
+                        <input type="hidden" name="bname" value="<%= data.b_name %>" />
+                        <input type="hidden" name="author" value="<%= data.author %>" />
+                        <input type="hidden" name="subject" value="<%= data.subject %>" />
+                        <input type="hidden" name="image" value="<%= data.image %>" />
+                        <input type="hidden" name="pages" value="<%= data.pages %>" />
+                        <input type="hidden" name="price" value="<%= data.price %>" />
+                        <input type="hidden" name="user" value="<%= data.user_id %>" />
+                        <div class="btns">
+                            <input type="submit" class="purchase" formaction="/purchase" name="purchase" value="Purchase">
+                            <input type="submit" class="cart" formaction="/cart" name="cart" value="Add to Cart">
+                        </div>
+                    </form>
                 </div>
-                <div class="btns">
-                    <input type="submit" class="purchase" name="purchase-book" value="Purchase">
-                    <input type="submit" class="cart" name="book-cart" value="Add to Cart">
-                </div>
-            </div>
+                <%}); %>
+            <%} %>
         </div>
     </section>    
 </body>
