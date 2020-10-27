@@ -1418,6 +1418,8 @@ app.post('/sell-exts',(req,res) =>{
 });
 
 //Buy Section
+
+//Bou Year1 Books
 app.get('/buy-y1-books',(req,res)=>{
     res.render('buy-y1-books');
 });
@@ -1444,7 +1446,7 @@ app.post('/buy-y1-books',(req,res) =>{
 
 });
 
-//Purchase
+//Purchase Books
 app.post('/purchase-books',(req,res) =>{
     //let prod= req.body.prod;
     let prod= req.body.prod;
@@ -1527,7 +1529,7 @@ app.post('/purchase-books',(req,res) =>{
 });
 
 
-//Cart
+//Cart books
 app.post('/cart-books',(req,res) =>{
     let prod= req.body.prod;
     console.log(prod);
