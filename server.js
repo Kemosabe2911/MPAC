@@ -1689,7 +1689,7 @@ app.post('/buy-calcs',(req,res) =>{
     let subject= req.body.selectpicker;
     console.log({subject});
     pool.query(
-        `SELECT * FROM calulators
+        `SELECT * FROM calculators
         WHERE c_type='${subject}'`,(err,results)=>{
             if(err){
                 throw err;
