@@ -1695,7 +1695,7 @@ app.post('/buy-calcs',(req,res) =>{
                 throw err;
             }
             console.log(results.rows);
-            res.render('purchase-calcs',{
+            res.render('purchase-calc',{
                 datas: results.rows
             });
             /*res.render("index",{
