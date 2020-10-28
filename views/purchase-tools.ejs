@@ -34,7 +34,7 @@
                     <div class="text">
                         <h2><%= data.t_name %></h2>
                         <img src="<%= typeof data.image !='undefined'? `/uploads/${data.image}` : 'Not displaying' %>" alt="Sample photo">
-                        <p>Author: <%= data.branch %></p>
+                        <p>Branch: <%= data.branch %></p>
                         <p>Price: Rs.<%= data.price %></p>
                     </div>
                     <form action="/purchase"  method="POST">

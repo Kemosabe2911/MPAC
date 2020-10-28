@@ -1669,7 +1669,9 @@ app.post('/buy-tools',(req,res) =>{
                 throw err;
             }
             console.log(results.rows);
-            res.redirect('/home');
+            res.render('purchase-tools',{
+                datas: results.rows
+            });
             /*res.render("index",{
                 imgs: results.rows
                 //img: `/uploads/${results.rows[0].img}`
