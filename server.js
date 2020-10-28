@@ -1659,6 +1659,24 @@ app.get('/buy-tools',(req,res)=>{
     res.render('buy-tools');
 });
 
+app.post('/buy-tools',(req,res) =>{    
+    let subject= req.body.selectpicker;
+    console.log({subject});
+    pool.query(
+        `SELECT * FROM tools
+        WHERE branch='${subject}'`,(err,results)=>{
+            if(err){
+                throw err;
+            }
+            console.log(results.rows);
+            res.redirect('/home');
+            /*res.render("index",{
+                imgs: results.rows
+                //img: `/uploads/${results.rows[0].img}`
+            });*/
+        }
+    );
+});
 
 
 
