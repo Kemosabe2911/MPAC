@@ -1854,6 +1854,12 @@ app.post('/purchase-tools',(req,res) =>{
 
 
     });
+    pool.query(` DELETE FROM toolcart WHERE p_id = $1`, [prod], (err, results) =>{
+        if(err){
+            throw err;
+        }
+        console.log(results.rows);
+    });
     pool.query(` DELETE FROM tools WHERE t_id = $1`, [prod], (err, results) =>{
         if(err){
             throw err;
