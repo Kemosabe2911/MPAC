@@ -1706,6 +1706,26 @@ app.post('/buy-calcs',(req,res) =>{
     );
 });
 
+//Buy Extras
+
+app.get('/buyexts',(req,res)=>{
+    pool.query(
+        `SELECT * FROM extras`,(err,results)=>{
+            if(err){
+                throw err;
+            }
+            console.log(results.rows);
+            res.render('purchase-exts',{
+                datas: results.rows
+            });
+            /*res.render("index",{
+                imgs: results.rows
+                //img: `/uploads/${results.rows[0].img}`
+            });*/
+        }
+    );
+});
+
 
 
 //Purchase Books
