@@ -17,7 +17,7 @@ document.getElementById('books').addEventListener('click',()  =>{
 
 //Tools
 document.getElementById('tools').addEventListener('click',()  =>{
-    window.location.href="/sell-tools";
+    window.location.href="/buy-tools";
     //var elmnt = document.getElementById("year-section");
     //display(elmnt);
   //elmnt.scrollIntoView();
@@ -26,7 +26,7 @@ document.getElementById('tools').addEventListener('click',()  =>{
 
 //Calculators
 document.getElementById('calcs').addEventListener('click',()  =>{
-    window.location.href="/sell-calcs";
+    window.location.href="/buy-calcs";
     //var elmnt = document.getElementById("year-section");
     //display(elmnt);
   //elmnt.scrollIntoView();
@@ -34,7 +34,7 @@ document.getElementById('calcs').addEventListener('click',()  =>{
 
 //Extras
 document.getElementById('extras').addEventListener('click',()  =>{
-    window.location.href="/sell-exts";
+    window.location.href="/buy-exts";
     //var elmnt = document.getElementById("year-section");
     //display(elmnt);
   //elmnt.scrollIntoView();
