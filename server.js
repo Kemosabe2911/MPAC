@@ -1654,6 +1654,12 @@ app.post('/buy-y4',(req,res) =>{
 });
 
 
+//Buy Tools
+app.get('/buy-tools',(req,res)=>{
+    res.render('buy-tools');
+});
+
+
 
 
 //Purchase Books
