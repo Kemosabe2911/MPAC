@@ -1680,6 +1680,29 @@ app.post('/buy-tools',(req,res) =>{
     );
 });
 
+//Buy calculators
+app.get('/buy-calcs',(req,res)=>{
+    res.render('buy-calcs');
+});
+
+app.post('/buy-calcs',(req,res) =>{    
+    let subject= req.body.selectpicker;
+    console.log({subject});
+    pool.query(
+        `SELECT * FROM calulators
+        WHERE c_type='${subject}'`,(err,results)=>{
+            if(err){
+                throw err;
+            }
+            console.log(results.rows);
+            /*res.render("index",{
+                imgs: results.rows
+                //img: `/uploads/${results.rows[0].img}`
+            });*/
+        }
+    );
+});
+
 
 
 //Purchase Books
