@@ -1708,7 +1708,7 @@ app.post('/buy-calcs',(req,res) =>{
 
 //Buy Extras
 
-app.get('/buyexts',(req,res)=>{
+app.get('/buy-exts',(req,res)=>{
     pool.query(
         `SELECT * FROM extras`,(err,results)=>{
             if(err){
@@ -1942,7 +1942,7 @@ app.post('/cart-tools',(req,res) =>{
 });
 
 
-//Purchase Tools
+//Purchase Calculators
 app.post('/purchase-calcs',(req,res) =>{
     //let prod= req.body.prod;
     let prod= req.body.prod;
@@ -2047,6 +2047,109 @@ app.post('/cart-calcs',(req,res) =>{
     );
 });
 
+
+//Purchase Extras
+app.post('/purchase-exts',(req,res) =>{
+    //let prod= req.body.prod;
+    let prod= req.body.prod;
+    console.log(prod);
+
+    console.log(req.user);
+    console.log(req.body);
+    pool.query(`SELECT * FROM users WHERE u_id= $1`,[req.body.user], (err, results) =>{
+        if(err){
+            throw err;
+        }
+        let seller=results.rows
+        console.log(seller[0]);   
+    const output= `
+    <h2> MPAC Purchase Confirmation Mail</h2>
+    <ul>
+        <li>Product Name: ${req.body.bname}</li>
+        <li>Price: ${req.body.price}</li>
+    </ul>
+    <img style="width:300px; height: 300px;"  src="cid:logo" alt="Image Not available">
+    <h3>Seller Info:<h3>
+    <ul>
+        <li>Seller Name: ${seller[0].name}</li>
+        <li>Seller Email: ${seller[0].email}</li>
+        <li>Seller Ph.No: ${seller[0].phno}</li>
+    </ul>
+    <br>
+    <h3>Buyer Info:<h3>
+    <ul>
+        <li>Buyer Name: ${req.user.name}</li>
+        <li>Buyer Email: ${req.user.email}</li>
+        <li>Buyer Ph.No: ${req.user.phno}</li>
+    </ul>
+    `;
+    let transporter = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true, // true for 465, false for other ports
+        auth: {
+        user: 'itsmestevin29@gmail.com', // generated ethereal user
+        pass: 'stevin@2911', // generated ethereal password
+        },
+        tls:{
+            rejectUnauthorized: false
+        }
+    });
+
+    // send mail with defined transport object
+    let info = transporter.sendMail({
+        from: '"MPAC" <itsmestevin29@gmail.com>', // sender address
+        to: `${req.user.email}, ${seller[0].email}`, // list of receivers
+        subject: "MPAC Purchase Confirmation", // Subject line
+        text: "Hello world?", // plain text body
+        html: output,
+        attachments: [{
+            filename: `${req.body.image}`,
+            path: __dirname +`/public/uploads/${req.body.image}`,
+            cid: 'logo' //my mistake was putting "cid:logo@cid" here! 
+       }]
+    });
+
+    console.log("Message sent: %s", info.messageId);
+    // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+
+    // Preview only available when sending through an Ethereal account
+    console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+
+
+    });
+    pool.query(` DELETE FROM extcart WHERE p_id = $1`, [prod], (err, results) =>{
+        if(err){
+            throw err;
+        }
+        console.log(results.rows);
+    });
+    pool.query(` DELETE FROM extras WHERE e_id = $1`, [prod], (err, results) =>{
+        if(err){
+            throw err;
+        }
+        console.log(results.rows);
+        res.redirect("/home");
+    });
+});
+
+
+//Cart Calcs
+app.post('/cart-exts',(req,res) =>{
+    let prod= req.body.prod;
+    console.log(prod);
+    pool.query(
+        `INSERT INTO extcart (user_id,p_id)
+        VALUES ($1, $2)
+        RETURNING ec_id`, [req.user.u_id, prod], (err, results)=>{
+            if(err){
+                throw err;
+            }
+            console.log(results.row);
+            res.redirect('/home');
+        }
+    );
+});
 
 
 //Port Console Log
