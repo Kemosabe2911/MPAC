@@ -1755,6 +1755,14 @@ app.post('/purchase-books',(req,res) =>{
 
 
     });
+
+    pool.query(` DELETE FROM bookcart WHERE p_id = $1`, [prod], (err, results) =>{
+        if(err){
+            throw err;
+        }
+        console.log(results.rows);
+    });
+
     pool.query(` DELETE FROM books WHERE b_id = $1`, [prod], (err, results) =>{
         if(err){
             throw err;
