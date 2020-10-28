@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPAC</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <!--icons api-->
+    <a href="https://icons8.com/icon/3260/sell"></a>
+    <script src="https://kit.fontawesome.com/087042e108.js" crossorigin="anonymous"></script>
+    <!--Jquery cdn-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+
+</head>
+<body>
+
+    <!--Home Section-->
+    <section id="home-form">
+        <!--Navbar-->
+        <nav id="navbar">
+            <ul>
+                <li class="logo">MPAC</li>
+                <li class="items"><a href="/home">Home</a></li>
+                <li class="items"><a href="/dashboard">Dashboard</a></li>
+                <li class="items"><a href="/about">About Us..</a></li>
+                <li class="items"><a href="/contact">Contact Us</a></li>
+                <li class="toggle"><span class="bars"></span></li>
+            </ul>
+        </nav>
+        <form action="/buy-tools" method="POST">
+            <div id="form-body">
+                <h1>Workshop Tools</h1>
+                <div class="book-subject">
+                    Subject <br>
+                    <SELECT id="subject" name="selectpicker" class="input-box" maxlength=12>
+                        <option name="NONE" selected >--NONE--
+                            <option name="Design of Machine Elements I ">Design of Machine Elements I(ME401)
+                            <option name="Advanced Energy Engineering">Advanced Energy Engineering(ME403) 
+                            <option name="Refrigeration and Air Conditioning">Refrigeration and Air Conditioning(ME405)
+                            <option name="Mechatronics ">Mechatronics (ME407) 
+                            <option name="Compressible Fluid Flow ">Compressible Fluid Flow (ME409) 	
+                            <option name="Design of Machine Elements II ">Design of Machine Elements II(ME402)	
+                            <option name="Industrial Engineering">Industrial Engineering(ME404)
+                    </SELECT>
+                </div>
+                <!--
+                <div class="input-group mb-3">
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="pImage" name="pImage" aria-describedby="inputGroupFileAddon01">
+                      <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                    </div>
+                </div>-->
+                <div class="submit-div">
+                    <div class="submit">
+                        <button class="sub-button" type="submit">Submit</button>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </form> 
+        </div>
+    </section>
+    <script src="/js/main.js"></script>
+    <script src="/js/temp.js"></script>
+    <script src='/js/jquery.js'></script>
+
+    <!--
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+    -->
+</body> 
+
+</html>
