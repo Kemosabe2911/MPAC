@@ -1695,6 +1695,9 @@ app.post('/buy-calcs',(req,res) =>{
                 throw err;
             }
             console.log(results.rows);
+            res.render('purchase-calcs',{
+                datas: results.rows
+            });
             /*res.render("index",{
                 imgs: results.rows
                 //img: `/uploads/${results.rows[0].img}`
