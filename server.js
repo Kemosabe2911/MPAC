@@ -2155,8 +2155,21 @@ app.post('/cart-exts',(req,res) =>{
 //My Cart
 
 app.get('/my-cart',(req,res) =>{
-    console.log(req.user);
-    res.send('Hello');
+    //console.log(req.user);
+    pool.query(
+        `SELECT * FROM books 
+         WHERE b_id IN (
+             SELECT p_id FROM bookcart
+             WHERE user_id= $1
+         ) `,[req.user.u_id],(err, results) =>{
+             if(err){
+                 throw err;
+             }
+             let books= results.rows;
+             console.log(books);
+         }
+    );
+    res.render('my-cart');
 
 });
 

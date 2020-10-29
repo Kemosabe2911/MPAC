@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPAC</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/purchase.css">
+    <!--icons api-->
+    <a href="https://icons8.com/icon/3260/sell"></a>
+    <script src="https://kit.fontawesome.com/087042e108.js" crossorigin="anonymous"></script>
+    <!--Jquery cdn-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <!--Home Section-->
+    <section id="home-form">
+        <!--Navbar-->
+        <nav id="navbar">
+            <ul>
+                <li class="logo">MPAC</li>
+                <li class="items"><a href="/home">Home</a></li>
+                <li class="items"><a href="/dashboard">Dashboard</a></li>
+                <li class="items"><a href="/about">About Us..</a></li>
+                <li class="items"><a href="/contact">Contact Us</a></li>
+                <li class="toggle"><span class="bars"></span></li>
+            </ul>
+        </nav>
+        <!--Product Display-->
+        <div class="container">
+            <% if(typeof datas != 'undefined') { %>
+                <% datas.forEach(function(data){ %>
+                <div class="prod-card">
+                    <div class="text">
+                        <h2><%= data.b_name %></h2>
+                        <img src="<%= typeof data.image !='undefined'? `/uploads/${data.image}` : 'Not displaying' %>" alt="Sample photo">
+                        <p>Author: <%= data.author %></p>
+                        <p>Pages: <%= data.pages %></p>
+                        <p>Price: Rs.<%= data.price %></p>
+                    </div>
+                    <form action="/purchase"  method="POST">
+                        <input type="hidden" name="prod" value="<%= data.b_id %>" />
+                        <input type="hidden" name="bname" value="<%= data.b_name %>" />
+                        <input type="hidden" name="author" value="<%= data.author %>" />
+                        <input type="hidden" name="subject" value="<%= data.subject %>" />
+                        <input type="hidden" name="image" value="<%= data.image %>" />
+                        <input type="hidden" name="pages" value="<%= data.pages %>" />
+                        <input type="hidden" name="price" value="<%= data.price %>" />
+                        <input type="hidden" name="user" value="<%= data.user_id %>" />
+                        <div class="btns">
+                            <input type="submit" class="purchase" formaction="/purchase-books" name="purchase" value="Purchase">
+                        </div>
+                    </form>
+                </div>
+                <%}); %>
+            <%} %>
+        </div>
+    </section>    
+</body>
+</html>
