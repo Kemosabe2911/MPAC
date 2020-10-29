@@ -448,7 +448,3 @@ nav ul li:hover a{
 #tiles .container .tile:hover{
     transform: scale(1.02);
 }
-
-#content{
-    overflow: none;
-}
