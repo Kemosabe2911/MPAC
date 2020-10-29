@@ -2183,19 +2183,38 @@ app.get('/my-cart',(req,res) =>{
          }
     );
     pool.query(
-        `SELECT * FROM books 
-         WHERE b_id IN (
-             SELECT p_id FROM bookcart
+        `SELECT * FROM calculators 
+         WHERE c_id IN (
+             SELECT p_id FROM calccart
              WHERE user_id= $1
          ) `,[req.user.u_id],(err, results) =>{
              if(err){
                  throw err;
              }
-             let books= results.rows;
-             console.log(books);
+             let calcs= results.rows;
+             console.log(calcs);
          }
     );
-    res.render('my-cart');
+
+    pool.query(
+            `SELECT * FROM extras 
+            WHERE e_id IN (
+                SELECT p_id FROM extcart
+                WHERE user_id= $1
+            ) `,[req.user.u_id],(err, results) =>{
+                if(err){
+                    throw err;
+                }
+                let exts= results.rows;
+                console.log(exts);
+            }
+        );
+    res.render('my-cart',{
+        books,
+        tools,
+        calcs,
+        exts
+    });
 
 });
 
