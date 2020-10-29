@@ -444,3 +444,11 @@ nav ul li:hover a{
     transition: all 0.2s;
     margin: 20px;
 }
+
+#tiles .container .tile:hover{
+    transform: scale(1.02);
+}
+
+#content{
+    overflow: none;
+}
