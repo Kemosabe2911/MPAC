@@ -2235,13 +2235,41 @@ app.post('/cart-remove-books', (req,res) =>{
             console.log(results.rows);
         }
     )
-
+    res.redirect('/my-cart');
 });
 
 app.post('/cart-remove-tools', (req,res) =>{
     let prod= req.body.prod;
     poo.query(
         `DELETE FROM toolcart
+        WHERE user_id= $1 AND p_id= $2`, [req.user.u_id, prod],(err,results) =>{
+            if(err){
+                throw err;
+            }
+            console.log(results.rows);
+        }
+    )
+
+});
+
+app.post('/cart-remove-calcs', (req,res) =>{
+    let prod= req.body.prod;
+    poo.query(
+        `DELETE FROM calccart
+        WHERE user_id= $1 AND p_id= $2`, [req.user.u_id, prod],(err,results) =>{
+            if(err){
+                throw err;
+            }
+            console.log(results.rows);
+        }
+    )
+
+});
+
+app.post('/cart-remove-exts', (req,res) =>{
+    let prod= req.body.prod;
+    poo.query(
+        `DELETE FROM extcart
         WHERE user_id= $1 AND p_id= $2`, [req.user.u_id, prod],(err,results) =>{
             if(err){
                 throw err;
