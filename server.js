@@ -2134,7 +2134,7 @@ app.post('/purchase-exts',(req,res) =>{
 });
 
 
-//Cart Calcs
+//Cart Extras
 app.post('/cart-exts',(req,res) =>{
     let prod= req.body.prod;
     console.log(prod);
