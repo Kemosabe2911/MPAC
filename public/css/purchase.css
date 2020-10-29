@@ -65,6 +65,12 @@
     border: 1px solid  #f6830f;
     transition: 1s;
 }
+.prod-card .btns .r-cart{
+    background: #ff0000;
+    color: #ffffff;
+    border: 1px solid  #ff0000;
+    transition: 1s;
+}
 
 .prod-card .btns .purchase:hover{
     border: 2px solid #000000;
