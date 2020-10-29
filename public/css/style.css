@@ -425,3 +425,18 @@ nav ul li:hover a{
     font-size: 16px;
     font-style: italic;
   }
+
+
+  #tiles .container .tile{
+    height: 260px;
+    width: 250px;
+    background: #ffffff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: #151515;
+    transition: all 0.2s;
+    margin: 20px;
+}
