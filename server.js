@@ -2222,6 +2222,8 @@ app.get('/my-cart',(req,res) =>{
 
 });
 
+//Remove Product from cart
+
 app.post('/cart-remove-books', (req,res) =>{
     let prod= req.body.prod;
     poo.query(
@@ -2236,6 +2238,19 @@ app.post('/cart-remove-books', (req,res) =>{
 
 });
 
+app.post('/cart-remove-tools', (req,res) =>{
+    let prod= req.body.prod;
+    poo.query(
+        `DELETE FROM toolcart
+        WHERE user_id= $1 AND p_id= $2`, [req.user.u_id, prod],(err,results) =>{
+            if(err){
+                throw err;
+            }
+            console.log(results.rows);
+        }
+    )
+
+});
 
 
 
