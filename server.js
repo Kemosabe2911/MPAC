@@ -2226,7 +2226,7 @@ app.get('/my-cart',(req,res) =>{
 
 app.post('/cart-remove-books', (req,res) =>{
     let prod= req.body.prod;
-    poo.query(
+    pool.query(
         `DELETE FROM bookcart
         WHERE user_id= $1 AND p_id= $2`, [req.user.u_id, prod],(err,results) =>{
             if(err){
@@ -2240,7 +2240,7 @@ app.post('/cart-remove-books', (req,res) =>{
 
 app.post('/cart-remove-tools', (req,res) =>{
     let prod= req.body.prod;
-    poo.query(
+    pool.query(
         `DELETE FROM toolcart
         WHERE user_id= $1 AND p_id= $2`, [req.user.u_id, prod],(err,results) =>{
             if(err){
@@ -2254,7 +2254,7 @@ app.post('/cart-remove-tools', (req,res) =>{
 
 app.post('/cart-remove-calcs', (req,res) =>{
     let prod= req.body.prod;
-    poo.query(
+    pool.query(
         `DELETE FROM calccart
         WHERE user_id= $1 AND p_id= $2`, [req.user.u_id, prod],(err,results) =>{
             if(err){
@@ -2268,7 +2268,7 @@ app.post('/cart-remove-calcs', (req,res) =>{
 
 app.post('/cart-remove-exts', (req,res) =>{
     let prod= req.body.prod;
-    poo.query(
+    pool.query(
         `DELETE FROM extcart
         WHERE user_id= $1 AND p_id= $2`, [req.user.u_id, prod],(err,results) =>{
             if(err){
