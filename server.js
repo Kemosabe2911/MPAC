@@ -2222,6 +2222,20 @@ app.get('/my-cart',(req,res) =>{
 
 });
 
+app.post('/cart-remove-books', (req,res) =>{
+    let prod= req.body.prod;
+    poo.query(
+        `DELETE FROM bookcart
+        WHERE user_id= $1 AND p_id= $2`, [req.user.u_id, prod],(err,results) =>{
+            if(err){
+                throw err;
+            }
+            console.log(results.rows);
+        }
+    )
+
+});
+
 
 
 
