@@ -2169,6 +2169,32 @@ app.get('/my-cart',(req,res) =>{
              console.log(books);
          }
     );
+    pool.query(
+        `SELECT * FROM tools 
+         WHERE t_id IN (
+             SELECT p_id FROM toolcart
+             WHERE user_id= $1
+         ) `,[req.user.u_id],(err, results) =>{
+             if(err){
+                 throw err;
+             }
+             let tools= results.rows;
+             console.log(tools);
+         }
+    );
+    pool.query(
+        `SELECT * FROM books 
+         WHERE b_id IN (
+             SELECT p_id FROM bookcart
+             WHERE user_id= $1
+         ) `,[req.user.u_id],(err, results) =>{
+             if(err){
+                 throw err;
+             }
+             let books= results.rows;
+             console.log(books);
+         }
+    );
     res.render('my-cart');
 
 });
