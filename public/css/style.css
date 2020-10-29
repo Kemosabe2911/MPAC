@@ -214,6 +214,10 @@ nav ul li:hover a{
         height: 210px;
         width: 210px;
     }
+    #tiles .container .tile{
+        height: 210px;
+        width: 210px;
+    }
     #tiles .container .stile{
         margin-top: 30px;
     }
