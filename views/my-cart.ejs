@@ -109,6 +109,30 @@
                 </div>
                 <%}); %>
             <%} %>
+
+            <!--Extras-->
+            <% if(typeof exts != 'undefined') { %>
+                <% exts.forEach(function(data){ %>
+                <div class="prod-card">
+                    <div class="text">
+                        <h2><%= data.e_name %></h2>
+                        <img src="<%= typeof data.image !='undefined'? `/uploads/${data.image}` : 'Not displaying' %>" alt="Sample photo">
+                        <p>Price: Rs.<%= data.price %></p>
+                    </div>
+                    <form action="/purchase"  method="POST">
+                        <input type="hidden" name="prod" value="<%= data.e_id %>" />
+                        <input type="hidden" name="bname" value="<%= data.e_name %>" />
+                        <input type="hidden" name="image" value="<%= data.image %>" />
+                        <input type="hidden" name="price" value="<%= data.price %>" />
+                        <input type="hidden" name="user" value="<%= data.user_id %>" />
+                        <div class="btns">
+                            <input type="submit" class="purchase" formaction="/purchase-exts" name="purchase" value="Purchase">
+                            <input type="submit" class="cart" formaction="/cart-remove" name="cart" value="Remove">
+                        </div>
+                    </form>
+                </div>
+                <%}); %>
+            <%} %>
         </div>
     </section>    
 </body>
