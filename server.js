@@ -2249,7 +2249,7 @@ app.post('/cart-remove-tools', (req,res) =>{
             console.log(results.rows);
         }
     )
-
+    res.redirect('/my-cart');
 });
 
 app.post('/cart-remove-calcs', (req,res) =>{
@@ -2263,7 +2263,7 @@ app.post('/cart-remove-calcs', (req,res) =>{
             console.log(results.rows);
         }
     )
-
+    res.redirect('/my-cart');
 });
 
 app.post('/cart-remove-exts', (req,res) =>{
@@ -2277,7 +2277,7 @@ app.post('/cart-remove-exts', (req,res) =>{
             console.log(results.rows);
         }
     )
-
+    res.redirect('/my-cart');
 });
 
 
