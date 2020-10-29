@@ -49,6 +49,33 @@
                         <input type="hidden" name="user" value="<%= data.user_id %>" />
                         <div class="btns">
                             <input type="submit" class="purchase" formaction="/purchase-books" name="purchase" value="Purchase">
+                            <input type="submit" class="cart" formaction="/cart-remove" name="cart" value="Remove">
+                        </div>
+                    </form>
+                </div>
+                <%}); %>
+            <%} %>
+
+            <!--Tools-->
+            <% if(typeof tools != 'undefined') { %>
+                <% tools.forEach(function(data){ %>
+                <div class="prod-card">
+                    <div class="text">
+                        <h2><%= data.t_name %></h2>
+                        <img src="<%= typeof data.image !='undefined'? `/uploads/${data.image}` : 'Not displaying' %>" alt="Sample photo">
+                        <p>Branch: <%= data.branch %></p>
+                        <p>Price: Rs.<%= data.price %></p>
+                    </div>
+                    <form action="/purchase"  method="POST">
+                        <input type="hidden" name="prod" value="<%= data.t_id %>" />
+                        <input type="hidden" name="bname" value="<%= data.t_name %>" />
+                        <input type="hidden" name="subject" value="<%= data.branch %>" />
+                        <input type="hidden" name="image" value="<%= data.image %>" />
+                        <input type="hidden" name="price" value="<%= data.price %>" />
+                        <input type="hidden" name="user" value="<%= data.user_id %>" />
+                        <div class="btns">
+                            <input type="submit" class="purchase" formaction="/purchase-tools" name="purchase" value="Purchase">
+                            <input type="submit" class="cart" formaction="/cart-remove" name="cart" value="Remove">
                         </div>
                     </form>
                 </div>
