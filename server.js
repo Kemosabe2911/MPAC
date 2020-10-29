@@ -2166,55 +2166,59 @@ app.get('/my-cart',(req,res) =>{
                  throw err;
              }
              let books= results.rows;
-             console.log(books);
-         }
-    );
-    pool.query(
-        `SELECT * FROM tools 
-         WHERE t_id IN (
-             SELECT p_id FROM toolcart
-             WHERE user_id= $1
-         ) `,[req.user.u_id],(err, results) =>{
-             if(err){
-                 throw err;
-             }
-             let tools= results.rows;
-             console.log(tools);
-         }
-    );
-    pool.query(
-        `SELECT * FROM calculators 
-         WHERE c_id IN (
-             SELECT p_id FROM calccart
-             WHERE user_id= $1
-         ) `,[req.user.u_id],(err, results) =>{
-             if(err){
-                 throw err;
-             }
-             let calcs= results.rows;
-             console.log(calcs);
-         }
-    );
-
-    pool.query(
-            `SELECT * FROM extras 
-            WHERE e_id IN (
-                SELECT p_id FROM extcart
-                WHERE user_id= $1
-            ) `,[req.user.u_id],(err, results) =>{
-                if(err){
-                    throw err;
+             //console.log(books);
+             pool.query(
+                `SELECT * FROM tools 
+                WHERE t_id IN (
+                    SELECT p_id FROM toolcart
+                    WHERE user_id= $1
+                ) `,[req.user.u_id],(err, results) =>{
+                    if(err){
+                        throw err;
+                    }
+                    let tools= results.rows;
+                    //console.log(books);
+                    //console.log(tools);
+                    pool.query(
+                        `SELECT * FROM calculators 
+                        WHERE c_id IN (
+                            SELECT p_id FROM calccart
+                            WHERE user_id= $1
+                        ) `,[req.user.u_id],(err, results) =>{
+                            if(err){
+                                throw err;
+                            }
+                            let calcs= results.rows;
+                            //console.log(calcs);
+                            pool.query(
+                                `SELECT * FROM extras 
+                                WHERE e_id IN (
+                                    SELECT p_id FROM extcart
+                                    WHERE user_id= $1
+                                ) `,[req.user.u_id],(err, results) =>{
+                                    if(err){
+                                        throw err;
+                                    }
+                                    let exts= results.rows;
+                                    console.log(books);
+                                    console.log(tools);
+                                    console.log(calcs);
+                                    console.log(exts);
+                                    res.render('my-cart',{
+                                                books: books,
+                                                tools: tools,
+                                                calcs: calcs,
+                                                exts: exts
+                                            });
+                                }
+                            );
+                        }
+                    );
                 }
-                let exts= results.rows;
-                console.log(exts);
-            }
-        );
-    res.render('my-cart',{
-        books,
-        tools,
-        calcs,
-        exts
-    });
+            );
+         }
+    );
+    //console.log(books);
 
 });
 
