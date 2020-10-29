@@ -20,3 +20,16 @@ const fileChosen = document.getElementById('file-chosen');
 pImage.addEventListener('change', function(){
   fileChosen.textContent = this.files[0].name
 })
+
+
+//Dashboard
+
+//My Products
+document.getElementById('my-prod').addEventListener('click',()  =>{
+    window.location.href="/my-prod";
+});
+
+//My Cart
+document.getElementById('my-cart').addEventListener('click',()  =>{
+    window.location.href="/my-cart";
+});
