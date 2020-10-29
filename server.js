@@ -2152,6 +2152,17 @@ app.post('/cart-exts',(req,res) =>{
 });
 
 
+//My Cart
+
+app.get('/my-cart',(req,res) =>{
+    console.log(req.user);
+    res.send('Hello');
+
+});
+
+
+
+
 //Port Console Log
 app.listen(PORT, () =>{
     console.log(`Server Running on port ${PORT}`);
