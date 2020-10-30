@@ -2281,6 +2281,62 @@ app.post('/cart-remove-exts', (req,res) =>{
 });
 
 
+//My Products
+app.get('/my-prod',(req,res) =>{
+    //console.log(req.user);
+    pool.query(
+        `SELECT * FROM books 
+         WHERE user_id =$1 `,[req.user.u_id],(err, results) =>{
+             if(err){
+                 throw err;
+             }
+             let books= results.rows;
+             //console.log(books);
+             pool.query(
+                `SELECT * FROM tools 
+                WHERE user_id =$1 `,[req.user.u_id],(err, results) =>{
+                    if(err){
+                        throw err;
+                    }
+                    let tools= results.rows;
+                    //console.log(books);
+                    //console.log(tools);
+                    pool.query(
+                        `SELECT * FROM calculators 
+                        WHERE user_id =$1`,[req.user.u_id],(err, results) =>{
+                            if(err){
+                                throw err;
+                            }
+                            let calcs= results.rows;
+                            //console.log(calcs);
+                            pool.query(
+                                `SELECT * FROM extras 
+                                WHERE user_id =$1 `,[req.user.u_id],(err, results) =>{
+                                    if(err){
+                                        throw err;
+                                    }
+                                    let exts= results.rows;
+                                    console.log(books);
+                                    console.log(tools);
+                                    console.log(calcs);
+                                    console.log(exts);
+                                    res.render('my-prod',{
+                                                books: books,
+                                                tools: tools,
+                                                calcs: calcs,
+                                                exts: exts
+                                            });
+                                }
+                            );
+                        }
+                    );
+                }
+            );
+         }
+    );
+    //console.log(books);
+
+});
 
 //Port Console Log
 app.listen(PORT, () =>{
