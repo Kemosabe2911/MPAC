@@ -2492,6 +2492,33 @@ app.post('/update-tools-data',(req,res) =>{
     )
 });
 
+app.post('/update-calcs',(req,res) =>{
+    let prod= req.body.prod;
+    console.log(prod);
+    res.render('update-calcs',{
+        id: prod,
+        data: req.body
+    })
+} );
+
+app.post('/update-calcs-data',(req,res) =>{
+    //console.log(req.body);
+    //res.send('Hello');
+    pool.query(
+        `UPDATE calculators 
+        SET c_name=$1,
+        price= $2,
+        power= $3
+        WHERE c_id= $4`,[req.body.bname,req.body.price,req.body.author,req.body.prod], (err, results) =>{
+            if(err){
+                throw err;
+            }
+            console.log(results.rows);
+            res.redirect('/my-prod');
+        }
+    )
+});
+
 //Port Console Log
 app.listen(PORT, () =>{
     console.log(`Server Running on port ${PORT}`);
