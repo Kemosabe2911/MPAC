@@ -2446,8 +2446,22 @@ app.post('/update-books',(req,res) =>{
 } );
 
 app.post('/update-books-data',(req,res) =>{
-    console.log(req.body);
-    res.send('Hello');
+    //console.log(req.body);
+    //res.send('Hello');
+    pool.query(
+        `UPDATE books 
+        SET b_name=$1,
+        author= $2,
+        pages= $3,
+        price= $4
+        WHERE b_id= $5`,[req.body.bname,req.body.author,req.body.pages,req.body.price,req.body.prod], (err, results) =>{
+            if(err){
+                throw err;
+            }
+            console.log(results.rows);
+            res.redirect('/my-prod');
+        }
+    )
 });
 
 
