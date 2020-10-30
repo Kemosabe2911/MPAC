@@ -2436,6 +2436,8 @@ app.post('/prod-remove-exts', (req,res) =>{
     //res.redirect('/my-prod');
 });
 
+//Update Products
+
 app.post('/update-books',(req,res) =>{
     let prod= req.body.prod;
     console.log(prod);
@@ -2464,6 +2466,31 @@ app.post('/update-books-data',(req,res) =>{
     )
 });
 
+app.post('/update-tools',(req,res) =>{
+    let prod= req.body.prod;
+    console.log(prod);
+    res.render('update-tools',{
+        id: prod,
+        data: req.body
+    })
+} );
+
+app.post('/update-tools-data',(req,res) =>{
+    //console.log(req.body);
+    //res.send('Hello');
+    pool.query(
+        `UPDATE tools 
+        SET t_name=$1,
+        price= $2
+        WHERE t_id= $3`,[req.body.bname,req.body.price,req.body.prod], (err, results) =>{
+            if(err){
+                throw err;
+            }
+            console.log(results.rows);
+            res.redirect('/my-prod');
+        }
+    )
+});
 
 //Port Console Log
 app.listen(PORT, () =>{
