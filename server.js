@@ -2436,7 +2436,19 @@ app.post('/prod-remove-exts', (req,res) =>{
     //res.redirect('/my-prod');
 });
 
+app.post('/update-books',(req,res) =>{
+    let prod= req.body.prod;
+    console.log(prod);
+    res.render('update-books',{
+        id: prod,
+        data: req.body
+    })
+} );
 
+app.post('/update-books-data',(req,res) =>{
+    console.log(req.body);
+    res.send('Hello');
+});
 
 
 //Port Console Log

@@ -29,20 +29,21 @@
                 <li class="toggle"><span class="bars"></span></li>
             </ul>
         </nav>
-        <form action="/update-books" method="POST" enctype="multipart/form-data">
+        <form action="/update-books-data" method="POST">
             <div id="form-body">
                 <h1>Update Product Data</h1>
+                <input type="hidden" name="prod" value="<%= id %>" />
                 <div class="book-name">
-                    Book Name <input type="text" class="input-box" name="bname" id="bname" value="<%= typeof bname != 'undefined' ? bname : ''%>" required="" />
+                    Book Name <input type="text" class="input-box" name="bname" id="bname" value="<%= typeof bname != 'undefined' ? bname : ''%>" placeholder="<%= data.bname %>" required="" />
                 </div>
                 <div class="book-author">
-                    Author <input type="text"  class="input-box" name="author" id="author" value="<%= typeof author != 'undefined' ? author : ''%>" required="" />
+                    Author <input type="text"  class="input-box" name="author" id="author" value="<%= typeof author != 'undefined' ? author : ''%>" placeholder="<%= data.author %>" required="" />
                 </div>
                 <div class="book-pages">
-                    Pages <input type="number"  class="input-box" name="pages" id="pages" value="<%= typeof pages != 'undefined' ? pages : ''%>" required="" />
+                    Pages <input type="number"  class="input-box" name="pages" id="pages" value="<%= typeof pages != 'undefined' ? pages : ''%>" placeholder="<%= data.pages %>" required="" />
                 </div>
                 <div class="book-price">
-                    Expected Price <input type="number"  class="input-box" name="price" id="price" value="<%= typeof price != 'undefined' ? price : ''%>" required="" />
+                    Expected Price <input type="number"  class="input-box" name="price" id="price" value="<%= typeof price != 'undefined' ? price : ''%>" placeholder="<%= data.price %>" required="" />
                 </div>
                 <!--
                 <div class="input-group mb-3">
