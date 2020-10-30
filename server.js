@@ -2368,44 +2368,73 @@ app.post('/prod-remove-tools', (req,res) =>{
     let prod= req.body.prod;
     pool.query(
         `DELETE FROM toolcart
-        WHERE user_id= $1 AND p_id= $2`, [req.user.u_id, prod],(err,results) =>{
+        WHERE p_id= $1`, [prod],(err,results) =>{
             if(err){
                 throw err;
             }
             console.log(results.rows);
+            pool.query(
+                `DELETE FROM tools
+                WHERE t_id= $1`, [prod],(err,results) =>{
+                    if(err){
+                        throw err;
+                    }
+                    console.log(results.rows);
+                    res.redirect('/my-prod');
+                }
+            )
         }
     )
-    res.redirect('/my-prod');
+    //res.redirect('/my-prod');
 });
 
 app.post('/prod-remove-calcs', (req,res) =>{
     let prod= req.body.prod;
     pool.query(
         `DELETE FROM calccart
-        WHERE user_id= $1 AND p_id= $2`, [req.user.u_id, prod],(err,results) =>{
+        WHERE p_id= $1`, [prod],(err,results) =>{
             if(err){
                 throw err;
             }
             console.log(results.rows);
+            pool.query(
+                `DELETE FROM calculators
+                WHERE c_id= $1`, [prod],(err,results) =>{
+                    if(err){
+                        throw err;
+                    }
+                    console.log(results.rows);
+                    res.redirect('/my-prod');
+                }
+            )
         }
     )
-    res.redirect('/my-prod');
+    //res.redirect('/my-prod');
 });
 
 app.post('/prod-remove-exts', (req,res) =>{
     let prod= req.body.prod;
     pool.query(
         `DELETE FROM extcart
-        WHERE user_id= $1 AND p_id= $2`, [req.user.u_id, prod],(err,results) =>{
+        WHERE p_id= $1`, [prod],(err,results) =>{
             if(err){
                 throw err;
             }
             console.log(results.rows);
+            pool.query(
+                `DELETE FROM extras
+                WHERE e_id= $1`, [prod],(err,results) =>{
+                    if(err){
+                        throw err;
+                    }
+                    console.log(results.rows);
+                    res.redirect('/my-prod');
+                }
+            )
         }
     )
-    res.redirect('/my-prod');
+    //res.redirect('/my-prod');
 });
-
 
 
 
