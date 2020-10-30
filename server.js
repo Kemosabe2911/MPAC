@@ -2519,6 +2519,32 @@ app.post('/update-calcs-data',(req,res) =>{
     )
 });
 
+app.post('/update-exts',(req,res) =>{
+    let prod= req.body.prod;
+    console.log(prod);
+    res.render('update-exts',{
+        id: prod,
+        data: req.body
+    })
+} );
+
+app.post('/update-exts-data',(req,res) =>{
+    //console.log(req.body);
+    //res.send('Hello');
+    pool.query(
+        `UPDATE extras 
+        SET e_name=$1,
+        price= $2
+        WHERE e_id= $3`,[req.body.bname,req.body.price,req.body.prod], (err, results) =>{
+            if(err){
+                throw err;
+            }
+            console.log(results.rows);
+            res.redirect('/my-prod');
+        }
+    )
+});
+
 //Port Console Log
 app.listen(PORT, () =>{
     console.log(`Server Running on port ${PORT}`);
