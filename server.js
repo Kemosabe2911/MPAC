@@ -1771,8 +1771,8 @@ app.post('/purchase-books',(req,res) =>{
         port: 465,
         secure: true, // true for 465, false for other ports
         auth: {
-        user: 'itsmestevin29@gmail.com', // generated ethereal user
-        pass: 'stevin@2911', // generated ethereal password
+        user: 'mpac2022@gmail.com', // generated ethereal user
+        pass: 'Mpac@123', // generated ethereal password
         },
         tls:{
             rejectUnauthorized: false
@@ -1781,10 +1781,10 @@ app.post('/purchase-books',(req,res) =>{
 
     // send mail with defined transport object
     let info = transporter.sendMail({
-        from: '"MPAC" <itsmestevin29@gmail.com>', // sender address
+        from: '"MPAC" <mpac2022@gmail.com>', // sender address
         to: `${req.user.email}, ${seller[0].email}`, // list of receivers
         subject: "MPAC Purchase Confirmation", // Subject line
-        text: "Hello world?", // plain text body
+        text: "Product Details", // plain text body
         html: output,
         attachments: [{
             filename: `${req.body.image}`,
@@ -1878,8 +1878,8 @@ app.post('/purchase-tools',(req,res) =>{
         port: 465,
         secure: true, // true for 465, false for other ports
         auth: {
-        user: 'itsmestevin29@gmail.com', // generated ethereal user
-        pass: 'stevin@2911', // generated ethereal password
+        user: 'mpac2022@gmail.com', // generated ethereal user
+        pass: 'Mpac@123', // generated ethereal password
         },
         tls:{
             rejectUnauthorized: false
@@ -1888,10 +1888,10 @@ app.post('/purchase-tools',(req,res) =>{
 
     // send mail with defined transport object
     let info = transporter.sendMail({
-        from: '"MPAC" <itsmestevin29@gmail.com>', // sender address
+        from: '"MPAC" <mpac2022@gmail.com>', // sender address
         to: `${req.user.email}, ${seller[0].email}`, // list of receivers
         subject: "MPAC Purchase Confirmation", // Subject line
-        text: "Hello world?", // plain text body
+        text: "Product Details", // plain text body
         html: output,
         attachments: [{
             filename: `${req.body.image}`,
@@ -1984,8 +1984,8 @@ app.post('/purchase-calcs',(req,res) =>{
         port: 465,
         secure: true, // true for 465, false for other ports
         auth: {
-        user: 'itsmestevin29@gmail.com', // generated ethereal user
-        pass: 'stevin@2911', // generated ethereal password
+        user: 'mpac2022@gmail.com', // generated ethereal user
+        pass: 'Mpac@123', // generated ethereal password
         },
         tls:{
             rejectUnauthorized: false
@@ -1994,10 +1994,10 @@ app.post('/purchase-calcs',(req,res) =>{
 
     // send mail with defined transport object
     let info = transporter.sendMail({
-        from: '"MPAC" <itsmestevin29@gmail.com>', // sender address
+        from: '"MPAC" <mpac2022@gmail.com>', // sender address
         to: `${req.user.email}, ${seller[0].email}`, // list of receivers
         subject: "MPAC Purchase Confirmation", // Subject line
-        text: "Hello world?", // plain text body
+        text: "Product Details", // plain text body
         html: output,
         attachments: [{
             filename: `${req.body.image}`,
@@ -2088,8 +2088,8 @@ app.post('/purchase-exts',(req,res) =>{
         port: 465,
         secure: true, // true for 465, false for other ports
         auth: {
-        user: 'itsmestevin29@gmail.com', // generated ethereal user
-        pass: 'stevin@2911', // generated ethereal password
+        user: 'mpac2022@gmail.com', // generated ethereal user
+        pass: 'Mpac@123', // generated ethereal password
         },
         tls:{
             rejectUnauthorized: false
@@ -2098,10 +2098,10 @@ app.post('/purchase-exts',(req,res) =>{
 
     // send mail with defined transport object
     let info = transporter.sendMail({
-        from: '"MPAC" <itsmestevin29@gmail.com>', // sender address
+        from: '"MPAC" <mpac2022@gmail.com>', // sender address
         to: `${req.user.email}, ${seller[0].email}`, // list of receivers
         subject: "MPAC Purchase Confirmation", // Subject line
-        text: "Hello world?", // plain text body
+        text: "Product Details", // plain text body
         html: output,
         attachments: [{
             filename: `${req.body.image}`,
