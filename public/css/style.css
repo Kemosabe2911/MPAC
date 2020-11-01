@@ -493,3 +493,19 @@ nav ul li:hover a{
     text-align: justify;
     margin-bottom: 40px;
 }
+
+@media screen and (max-width:1200px){
+    .inner-container{
+        padding: 80px;
+    }
+}
+
+@media screen and (max-width:1000px){
+    .about-section{
+        background-size: 100%;
+        /* padding: 100px 40px; */
+    }
+    .inner-container{
+        width: 100%;
+    }
+}
