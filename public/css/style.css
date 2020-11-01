@@ -454,8 +454,6 @@ nav ul li:hover a{
 /*About Section*/
 .about-section{
     font-family: Arial, Helvetica, sans-serif;
-    background: url('/images/ecommerce-3546296.jpg') no-repeat;
-    background-color: #fdfdfd;
     overflow: hidden;
     padding: 100px 0;
     display: flex;
