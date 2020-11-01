@@ -448,3 +448,48 @@ nav ul li:hover a{
 #tiles .container .tile:hover{
     transform: scale(1.02);
 }
+
+
+
+/*About Section*/
+.about-section{
+    font-family: Arial, Helvetica, sans-serif;
+   background: url('../home-page/images/WhatsApp\ Image\ 2020-10-18\ at\ 6.45.23\ PM.jpeg');
+    background-color: #fdfdfd;
+    overflow: hidden;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.inner-container{
+    width: 50%;
+    background-color: #fdfdfd;
+    padding: 150px;
+    position: relative;
+}
+
+.inner-container h1{
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.inner-container img{
+    position: absolute;
+    top: -75px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #fff;
+  }
+
+.text{
+    font-size: 13px;
+    color: #545454;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px;
+}
