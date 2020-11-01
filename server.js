@@ -92,6 +92,10 @@ app.get('/dashboard',checkNotAuthenticated,(req,res) =>{
     });
 });
 
+app.get('/about', (req,res) =>{
+    res.render("about");
+});
+
 app.get('/sell',checkNotAuthenticated,(req,res) =>{
     res.render("sell");
 });
