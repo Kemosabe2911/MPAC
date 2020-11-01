@@ -96,6 +96,10 @@ app.get('/about', (req,res) =>{
     res.render("about");
 });
 
+app.get('/contact', (req,res) =>{
+    res.render("contact");
+});
+
 app.get('/sell',checkNotAuthenticated,(req,res) =>{
     res.render("sell");
 });
