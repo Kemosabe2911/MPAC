@@ -10,6 +10,11 @@
     <script src="https://kit.fontawesome.com/087042e108.js" crossorigin="anonymous"></script>
     <!--Jquery cdn-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--Animate CSS-->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
 </head>
 <body>
     <!--Navbar-->
@@ -28,19 +33,19 @@
     <!--Showcase-->
     <section id="showcase">
         <div class="container">
-            <h1>Welcome <%= user %></h1>
+            <h1 class="animate__animated animate__bounce">Welcome <%= user %></h1>
         </div>
     </section>
 
     <!--Tiles Section-->
     <section id="tiles">
         <div class="container">
-            <div id="buy" class="btile">
+            <div id="buy" class="btile animate__animated animate__bounceInLeft">
                 <h2>Buy</h2>
                 <img src="https://img.icons8.com/android/96/000000/buy.png"/>
                 <!--<i class="fas fa-shopping-cart"></i>-->
             </div>
-            <div id="sell" class="stile">
+            <div id="sell" class="stile animate__animated animate__bounceInRight">
                 <h2>Sell</h2>
                 <img src="https://img.icons8.com/android/96/000000/sell.png"/>
                 <!--<i class="fas fa-clipboard-check"></i>-->
