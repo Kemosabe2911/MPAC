@@ -1630,9 +1630,14 @@ app.post('/buy-y3',(req,res) =>{
                 throw err;
             }
             console.log(results.rows);
-            res.render('purchase-books',{
-                datas: results.rows
-            });
+            if(results.rows.length === 0){
+                res.render('no-products');
+            }
+            else{
+                res.render('purchase-books',{
+                    datas: results.rows
+                });
+            }
             /*res.render("index",{
                 imgs: results.rows
                 //img: `/uploads/${results.rows[0].img}`
@@ -1677,9 +1682,14 @@ app.post('/buy-y4',(req,res) =>{
                 throw err;
             }
             console.log(results.rows);
-            res.render('purchase-books',{
-                datas: results.rows
-            });
+            if(results.rows.length === 0){
+                res.render('no-products');
+            }
+            else{
+                res.render('purchase-books',{
+                    datas: results.rows
+                });
+            }
             /*res.render("index",{
                 imgs: results.rows
                 //img: `/uploads/${results.rows[0].img}`
@@ -1704,9 +1714,14 @@ app.post('/buy-tools',(req,res) =>{
                 throw err;
             }
             console.log(results.rows);
-            res.render('purchase-tools',{
-                datas: results.rows
-            });
+            if(results.rows.length === 0){
+                res.render('no-products');
+            }
+            else{
+                res.render('purchase-tools',{
+                    datas: results.rows
+                });
+            }
             /*res.render("index",{
                 imgs: results.rows
                 //img: `/uploads/${results.rows[0].img}`
@@ -1730,9 +1745,15 @@ app.post('/buy-calcs',(req,res) =>{
                 throw err;
             }
             console.log(results.rows);
-            res.render('purchase-calc',{
-                datas: results.rows
-            });
+            if(results.rows.length === 0){
+                res.render('no-products');
+            }
+            else{
+                res.render('purchase-calc',{
+                    datas: results.rows
+                });
+            }
+            
             /*res.render("index",{
                 imgs: results.rows
                 //img: `/uploads/${results.rows[0].img}`
@@ -1750,9 +1771,14 @@ app.get('/buy-exts',(req,res)=>{
                 throw err;
             }
             console.log(results.rows);
-            res.render('purchase-exts',{
-                datas: results.rows
-            });
+            if(results.rows.length === 0){
+                res.render('no-products');
+            }
+            else{
+                res.render('purchase-exts',{
+                    datas: results.rows
+                });
+            }
             /*res.render("index",{
                 imgs: results.rows
                 //img: `/uploads/${results.rows[0].img}`
