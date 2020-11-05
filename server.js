@@ -1475,9 +1475,15 @@ app.post('/buy-y2-ce',(req,res) =>{
                 throw err;
             }
             console.log(results.rows);
-            res.render('purchase-books',{
-                datas: results.rows
-            });
+            if(results.rows.length === 0){
+                res.render('no-products');
+            }
+            else{
+                res.render('purchase-books',{
+                    datas: results.rows
+                });
+            }
+            
             /*res.render("index",{
                 imgs: results.rows
                 //img: `/uploads/${results.rows[0].img}`
@@ -1502,9 +1508,14 @@ app.post('/buy-y2-cs',(req,res) =>{
                 throw err;
             }
             console.log(results.rows);
-            res.render('purchase-books',{
-                datas: results.rows
-            });
+            if(results.rows.length === 0){
+                res.render('no-products');
+            }
+            else{
+                res.render('purchase-books',{
+                    datas: results.rows
+                });
+            }
             /*res.render("index",{
                 imgs: results.rows
                 //img: `/uploads/${results.rows[0].img}`
@@ -1529,9 +1540,14 @@ app.post('/buy-y2-ec',(req,res) =>{
                 throw err;
             }
             console.log(results.rows);
-            res.render('purchase-books',{
-                datas: results.rows
-            });
+            if(results.rows.length === 0){
+                res.render('no-products');
+            }
+            else{
+                res.render('purchase-books',{
+                    datas: results.rows
+                });
+            }
             /*res.render("index",{
                 imgs: results.rows
                 //img: `/uploads/${results.rows[0].img}`
@@ -1556,9 +1572,14 @@ app.post('/buy-y2-ee',(req,res) =>{
                 throw err;
             }
             console.log(results.rows);
-            res.render('purchase-books',{
-                datas: results.rows
-            });
+            if(results.rows.length === 0){
+                res.render('no-products');
+            }
+            else{
+                res.render('purchase-books',{
+                    datas: results.rows
+                });
+            }
             /*res.render("index",{
                 imgs: results.rows
                 //img: `/uploads/${results.rows[0].img}`
