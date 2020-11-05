@@ -1443,7 +1443,7 @@ app.post('/buy-y1-books',(req,res) =>{
             }
             console.log(results.rows);
             if(results.rows.length === 0){
-                res.send('Hello');
+                res.render('no-products');
             }
             else{
                 res.render('purchase-books',{

@@ -198,6 +198,20 @@ nav ul li:hover a{
     transform: scale(1.02);
 }
 
+#tiles .container .tile{
+    height: 260px;
+    width: 250px;
+    background: #33ffff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: #151515;
+    transition: all 0.2s;
+}
+
+
 @media (max-width: 768px){
     #showcase{
         min-height: 100px;
