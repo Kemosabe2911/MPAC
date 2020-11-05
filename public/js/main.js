@@ -11,6 +11,12 @@ document.getElementById('sell').addEventListener('click',()  =>{
     window.location.href="/sell";
 });
 
+//Home
+document.getElementById('home-index').addEventListener('click',()  =>{
+  window.location.href="/home";
+});
+
+
 
 //pImage btn
 const pImage = document.getElementById('pImage');
