@@ -631,3 +631,24 @@ nav ul li:hover a{
     border-radius: 50%;
     padding: 5px;
   }
+
+
+  /*No Products*/
+  .no-container{
+      width: 90vw;
+      margin: auto;
+      height: 30vh;
+  }
+
+
+  .no-container .results{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+  }
+
+  .no-container .results h2{
+      font-size: 40px;
+      padding: 10vh 0 0 0;
+  }
