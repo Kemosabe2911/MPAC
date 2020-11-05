@@ -646,9 +646,14 @@ nav ul li:hover a{
       justify-content: center;
       align-items: center;
       color: #fff;
+      flex-direction: column;
   }
 
   .no-container .results h2{
       font-size: 40px;
       padding: 10vh 0 0 0;
+  }
+
+  .no-container .results p{
+    font-size: 32px;
   }
