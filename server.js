@@ -1442,9 +1442,15 @@ app.post('/buy-y1-books',(req,res) =>{
                 throw err;
             }
             console.log(results.rows);
-            res.render('purchase-books',{
-                datas: results.rows
-            });
+            if(results.rows.length === 0){
+                res.send('Hello');
+            }
+            else{
+                res.render('purchase-books',{
+                    datas: results.rows
+                });
+            }
+            
             /*res.render("index",{
                 imgs: results.rows
                 //img: `/uploads/${results.rows[0].img}`
