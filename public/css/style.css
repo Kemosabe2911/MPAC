@@ -604,7 +604,7 @@ nav ul li:hover a{
   .team .team_member h3{
     color: #81c644;
     font-size: 26px;
-    margin-top: 50px;
+    margin-top: 60px;
   }
   
   .team .team_member p.role{
@@ -619,15 +619,15 @@ nav ul li:hover a{
     top: -50px;
     left: 50%;
     transform: translateX(-50%);
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     background: #fff;
   }
   
   .team .team_member .team_img img{
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     padding: 5px;
   }
