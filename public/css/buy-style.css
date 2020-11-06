@@ -155,7 +155,7 @@ nav ul li:hover a{
 
 /*tiles-sell section*/
 #tiles-sell{
-    background: url('../images/hi-res-wallpaper-12.jpg') no-repeat;
+    background: url('../images/shopping-4360296_1920.jpg') no-repeat;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -221,7 +221,7 @@ nav ul li:hover a{
 
 /*Books Sell*/
 #books-sell{
-    background: url('/images/hi-res-wallpaper-12.jpg');
+    background: url('/images/shopping-4360296_1920.jpg') no-repeat;
     width: 100%;
     height: 100vh;
     display: flex;
