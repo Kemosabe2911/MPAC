@@ -11,6 +11,11 @@
     <script src="https://kit.fontawesome.com/087042e108.js" crossorigin="anonymous"></script>
     <!--Jquery cdn-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--Animate CSS-->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
 </head>
 <body>
     <!--Home Section-->
@@ -28,7 +33,7 @@
             </ul>
         </nav>
         <!--Product Display-->
-        <div class="container">
+        <div class="container animate__animated animate__zoomIn">
             <% if(typeof datas != 'undefined') { %>
                 <% datas.forEach(function(data){ %>
                 <div class="prod-card">
