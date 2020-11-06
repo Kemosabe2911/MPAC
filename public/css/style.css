@@ -475,9 +475,9 @@ nav ul li:hover a{
 }
 
 .inner-container{
-    width: 50%;
+    width: 60%;
     background-color: #fdfdfd;
-    padding: 150px;
+    padding: 100px;
     position: relative;
 }
 
@@ -501,7 +501,7 @@ nav ul li:hover a{
 .text{
     font-size: 13px;
     color: #545454;
-    line-height: 30px;
+    line-height: 25px;
     text-align: justify;
     margin-bottom: 40px;
 }
