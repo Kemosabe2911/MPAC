@@ -16,6 +16,3 @@ Website is mainly designed for Engineering Students.
 
 ◾ ejs 🟡🟡🟡
 
-
-Work Under Progress
-🏁🏁🏁
