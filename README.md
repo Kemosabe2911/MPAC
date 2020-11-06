@@ -16,3 +16,6 @@ Website is mainly designed for Engineering Students.
 
 ◾ ejs 🟡🟡🟡
 
+◾ Nodemailer  📧📧📧
+
+◾ Multer  🖼️🖼️🖼️
