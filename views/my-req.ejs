@@ -50,6 +50,36 @@
                     </div>
                 <% }) %>
             <% } %>
+            <% if(typeof tools != 'undefined') { %>
+                <% tools.forEach(function(data){ %>
+                    <div class="req-container">
+                        <div class="text">
+                            <h3>Request Tool: </h3>
+                            <h4>Branch: <%= data.branch %> </h4>
+                        </div>
+                    <form action="request" class="req-form">
+                        <input type="hidden" name="rt_id" value="<%= data.rt_id %>" />
+                        <input type="submit" value="Available Products" />
+                        <input type="submit" formaction="/req-remove-tool" value="Remove" />
+                    </form>
+                    </div>
+                <% }) %>
+            <% } %>
+            <% if(typeof calcs != 'undefined') { %>
+                <% calcs.forEach(function(data){ %>
+                    <div class="req-container">
+                        <div class="text">
+                            <h3>Request Calculator: </h3>
+                            <h4>Type: <%= data.c_type %> </h4>
+                        </div>
+                    <form action="request" class="req-form">
+                        <input type="hidden" name="rc_id" value="<%= data.rc_id %>" />
+                        <input type="submit" value="Available Products" />
+                        <input type="submit" formaction="/req-remove-book" value="Remove" />
+                    </form>
+                    </div>
+                <% }) %>
+            <% } %>
         </div>
     </section>    
     <script src="/js/main.js"></script>

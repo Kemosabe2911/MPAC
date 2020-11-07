@@ -1523,12 +1523,38 @@ app.get('/my-req',(req,res) =>{
             throw err;
         }
         console.log(results.rows); 
-        res.render('my-req',{
-            books: results.rows 
-        })
+        const books= results.rows;
+        pool.query(`
+        SELECT * FROM reqtool 
+        WHERE user_id=$1
+        `,[req.user.u_id],(err,results) =>{
+            if(err){
+                throw err;
+            }
+            console.log(results.rows); 
+            const tools= results.rows;
+            
+            pool.query(`
+            SELECT * FROM reqcalc 
+            WHERE user_id=$1
+            `,[req.user.u_id],(err,results) =>{
+                if(err){
+                    throw err;
+                }
+                console.log(results.rows); 
+                const calcs= results.rows;
+                
+            res.render('my-req',{
+                books: books,
+                tools: tools,
+                calcs: calcs
+            });
+        });
     });
     //res.redirect('/home');
-})
+});
+
+});
 
 
 
@@ -2785,4 +2811,4 @@ app.post('/update-exts-data',(req,res) =>{
 //Port Console Log
 app.listen(PORT, () =>{
     console.log(`Server Running on port ${PORT}`);
-})
+});
