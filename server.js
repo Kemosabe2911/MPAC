@@ -1481,6 +1481,13 @@ app.post('/request-book',(req,res) =>{
     res.redirect('/home');
 });
 
+//Request
+app.get('/my-req',(req,res) =>{
+    res.render('request');
+});
+
+
+
 //Buy Year2 CE Books
 app.get('/buy-y2-ce',(req,res)=>{
     res.render('buy-y2-ce');
