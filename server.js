@@ -1442,8 +1442,14 @@ app.post('/buy-y1-books',(req,res) =>{
                 throw err;
             }
             console.log(results.rows);
+            console.log(subject);
             if(results.rows.length === 0){
-                res.render('no-products');
+                res.render('no-products',{
+                    year: 1,
+                    branch: 'General',
+                    subject: subject,
+                    user: req.user.u_id
+                });
             }
             else{
                 res.render('purchase-books',{
@@ -1459,6 +1465,10 @@ app.post('/buy-y1-books',(req,res) =>{
     );
 
 });
+
+app.post('/request-book',(req,res) =>{
+    console.log(req.body);
+})
 
 //Buy Year2 CE Books
 app.get('/buy-y2-ce',(req,res)=>{

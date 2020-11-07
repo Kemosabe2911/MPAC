@@ -33,6 +33,21 @@
             <div class="results">
                 <h2>No Products Available Right Now</h2>
                 <p>Come Back Later</p>
+                <% if(typeof year != 'undefined') { %>
+                    <% if(typeof branch != 'undefined') { %>
+                        <% if(typeof subject != 'undefined') { %>
+                            <% if(typeof user != 'undefined') { %>
+                            <form action="/request-book">
+                                <input type="hidden" name="year" value="<%= year %>"/>
+                                <input type="hidden" name="branch" value="<%= branch %>"/>
+                                <input type="hidden" name="subject" value="<%= subject %>"/>
+                                <input type="hidden" name="user" value="<%= user %>"/>
+                                <input type="submit" name="reqbooks" class="request" value="Request">    
+                            </form>
+                            <% } %>
+                        <% } %>
+                    <% } %>
+                <% } %>
             </div>
         </div>
         <!--Tiles Section-->
