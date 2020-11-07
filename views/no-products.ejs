@@ -39,7 +39,6 @@
                             <% if(typeof user != 'undefined') { %>
                             <form action="/request-book" method="POST">
                                 <input type="hidden" name="year" value="<%= year %>"/>
-                                <input type="hidden" name="branch" value="<%= branch %>"/>
                                 <input type="hidden" name="subject" value="<%= subject %>"/>
                                 <input type="hidden" name="user" value="<%= user %>"/>
                                 <input type="submit" name="reqbooks" class="request" value="Request">    

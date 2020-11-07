@@ -1446,7 +1446,6 @@ app.post('/buy-y1-books',(req,res) =>{
             if(results.rows.length === 0){
                 res.render('no-products',{
                     year: 1,
-                    branch: 'General',
                     subject: subject,
                     user: req.user.u_id
                 });
@@ -1469,9 +1468,9 @@ app.post('/buy-y1-books',(req,res) =>{
 app.post('/request-book',(req,res) =>{
     //console.log('Hello');
     console.log(req.body);
-    pool.query(`INSERT INTO reqbook (year, branch, subject, user_id)
-    VALUES ($1, $2, $3, $4)
-    RETURNING rb_id`,[req.body.year, req.body.branch, req.body.subject, req.body.user],(err,results) =>{
+    pool.query(`INSERT INTO reqbook (year, subject, user_id)
+    VALUES ($1, $2, $3)
+    RETURNING rb_id`,[req.body.year, req.body.subject, req.body.user],(err,results) =>{
         if(err){
             throw err;
         }
@@ -1486,7 +1485,7 @@ app.post('/request-tool',(req,res) =>{
     console.log(req.body);
     pool.query(`INSERT INTO reqtool (branch, user_id)
     VALUES ($1, $2)
-    RETURNING rt_id`,[req.body.branch, req.body.user],(err,results) =>{
+    RETURNING rt_id`,[req.body.subject, req.body.user],(err,results) =>{
         if(err){
             throw err;
         }
@@ -1496,12 +1495,12 @@ app.post('/request-tool',(req,res) =>{
     res.redirect('/home');
 });
 
-app.post('/request-tool',(req,res) =>{
+app.post('/request-calc',(req,res) =>{
     //console.log('Hello');
     console.log(req.body);
     pool.query(`INSERT INTO reqcalc (c_type, user_id)
     VALUES ($1, $2)
-    RETURNING rc_id`,[req.body.branch, req.body.user],(err,results) =>{
+    RETURNING rc_id`,[req.body.subject, req.body.user],(err,results) =>{
         if(err){
             throw err;
         }
@@ -1516,8 +1515,8 @@ app.post('/request-tool',(req,res) =>{
 app.get('/my-req',(req,res) =>{
     pool.query(
         `SELECT * FROM books
-        WHERE (year, branch, subject) IN
-        (SELECT year,branch, subject FROM reqbook
+        WHERE (year, subject) IN
+        (SELECT year, subject FROM reqbook
         WHERE user_id=$1);`,[req.user.u_id],(err, results) =>{
              if(err){
                  throw err;
@@ -1580,8 +1579,13 @@ app.post('/buy-y2-ce',(req,res) =>{
                 throw err;
             }
             console.log(results.rows);
+            //console.log(subject);
             if(results.rows.length === 0){
-                res.render('no-products');
+                res.render('no-products',{
+                    year: 2,
+                    subject: subject,
+                    user: req.user.u_id
+                });
             }
             else{
                 res.render('purchase-books',{
@@ -1614,7 +1618,11 @@ app.post('/buy-y2-cs',(req,res) =>{
             }
             console.log(results.rows);
             if(results.rows.length === 0){
-                res.render('no-products');
+                res.render('no-products',{
+                    year: 2,
+                    subject: subject,
+                    user: req.user.u_id
+                });
             }
             else{
                 res.render('purchase-books',{
@@ -1646,7 +1654,11 @@ app.post('/buy-y2-ec',(req,res) =>{
             }
             console.log(results.rows);
             if(results.rows.length === 0){
-                res.render('no-products');
+                res.render('no-products',{
+                    year: 2,
+                    subject: subject,
+                    user: req.user.u_id
+                });
             }
             else{
                 res.render('purchase-books',{
@@ -1678,7 +1690,11 @@ app.post('/buy-y2-ee',(req,res) =>{
             }
             console.log(results.rows);
             if(results.rows.length === 0){
-                res.render('no-products');
+                res.render('no-products',{
+                    year: 2,
+                    subject: subject,
+                    user: req.user.u_id
+                });
             }
             else{
                 res.render('purchase-books',{
@@ -1736,7 +1752,11 @@ app.post('/buy-y3',(req,res) =>{
             }
             console.log(results.rows);
             if(results.rows.length === 0){
-                res.render('no-products');
+                res.render('no-products',{
+                    year: 3,
+                    subject: subject,
+                    user: req.user.u_id
+                });
             }
             else{
                 res.render('purchase-books',{
@@ -1788,7 +1808,11 @@ app.post('/buy-y4',(req,res) =>{
             }
             console.log(results.rows);
             if(results.rows.length === 0){
-                res.render('no-products');
+                res.render('no-products',{
+                    year: 4,
+                    subject: subject,
+                    user: req.user.u_id
+                });
             }
             else{
                 res.render('purchase-books',{
