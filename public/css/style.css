@@ -661,9 +661,15 @@ nav ul li:hover a{
 
   /*request*/
 
+  .container-2{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
   .req-container{
-      width: 80vw;
-      height: 10vh;
+      width: 75vw;
+      height: 15vh;
       color: #0000;
       background-color: #fdfdfd;
       margin: 10px;
