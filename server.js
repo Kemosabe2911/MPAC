@@ -1685,6 +1685,39 @@ app.post('/req-remove-book',(req,res) =>{
     res.redirect('/my-req');
 });
 
+app.post('/req-remove-tool',(req,res) =>{
+    console.log('hELLO');
+    console.log(req.body);
+    const id= parseInt(req.body.rt_id);
+    pool.query(`
+       DELETE FROM reqtool 
+       WHERE rt_id = $1 
+    `,[id],(err,results) =>{
+        if(err){
+            throw err;
+        }
+        console.log(results.row);
+        console.log("success");
+    });
+    res.redirect('/my-req');
+});
+
+app.post('/req-remove-calc',(req,res) =>{
+    console.log('hELLO');
+    console.log(req.body);
+    const id= parseInt(req.body.rc_id);
+    pool.query(`
+       DELETE FROM reqcalc 
+       WHERE rc_id = $1 
+    `,[id],(err,results) =>{
+        if(err){
+            throw err;
+        }
+        console.log(results.row);
+        console.log("success");
+    });
+    res.redirect('/my-req');
+});
 
 //Buy Year2 CE Books
 app.get('/buy-y2-ce',(req,res)=>{
