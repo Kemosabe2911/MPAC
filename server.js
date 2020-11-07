@@ -1483,8 +1483,50 @@ app.post('/request-book',(req,res) =>{
 
 //Request
 app.get('/my-req',(req,res) =>{
-    res.render('request');
-});
+    pool.query(
+        `SELECT * FROM books
+        WHERE (year, branch, subject) IN
+        (SELECT year,branch, subject FROM reqbook
+        WHERE user_id=$1);`,[req.user.u_id],(err, results) =>{
+             if(err){
+                 throw err;
+             }
+             let books= results.rows;
+             //console.log(books);
+             pool.query(
+                `SELECT * FROM tools 
+                WHERE user_id =$1 `,[req.user.u_id],(err, results) =>{
+                    if(err){
+                        throw err;
+                    }
+                    let tools= results.rows;
+                    //console.log(books);
+                    //console.log(tools);
+                    pool.query(
+                        `SELECT * FROM calculators 
+                        WHERE user_id =$1`,[req.user.u_id],(err, results) =>{
+                            if(err){
+                                throw err;
+                            }
+                            let calcs= results.rows;
+                            //console.log(calcs);
+                            
+                            console.log(books);
+                            //console.log(tools);
+                            //console.log(calcs);
+                            res.render('request',{
+                                    books: books,
+                                    tools: tools,
+                                    calcs: calcs
+                                });
+                            }
+                            );
+                        }
+                    );
+                }
+            );
+         }
+);
 
 
 
