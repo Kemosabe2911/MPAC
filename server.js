@@ -1556,24 +1556,30 @@ app.get('/my-req',(req,res) =>{
 
 });
 
-
-
-app.get('/request',(req,res) =>{
+app.post('/request-b',(req,res) =>{
+    console.log(req.body);
     pool.query(
         `SELECT * FROM books
         WHERE (year, subject) IN
         (SELECT year, subject FROM reqbook
-        WHERE user_id=$1);`,[req.user.u_id],(err, results) =>{
+        WHERE rb_id=$1);`,[req.body.rb_id],(err, results) =>{
              if(err){
                  throw err;
              }
              let books= results.rows;
+             res.render('request',{
+                 books: books
+             });
              //console.log(books);
+            });
+        });           
+
+/*
              pool.query(
                 `SELECT * FROM tools
                 WHERE (branch) IN
                 (SELECT branch FROM reqtool
-                WHERE user_id=$1);`,[req.user.u_id],(err, results) =>{
+                WHERE rt_id=$1);`,[req.body.rt_id],(err, results) =>{
                     if(err){
                         throw err;
                     }
@@ -1584,7 +1590,7 @@ app.get('/request',(req,res) =>{
                         `SELECT * FROM calculators
                         WHERE (c_type) IN
                         (SELECT c_type FROM reqcalc
-                        WHERE user_id=$1);`,[req.user.u_id],(err, results) =>{
+                        WHERE rc_id=$1);`,[req.body.rc_id],(err, results) =>{
                             if(err){
                                 throw err;
                             }
@@ -1604,9 +1610,7 @@ app.get('/request',(req,res) =>{
                         }
                     );
                 }
-            );
-         }
-);
+            );*/
 
 //rEMOVE pRODUCT
 

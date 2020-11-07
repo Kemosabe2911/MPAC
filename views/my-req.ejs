@@ -42,7 +42,7 @@
                             <h4>Year: <%= data.year %></h4>
                             <h4>Subject: <%= data.subject %> </h4>
                         </div>
-                    <form action="/request" class="req-form">
+                    <form action="/request-b" class="req-form" method="POST">
                         <input type="hidden" name="rb_id" value="<%= data.rb_id %>" />
                         <input type="submit" class="avail req-btns" value="Available Products" />
                         <input type="submit" class="req-rem req-btns" formaction="/req-remove-book" value="Remove" />
@@ -57,7 +57,7 @@
                             <h3>Request Tool: </h3>
                             <h4>Branch: <%= data.branch %> </h4>
                         </div>
-                    <form action="/request" class="req-form">
+                    <form action="/request-t" class="req-form"  method="POST">
                         <input type="hidden" name="rt_id" value="<%= data.rt_id %>" />
                         <input type="submit" class="req-btns" value="Available Products" />
                         <input type="submit" class="req-btns" formaction="/req-remove-tool" value="Remove" />
@@ -72,7 +72,7 @@
                             <h3>Request Calculator: </h3>
                             <h4>Type: <%= data.c_type %> </h4>
                         </div>
-                    <form action="/request" class="req-form">
+                    <form action="/request" class="req-form" method="POST">
                         <input type="hidden" name="rc_id" value="<%= data.rc_id %>" />
                         <input type="submit" class="req-btns" value="Available Products" />
                         <input type="submit" class="req-btns" formaction="/req-remove-book" value="Remove" />
