@@ -657,3 +657,15 @@ nav ul li:hover a{
   .no-container .results p{
     font-size: 32px;
   }
+
+
+  /*request*/
+
+  .req-container{
+      width: 80vw;
+      height: 10vh;
+      color: #0000;
+      background-color: #fdfdfd;
+      margin: 10px;
+      display: flex;
+  }
