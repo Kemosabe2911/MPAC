@@ -1562,6 +1562,26 @@ app.get('/my-req',(req,res) =>{
          }
 );
 
+//rEMOVE pRODUCT
+
+app.post('/req-remove-books',(req,res) =>{
+    console.log('hELLO');
+    console.log(req.body);
+    const year= parseInt(req.body.year);
+    pool.query(`
+        SELECT rb_id FROM reqbook
+        WHERE year=$1 AND subject =$2 AND user_id=$3
+    `,[year,req.body.subject, req.body.user],(err,results) =>{
+        if(err){
+            throw err;
+        }
+        console.log(results.row);
+        pool.query(`
+        `)
+        console.log("success");
+    });
+    res.redirect('/home');
+});
 
 
 //Buy Year2 CE Books
