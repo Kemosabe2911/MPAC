@@ -1496,6 +1496,21 @@ app.post('/request-tool',(req,res) =>{
     res.redirect('/home');
 });
 
+app.post('/request-tool',(req,res) =>{
+    //console.log('Hello');
+    console.log(req.body);
+    pool.query(`INSERT INTO reqcalc (c_type, user_id)
+    VALUES ($1, $2)
+    RETURNING rc_id`,[req.body.branch, req.body.user],(err,results) =>{
+        if(err){
+            throw err;
+        }
+        console.log(results.row);
+        console.log("success");
+    });
+    res.redirect('/home');
+});
+
 
 //Request
 app.get('/my-req',(req,res) =>{

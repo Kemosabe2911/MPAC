@@ -35,7 +35,7 @@
                 <p>Come Back Later</p>
                 <% if(typeof branch != 'undefined') { %>
                     <% if(typeof user != 'undefined') { %>
-                        <form action="/request-book" method="POST">
+                        <form action="/request-tool" method="POST">
                             <input type="hidden" name="branch" value="<%= branch %>"/>
                             <input type="hidden" name="user" value="<%= user %>"/>
                             <input type="submit" name="reqbooks" class="request" value="Request">    
