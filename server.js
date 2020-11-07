@@ -1486,7 +1486,7 @@ app.post('/request-tool',(req,res) =>{
     console.log(req.body);
     pool.query(`INSERT INTO reqtool (branch, user_id)
     VALUES ($1, $2)
-    RETURNING rt_id`,[req.body.subject, req.body.user],(err,results) =>{
+    RETURNING rt_id`,[req.body.branch, req.body.user],(err,results) =>{
         if(err){
             throw err;
         }
