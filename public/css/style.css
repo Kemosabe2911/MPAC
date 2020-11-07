@@ -708,7 +708,7 @@ nav ul li:hover a{
         color: #ffffff;
         background-color: #ff0000;
         border: 2px solid #ec0101;
-        border-radius: 10px;
+        border-radius: 15px;
         transition: 1s;
     }
     .req-container .req-form .req-btns:hover{
