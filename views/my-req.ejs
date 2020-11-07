@@ -59,8 +59,8 @@
                         </div>
                     <form action="request" class="req-form">
                         <input type="hidden" name="rt_id" value="<%= data.rt_id %>" />
-                        <input type="submit" value="Available Products" />
-                        <input type="submit" formaction="/req-remove-tool" value="Remove" />
+                        <input type="submit" class="req-btns" value="Available Products" />
+                        <input type="submit" class="req-btns" formaction="/req-remove-tool" value="Remove" />
                     </form>
                     </div>
                 <% }) %>
@@ -74,8 +74,8 @@
                         </div>
                     <form action="request" class="req-form">
                         <input type="hidden" name="rc_id" value="<%= data.rc_id %>" />
-                        <input type="submit" value="Available Products" />
-                        <input type="submit" formaction="/req-remove-book" value="Remove" />
+                        <input type="submit" class="req-btns" value="Available Products" />
+                        <input type="submit" class="req-btns" formaction="/req-remove-book" value="Remove" />
                     </form>
                     </div>
                 <% }) %>
