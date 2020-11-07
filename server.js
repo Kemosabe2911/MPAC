@@ -1442,7 +1442,7 @@ app.post('/buy-y1-books',(req,res) =>{
                 throw err;
             }
             console.log(results.rows);
-            console.log(subject);
+            //console.log(subject);
             if(results.rows.length === 0){
                 res.render('no-products',{
                     year: 1,
@@ -1467,8 +1467,19 @@ app.post('/buy-y1-books',(req,res) =>{
 });
 
 app.post('/request-book',(req,res) =>{
+    //console.log('Hello');
     console.log(req.body);
-})
+    pool.query(`INSERT INTO reqbook (year, branch, subject, user_id)
+    VALUES ($1, $2, $3, $4)
+    RETURNING rb_id`,[req.body.year, req.body.branch, req.body.subject, req.body.user],(err,results) =>{
+        if(err){
+            throw err;
+        }
+        console.log(results.row);
+        console.log("success");
+    });
+    res.redirect('/home');
+});
 
 //Buy Year2 CE Books
 app.get('/buy-y2-ce',(req,res)=>{
