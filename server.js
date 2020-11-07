@@ -1510,8 +1510,10 @@ app.get('/my-req',(req,res) =>{
              let books= results.rows;
              //console.log(books);
              pool.query(
-                `SELECT * FROM tools 
-                WHERE user_id =$1 `,[req.user.u_id],(err, results) =>{
+                `SELECT * FROM tools
+                WHERE (branch) IN
+                (SELECT branch FROM reqtool
+                WHERE user_id=$1);`,[req.user.u_id],(err, results) =>{
                     if(err){
                         throw err;
                     }
@@ -1519,8 +1521,10 @@ app.get('/my-req',(req,res) =>{
                     //console.log(books);
                     //console.log(tools);
                     pool.query(
-                        `SELECT * FROM calculators 
-                        WHERE user_id =$1`,[req.user.u_id],(err, results) =>{
+                        `SELECT * FROM calculators
+                        WHERE (c_type) IN
+                        (SELECT c_type FROM reqcalc
+                        WHERE user_id=$1);`,[req.user.u_id],(err, results) =>{
                             if(err){
                                 throw err;
                             }
