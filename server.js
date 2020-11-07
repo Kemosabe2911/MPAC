@@ -1481,6 +1481,22 @@ app.post('/request-book',(req,res) =>{
     res.redirect('/home');
 });
 
+app.post('/request-tool',(req,res) =>{
+    //console.log('Hello');
+    console.log(req.body);
+    pool.query(`INSERT INTO reqtool (branch, user_id)
+    VALUES ($1, $2)
+    RETURNING rt_id`,[req.body.branch, req.body.user],(err,results) =>{
+        if(err){
+            throw err;
+        }
+        console.log(results.row);
+        console.log("success");
+    });
+    res.redirect('/home');
+});
+
+
 //Request
 app.get('/my-req',(req,res) =>{
     pool.query(
@@ -1785,7 +1801,10 @@ app.post('/buy-tools',(req,res) =>{
             }
             console.log(results.rows);
             if(results.rows.length === 0){
-                res.render('no-products');
+                res.render('no-product-tool',{
+                    branch: subject,
+                    user: req.user.u_id
+                });
             }
             else{
                 res.render('purchase-tools',{
@@ -1816,7 +1835,10 @@ app.post('/buy-calcs',(req,res) =>{
             }
             console.log(results.rows);
             if(results.rows.length === 0){
-                res.render('no-products');
+                res.render('no-product-calc',{
+                    branch: subject,
+                    user: req.user.u_id
+                });
             }
             else{
                 res.render('purchase-calc',{
