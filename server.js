@@ -1572,8 +1572,45 @@ app.post('/request-b',(req,res) =>{
              });
              //console.log(books);
             });
-        });           
+        });    
+        
+        
+        app.post('/request-t',(req,res) =>{
+            console.log(req.body);
+            pool.query(
+                `SELECT * FROM tools
+                WHERE (branch) IN
+                (SELECT branch FROM reqtool
+                WHERE rt_id=$1);`,[req.body.rt_id],(err, results) =>{
+                     if(err){
+                         throw err;
+                     }
+                     let tools= results.rows;
+                     res.render('request',{
+                         tools: tools
+                     });
+                     //console.log(books);
+                    });
+         });
 
+
+         app.post('/request-c',(req,res) =>{
+            console.log(req.body);
+            pool.query(
+                `SELECT * FROM calculators
+                WHERE (c_type) IN
+                (SELECT c_type FROM reqcalc
+                WHERE rc_id=$1);`,[req.body.rc_id],(err, results) =>{
+                     if(err){
+                         throw err;
+                     }
+                     let calcs= results.rows;
+                     res.render('request',{
+                         calcs: calcs
+                     });
+                     //console.log(books);
+                    });
+         });
 /*
              pool.query(
                 `SELECT * FROM tools
