@@ -722,7 +722,11 @@ nav ul li:hover a{
         font-size: 23px;
         width: 150px;
         height: 50px;
-        color: #000;
-        background-color: #33ffff;
-        border: 2px solid #545454;
+        color: #fff;
+        background-color: #ec0101;
+        border: 2px solid #d40404;
+        transition: 0.7s;
+    }
+    .request:hover{
+        box-shadow: 3px 6px #b80202;
     }
