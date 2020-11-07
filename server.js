@@ -1567,9 +1567,14 @@ app.post('/request-b',(req,res) =>{
                  throw err;
              }
              let books= results.rows;
-             res.render('request',{
-                 books: books
-             });
+             if(books.length === 0){
+                 res.render('no-req-pro');
+             }
+             else{
+                res.render('request',{
+                    books: books
+                });
+             }
              //console.log(books);
             });
         });    
@@ -1586,9 +1591,15 @@ app.post('/request-b',(req,res) =>{
                          throw err;
                      }
                      let tools= results.rows;
-                     res.render('request',{
-                         tools: tools
-                     });
+                     if(tools.length === 0){
+                         res.render('no-req-pro');
+                     }
+                     else{
+                        res.render('request',{
+                            tools: tools
+                        });
+                     }
+                     
                      //console.log(books);
                     });
          });
@@ -1605,9 +1616,15 @@ app.post('/request-b',(req,res) =>{
                          throw err;
                      }
                      let calcs= results.rows;
-                     res.render('request',{
-                         calcs: calcs
-                     });
+                     if( calcs.length === 0){
+                         res.render('no-req-pro');
+                     }
+                     else{
+                        res.render('request',{
+                            calcs: calcs
+                        });
+                     }
+                     
                      //console.log(books);
                     });
          });
