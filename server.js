@@ -1668,23 +1668,21 @@ app.post('/request-b',(req,res) =>{
 
 //rEMOVE pRODUCT
 
-app.post('/req-remove-books',(req,res) =>{
+app.post('/req-remove-book',(req,res) =>{
     console.log('hELLO');
     console.log(req.body);
-    const year= parseInt(req.body.year);
+    const id= parseInt(req.body.rb_id);
     pool.query(`
-        SELECT rb_id FROM reqbook
-        WHERE year=$1 AND subject =$2 AND user_id=$3
-    `,[year,req.body.subject, req.body.user],(err,results) =>{
+       DELETE FROM reqbook 
+       WHERE rb_id = $1 
+    `,[id],(err,results) =>{
         if(err){
             throw err;
         }
         console.log(results.row);
-        pool.query(`
-        `)
         console.log("success");
     });
-    res.redirect('/home');
+    res.redirect('/my-req');
 });
 
 
