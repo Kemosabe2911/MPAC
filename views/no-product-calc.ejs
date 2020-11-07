@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPAC</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/purchase.css">
+    <!--icons api-->
+    <a href="https://icons8.com/icon/3260/sell"></a>
+    <script src="https://kit.fontawesome.com/087042e108.js" crossorigin="anonymous"></script>
+    <!--Jquery cdn-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <!--Home Section-->
+    <section id="home-form">
+        <!--Navbar-->
+        <nav id="navbar">
+            <ul>
+                <li class="logo">MPAC</li>
+                <li class="items"><a href="/home">Home</a></li>
+                <li class="items"><a href="/dashboard">Dashboard</a></li>
+                <li class="items"><a href="/about">About Us</a></li>
+                <li class="items"><a href="/contact">Contact Us</a></li>
+                <li class="items"><a href="/logout">Logout</a></li>
+                <li class="toggle"><span class="bars"></span></li>
+            </ul>
+        </nav>
+        
+        <!--Showcase-->
+        <div class="no-container">
+            <div class="results">
+                <h2>No Products Available Right Now</h2>
+                <p>Come Back Later</p>
+                <% if(typeof branch != 'undefined') { %>
+                    <% if(typeof user != 'undefined') { %>
+                        <form action="/request-calc" method="POST">
+                            <input type="hidden" name="branch" value="<%= branch %>"/>
+                            <input type="hidden" name="user" value="<%= user %>"/>
+                            <input type="submit" name="reqbooks" class="request" value="Request">    
+                        </form>
+                    <% } %>
+                <% } %>
+            </div>
+        </div>
+        <!--Tiles Section-->
+        <section id="tiles">
+            <div class="container">
+                <div id="home-index" class="tile">
+                    <h2>Home</h2>
+                    <img src="https://img.icons8.com/carbon-copy/100/000000/apple-home.png"/>
+                </div>
+            </div>
+        </section>
+            
+        <script src="/js/main.js"></script>
+        <script src='/js/jquery.js'></script>
+        <script>
+            //Home
+            document.getElementById('home-index').addEventListener('click',()  =>{
+            window.location.href="/home";
+            });
+        </script>
+</body>
+</html>
