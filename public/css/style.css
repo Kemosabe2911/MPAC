@@ -676,9 +676,11 @@ nav ul li:hover a{
       padding: 15px;
       line-height: 1.2;
       display: flex;
+      justify-content: space-between;
       border-radius: 10px;
   }
   .req-container .text{
+      justify-content: flex-start;
       padding: 2px;
   }
   .req-container .text h3{
@@ -690,3 +692,20 @@ nav ul li:hover a{
     font-weight: 700;
     padding: 5px;
 }
+    .req-container .req-form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .req-container .req-form input{
+        margin: 10px 0px;
+        width: 200px;
+    }
+    .req-container .req-form .req-btns{
+        font-size: 17px;
+        padding: 5px;
+        color: #ffffff;
+        background-color: #ff0000;
+        border-radius: 2px solid #fe0000;
+    }

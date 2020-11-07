@@ -44,8 +44,8 @@
                         </div>
                     <form action="request" class="req-form">
                         <input type="hidden" name="rb_id" value="<%= data.rb_id %>" />
-                        <input type="submit" value="Available Products" />
-                        <input type="submit" formaction="/req-remove-book" value="Remove" />
+                        <input type="submit" class="avail req-btns" value="Available Products" />
+                        <input type="submit" class="req-rem req-btns" formaction="/req-remove-book" value="Remove" />
                     </form>
                     </div>
                 <% }) %>
