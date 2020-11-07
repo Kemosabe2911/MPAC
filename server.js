@@ -1877,9 +1877,10 @@ app.post('/buy-calcs',(req,res) =>{
                 throw err;
             }
             console.log(results.rows);
+            console.log(subject);
             if(results.rows.length === 0){
                 res.render('no-product-calc',{
-                    branch: subject,
+                    subject: subject,
                     user: req.user.u_id
                 });
             }
