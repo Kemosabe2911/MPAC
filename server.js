@@ -59,7 +59,11 @@ app.use(
 
 app.use(flash());
 
-app.get('/',checkAuthenticated,(req,res) =>{
+app.get('/',(req,res) =>{
+    res.render("start");
+})
+
+app.get('/login',checkAuthenticated,(req,res) =>{
     res.render("login");
 });
 
@@ -75,7 +79,7 @@ app.get('/register',checkAuthenticated,(req,res) =>{
 app.get('/logout',(req,res) =>{
     req.logout();
     req.flash("success_msg", "You have logged out");
-    res.redirect('/');
+    res.redirect('/login');
 });
 
 
@@ -162,7 +166,7 @@ app.post('/register', async (req,res)=>{
                          }
                          console.log(results.row);
                          req.flash('success_msg',"You are now registered. Please Login");
-                         res.redirect('/');
+                         res.redirect('/login');
                      }
                  )
              }
@@ -175,7 +179,7 @@ app.post('/register', async (req,res)=>{
 
 app.post('/',passport.authenticate("local",{
     successRedirect: '/home',
-    failureRedirect: '/',
+    failureRedirect: '/login',
     failureFlash: true
 }));
 
@@ -190,7 +194,7 @@ function checkNotAuthenticated(req, res, next) {
     if(req.isAuthenticated()) {
         return next();
     }
-    res.redirect('/');
+    res.redirect('/login');
 }
 
 
