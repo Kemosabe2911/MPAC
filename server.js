@@ -18,6 +18,7 @@ const User_id = require('./passportConfig');
 const { prependOnceListener } = require('process');
 
 const test= require('./public/js/temp');
+const { request } = require('http');
 console.log(test);
 
 
@@ -1513,6 +1514,25 @@ app.post('/request-calc',(req,res) =>{
 
 //Request
 app.get('/my-req',(req,res) =>{
+    console.log('request');
+    pool.query(`
+    SELECT * FROM reqbook 
+    WHERE user_id=$1
+    `,[req.user.u_id],(err,results) =>{
+        if(err){
+            throw err;
+        }
+        console.log(results.rows); 
+        res.render('my-req',{
+            books: results.rows 
+        })
+    });
+    //res.redirect('/home');
+})
+
+
+
+app.get('/request',(req,res) =>{
     pool.query(
         `SELECT * FROM books
         WHERE (year, subject) IN

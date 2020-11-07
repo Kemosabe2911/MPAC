@@ -34,7 +34,22 @@
         </nav>
         <!--Product Display-->
         <div class="container animate__animated animate__fadeIn">
-            
+            <% if(typeof books != 'undefined') { %>
+                <% books.forEach(function(data){ %>
+                    <div class="req-container">
+                        <div class="text">
+                            <h3>Request Book: </h3>
+                            <h4>Year: <%= data.year %></h4>
+                            <h4>Subject: <%= data.subject %> </h4>
+                        </div>
+                    <form action="request" class="req-form">
+                        <input type="hidden" name="rb_id" value="<%= data.rb_id %>" />
+                        <input type="submit" value="Available Products" />
+                        <input type="submit" formaction="/req-remove-book" value="Remove" />
+                    </form>
+                    </div>
+                <% }) %>
+            <% } %>
         </div>
     </section>    
     <script src="/js/main.js"></script>
