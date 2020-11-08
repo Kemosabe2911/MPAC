@@ -4,15 +4,155 @@
     box-sizing: border-box;
 }
 
-
+/*
 .container{
     width: 90vw;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
     margin-top: 20px;
+}*/
+
+
+.container{
+    display: flex;
+    flex-direction: row;  
+    flex-wrap: wrap;
+    margin-top: 20px;
+    font-family: 'Alegreya', serif;
 }
 
+
+.prod-card{
+    position: relative;
+    height: 350px;
+    width: 300px;
+    overflow: hidden;
+    margin: 20px;
+    background: #fff;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.prod-card:hover{
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.2);;
+}
+
+.prod-card .image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 40%;
+}
+.prod-card .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+.prod-card:hover .image img{
+    transform: scale(1.1);
+}
+
+.prod-card .card-content{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.card-content .wrapper{
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    bottom: 0px;
+    padding: 20px 25px;
+    box-shadow:  -1px -1px 6px rgba(0,0,0.1);
+}
+
+.wrapper .title{
+   font-size: 22px;
+   font-weight: 500; 
+}
+
+.wrapper p{
+    font-size: 17px;
+    color: grey;
+}
+
+.wrapper .price{
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    color: #456ABD;
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.wrapper .content{
+    margin: 10px 0;
+}
+
+.wrapper .content .name{
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+#btns{
+    display: flex;
+    justify-content: center;
+    font-family: 'Noticia Text', serif;
+}
+
+#btns input{
+    background: none;
+    padding: 6px 16px;
+    font-size: 15px;
+    margin: 5px 20px;
+    transition: 0.8s;
+}
+
+#btns .btn1{
+    border: 1px solid #3498db;
+    color: #3498db;
+}
+
+#btns .btn2{
+    border: 1px solid #f6830f;
+    color: #f6830f;
+}
+
+#btns .btn1:hover{
+    color: #fff;
+    background: #3498db;
+}
+#btns .btn2:hover{
+    color: #fff;
+    background: #f6830f;
+}
+
+@media (max-width: 768px){
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    #btns{
+        display: flex;
+        flex-direction: column;
+    }
+    .prod-card{
+        height: 350px;
+        width: 250px;
+    }
+}
+
+
+
+
+/*
 .prod-card{
  background: #ffffff;
  width: 300px;
@@ -78,3 +218,4 @@
 .prod-card .btns .cart:hover{
     border: 2px solid #000000;
 }
+*/
