@@ -36,25 +36,29 @@
         <div class="container animate__animated animate__fadeIn">
             <% if(typeof datas != 'undefined') { %>
                 <% datas.forEach(function(data){ %>
-                <div class="prod-card">
-                    <div class="text">
-                        <h2><%= data.t_name %></h2>
-                        <img src="<%= typeof data.image !='undefined'? `/uploads/${data.image}` : 'Not displaying' %>" alt="Sample photo">
-                        <p>Branch: <%= data.branch %></p>
-                        <p>Price: Rs.<%= data.price %></p>
-                    </div>
-                    <form action="/purchase"  method="POST">
-                        <input type="hidden" name="prod" value="<%= data.t_id %>" />
-                        <input type="hidden" name="bname" value="<%= data.t_name %>" />
-                        <input type="hidden" name="subject" value="<%= data.branch %>" />
-                        <input type="hidden" name="image" value="<%= data.image %>" />
-                        <input type="hidden" name="price" value="<%= data.price %>" />
-                        <input type="hidden" name="user" value="<%= data.user_id %>" />
-                        <div class="btns">
-                            <input type="submit" class="purchase" formaction="/purchase-tools" name="purchase" value="Purchase">
-                            <input type="submit" class="cart" formaction="/cart-tools" name="cart" value="Add to Cart">
+                    <div class="prod-card">
+                        <div class="image">
+                            <img src="<%= typeof data.image !='undefined'? `/uploads/${data.image}` : 'Not displaying' %>" alt="Sample photo">
                         </div>
-                    </form>
+                        <div class="card-content">
+                            <div class="wrapper">
+                                <div class="title"><%= data.t_name %></div>
+                                <p>Branch: <%= data.branch %></p>
+                                <div class="price">₹<%= data.price %></div>  
+                            <form action="/purchase"  method="POST">
+                                <input type="hidden" name="prod" value="<%= data.t_id %>" />
+                                <input type="hidden" name="bname" value="<%= data.t_name %>" />
+                                <input type="hidden" name="subject" value="<%= data.branch %>" />
+                                <input type="hidden" name="image" value="<%= data.image %>" />
+                                <input type="hidden" name="price" value="<%= data.price %>" />
+                                <input type="hidden" name="user" value="<%= data.user_id %>" />
+                                <div id="btns">
+                                    <input type="submit" class="btn1" formaction="/purchase-tools" name="purchase" value="Buy Now">
+                                    <input type="submit" class="btn2" formaction="/cart-tools" name="cart" value="Add to Cart">
+                                </div>
+                            </form>
+                            </div>
+                        </div>
                 </div>
                 <%}); %>
             <%} %>
