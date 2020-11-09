@@ -350,6 +350,10 @@ nav ul li:hover a{
         outline: none;
         background: transparent;
       }
+
+.sort-radio{
+    margin-top: 10px;
+}
       
 #form-body .input-file{
     width: 100%;
