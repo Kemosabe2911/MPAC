@@ -1746,7 +1746,7 @@ app.post('/buy-y2-ce',(req,res) =>{
     console.log({order});
     pool.query(
         `SELECT * FROM books
-        WHERE year=2 AND subject='${subject}'`,(err,results)=>{
+        WHERE year=2 AND subject='${subject}' ORDER BY price ${order}`,(err,results)=>{
             if(err){
                 throw err;
             }
@@ -1790,7 +1790,7 @@ app.post('/buy-y2-cs',(req,res) =>{
     console.log({order});
     pool.query(
         `SELECT * FROM books
-        WHERE year=2 AND subject='${subject}'`,(err,results)=>{
+        WHERE year=2 AND subject='${subject}' ORDER BY price ${order}`,(err,results)=>{
             if(err){
                 throw err;
             }
@@ -1832,7 +1832,7 @@ app.post('/buy-y2-ec',(req,res) =>{
     console.log({order});
     pool.query(
         `SELECT * FROM books
-        WHERE year=2 AND subject='${subject}'`,(err,results)=>{
+        WHERE year=2 AND subject='${subject}' ORDER BY price ${order}`,(err,results)=>{
             if(err){
                 throw err;
             }
@@ -1874,7 +1874,7 @@ app.post('/buy-y2-ee',(req,res) =>{
     console.log({order});
     pool.query(
         `SELECT * FROM books
-        WHERE year=2 AND subject='${subject}'`,(err,results)=>{
+        WHERE year=2 AND subject='${subject}' ORDER BY price ${order}`,(err,results)=>{
             if(err){
                 throw err;
             }
@@ -1942,7 +1942,7 @@ app.post('/buy-y3',(req,res) =>{
     console.log({order});
     pool.query(
         `SELECT * FROM books
-        WHERE year=3 AND subject='${subject}'`,(err,results)=>{
+        WHERE year=3 AND subject='${subject}' ORDER BY price ${order}`,(err,results)=>{
             if(err){
                 throw err;
             }
@@ -2004,7 +2004,7 @@ app.post('/buy-y4',(req,res) =>{
     console.log({order});
     pool.query(
         `SELECT * FROM books
-        WHERE year=4 AND subject='${subject}'`,(err,results)=>{
+        WHERE year=4 AND subject='${subject}' ORDER BY price ${order}`,(err,results)=>{
             if(err){
                 throw err;
             }
@@ -2046,7 +2046,7 @@ app.post('/buy-tools',(req,res) =>{
     console.log({order});
     pool.query(
         `SELECT * FROM tools
-        WHERE branch='${subject}'`,(err,results)=>{
+        WHERE branch='${subject}' ORDER BY price ${order}`,(err,results)=>{
             if(err){
                 throw err;
             }
@@ -2086,7 +2086,7 @@ app.post('/buy-calcs',(req,res) =>{
     console.log({order});
     pool.query(
         `SELECT * FROM calculators
-        WHERE c_type='${subject}'`,(err,results)=>{
+        WHERE c_type='${subject}' ORDER BY price ${order}`,(err,results)=>{
             if(err){
                 throw err;
             }
