@@ -1438,10 +1438,10 @@ app.get('/buy-y1-books',(req,res)=>{
 });
 
 app.post('/buy-y1-books',(req,res) =>{  
-    console.log(req.body); 
-    let price= req.body.price; 
+    console.log(req.body);  
     let subject= req.body.selectpicker;
     console.log({subject});
+    let price= req.body.price;
     let order= "ASC";
     if(price === '1'){
         order = "DESC";
@@ -1738,6 +1738,12 @@ app.get('/buy-y2-ce',(req,res)=>{
 app.post('/buy-y2-ce',(req,res) =>{    
     let subject= req.body.selectpicker;
     console.log({subject});
+    let price= req.body.price;
+    let order= "ASC";
+    if(price === '1'){
+        order = "DESC";
+    }
+    console.log({order});
     pool.query(
         `SELECT * FROM books
         WHERE year=2 AND subject='${subject}'`,(err,results)=>{
@@ -1776,6 +1782,12 @@ app.get('/buy-y2-cs',(req,res)=>{
 app.post('/buy-y2-cs',(req,res) =>{    
     let subject= req.body.selectpicker;
     console.log({subject});
+    let price= req.body.price;
+    let order= "ASC";
+    if(price === '1'){
+        order = "DESC";
+    }
+    console.log({order});
     pool.query(
         `SELECT * FROM books
         WHERE year=2 AND subject='${subject}'`,(err,results)=>{
@@ -1812,6 +1824,12 @@ app.get('/buy-y2-ec',(req,res)=>{
 app.post('/buy-y2-ec',(req,res) =>{    
     let subject= req.body.selectpicker;
     console.log({subject});
+    let price= req.body.price;
+    let order= "ASC";
+    if(price === '1'){
+        order = "DESC";
+    }
+    console.log({order});
     pool.query(
         `SELECT * FROM books
         WHERE year=2 AND subject='${subject}'`,(err,results)=>{
@@ -1848,6 +1866,12 @@ app.get('/buy-y2-ee',(req,res)=>{
 app.post('/buy-y2-ee',(req,res) =>{    
     let subject= req.body.selectpicker;
     console.log({subject});
+    let price= req.body.price;
+    let order= "ASC";
+    if(price === '1'){
+        order = "DESC";
+    }
+    console.log({order});
     pool.query(
         `SELECT * FROM books
         WHERE year=2 AND subject='${subject}'`,(err,results)=>{
@@ -1910,6 +1934,12 @@ app.get('/buy-y3-me',(req,res)=>{
 app.post('/buy-y3',(req,res) =>{    
     let subject= req.body.selectpicker;
     console.log({subject});
+    let price= req.body.price;
+    let order= "ASC";
+    if(price === '1'){
+        order = "DESC";
+    }
+    console.log({order});
     pool.query(
         `SELECT * FROM books
         WHERE year=3 AND subject='${subject}'`,(err,results)=>{
@@ -1966,6 +1996,12 @@ app.get('/buy-y4-me',(req,res)=>{
 app.post('/buy-y4',(req,res) =>{    
     let subject= req.body.selectpicker;
     console.log({subject});
+    let price= req.body.price;
+    let order= "ASC";
+    if(price === '1'){
+        order = "DESC";
+    }
+    console.log({order});
     pool.query(
         `SELECT * FROM books
         WHERE year=4 AND subject='${subject}'`,(err,results)=>{
@@ -2002,6 +2038,12 @@ app.get('/buy-tools',(req,res)=>{
 app.post('/buy-tools',(req,res) =>{    
     let subject= req.body.selectpicker;
     console.log({subject});
+    let price= req.body.price;
+    let order= "ASC";
+    if(price === '1'){
+        order = "DESC";
+    }
+    console.log({order});
     pool.query(
         `SELECT * FROM tools
         WHERE branch='${subject}'`,(err,results)=>{
@@ -2036,6 +2078,12 @@ app.get('/buy-calcs',(req,res)=>{
 app.post('/buy-calcs',(req,res) =>{    
     let subject= req.body.selectpicker;
     console.log({subject});
+    let price= req.body.price;
+    let order= "ASC";
+    if(price === '1'){
+        order = "DESC";
+    }
+    console.log({order});
     pool.query(
         `SELECT * FROM calculators
         WHERE c_type='${subject}'`,(err,results)=>{
