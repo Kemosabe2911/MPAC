@@ -1437,12 +1437,19 @@ app.get('/buy-y1-books',(req,res)=>{
     res.render('buy-y1-books');
 });
 
-app.post('/buy-y1-books',(req,res) =>{    
+app.post('/buy-y1-books',(req,res) =>{  
+    console.log(req.body); 
+    let price= req.body.price; 
     let subject= req.body.selectpicker;
     console.log({subject});
+    let order= "ASC";
+    if(price === '1'){
+        order = "DESC";
+    }
+    console.log({order});
     pool.query(
         `SELECT * FROM books
-        WHERE year=1 AND subject='${subject}'`,(err,results)=>{
+        WHERE year=1 AND subject='${subject}' ORDER BY price ${order}`,(err,results)=>{
             if(err){
                 throw err;
             }
