@@ -12,8 +12,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
+    <section id="dashboard">
     <!--Navbar-->
-    <nav>
+    <nav id="navbar">
         <ul>
             <li class="logo">MPAC</li>
             <li class="items"><a href="/home">Home</a></li>
@@ -46,28 +47,50 @@
             </div>
         </div>
     </section>
-    
-    <!--User data -->
-    <section id="tiles">
-        <div class="container">
-            <div id="my-prod" class="tile">
-                <h2>My Products</h2>
-                <img src="https://img.icons8.com/android/96/000000/buy.png"/>
-                <!--<i class="fas fa-shopping-cart"></i>-->
-            </div>
-            <div id="my-req" class="tile">
-                <h2>My Requests</h2>
-                <img src="https://img.icons8.com/android/96/000000/buy.png"/>
-                <!--<i class="fas fa-shopping-cart"></i>-->
-            </div>
-            <div id="my-cart" class="tile">
-                <h2>My Cart</h2>
-                <img src="https://img.icons8.com/android/96/000000/buy.png"/>
-                <!--<i class="fas fa-clipboard-check"></i>-->
+
+    <div class="arrow-container">
+        <div class="content">
+            <h3>View Details Below</h3>
+          <svg id="more-arrows">
+            <polygon id="arrow" class="arrow-bottom" points="37.6,64 0,36.1 5.1,32.8 37.6,56.8 70.4,32.8 75.5,36.1 "/>
+          </svg>
+        </div>
+      </div>
+    </section>
+    <section id="dash-info">
+    <div class="dash-container">
+        <div class="dash-item item1">
+            <img src="../home-page/images/kimberly-farmer-lUaaKCUANVI-unsplash.jpg" alt="image">
+            <div class="dash-text">
+                <div class="dash-text-content">
+                    <h2>My Products</h2>
+                    <p>View, Remove or Edit your products which has been placed for sale</p>
+                </div>
+                <a href="/my-prod">View My Products</a>
             </div>
         </div>
+        <div class="dash-item item2">
+            <img src="../home-page/images/annie-spratt-gl7joOaABlI-unsplash.jpg" alt="image">
+            <div class="dash-text">
+                <div class="dash-text-content">
+                    <h2>My Requests</h2>
+                    <p>View or Cancel all of your requests & See if any of the products are available</p>
+                </div>
+                <a href="/my-req">View My Requests</a>
+            </div>
+        </div>
+        <div class="dash-item item3">
+            <img src="../home-page/images/alfred-kenneally-2xR_6LHrqX4-unsplash.jpg" alt="image">
+            <div class="dash-text">
+                <div class="dash-text-content">
+                    <h2>My Cart</h2>
+                    <p>Products in your cart is waiting for you. Grab the products as soon as possible</p>
+                </div>
+                <a href="/my-cart">View My Cart</a>
+            </div>
+        </div>
+    </div>
     </section>
-    
     
     
     

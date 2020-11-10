@@ -3,6 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@700&family=Noticia+Text:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap');
 
 *{
     margin: 0;
@@ -1142,3 +1145,104 @@ html{
            text-align: center;
        } */
    }
+
+/*dashboard*/
+#dashboard{
+    height: 100vh;
+}
+
+
+.dash-container{
+    width: 90vw;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 100px;
+}
+
+.dash-container .dash-item{
+    display: flex;
+    border: 2px solid #cccccc;
+    background: #ffffff;
+    border-radius: 10px;
+    width: 80%;
+    margin: 20px;
+}
+.dash-container .dash-item img{
+    width: 380px;
+    height: 230px;
+    border-radius: 9px 0px 0px 9px;
+    border: #cccccc;
+}
+.dash-container .dash-item .dash-text{
+    display: flex;
+    width: 550px;
+    margin: 20px;
+    justify-content: space-between;
+}
+.dash-container .dash-item .dash-text h2{
+    font-family: 'Merriweather', serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    padding: 10px;
+}
+.dash-container .dash-item .dash-text p{
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.5;
+    width: 300px;
+    font-size: 16px;
+    padding: 20px;
+}
+.dash-container .dash-item a{
+    font-family: 'Merriweather', serif;
+    margin-top: 50px;
+    height: 50px;
+    align-items: center;
+    font-size: 17px;
+    font-weight: 500;
+    width: 200px;
+    text-align: center;
+    text-decoration: none;
+    color: #000000;
+    background: #ffffff;
+    padding: 15px 10px;
+    border: 2px solid #000000;
+    transition: 0.8s;
+}
+.dash-container .dash-item a:hover{
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.arrow-container {
+    background: transparent;
+    height: 100vh;
+    padding: 20px;
+    text-align: center;
+  }
+  .arrow-container h3{
+      color: #ffffff;
+      font-size: 25px;
+      padding: 30px;
+      text-transform: uppercase;
+  }
+  .arrow-container p {
+    margin: 0 0 20px;
+  }
+  
+  /* Arrow & Hover Animation */
+  #more-arrows {
+    fill: #FFF;
+    width: 75px;
+    height: 65px;
+    transition: all .2s ease-out;
+  }
+   #more-arrows:hover {
+        fill: #FFF;
+        transform: translate(1.01);
+    }
+
+
+
+

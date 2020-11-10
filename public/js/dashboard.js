@@ -1,4 +1,10 @@
 //Dashboard
+document.getElementById('arrow').addEventListener('click',()  =>{
+    //window.location.href="#tiles.sell";
+    var elmnt = document.getElementById("dash-info");
+    display(elmnt);
+  elmnt.scrollIntoView();
+  });
 
 //My Products
 document.getElementById('my-prod').addEventListener('click',()  =>{
