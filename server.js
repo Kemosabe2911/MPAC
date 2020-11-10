@@ -97,11 +97,11 @@ app.get('/dashboard',checkNotAuthenticated,(req,res) =>{
     });
 });
 
-app.get('/about', (req,res) =>{
+app.get('/about',checkNotAuthenticated, (req,res) =>{
     res.render("about");
 });
 
-app.get('/contact', (req,res) =>{
+app.get('/contact',checkNotAuthenticated, (req,res) =>{
     res.render("contact");
 });
 
