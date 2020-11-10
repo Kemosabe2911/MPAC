@@ -2956,6 +2956,55 @@ app.post('/update-exts-data',(req,res) =>{
     )
 });
 
+app.post('/contact-mail',(req,res) =>{
+    console.log(req.body);
+    const output= `
+    <h1> MPAC Contact Mail</h1>
+    <h2>User Info:</h2>
+    <ul>
+        <li>User Name: ${req.body.Name}</li>
+        <li>User Email: ${req.body.Email}</li>
+    </ul>
+    <img style="width:300px; height: 300px;"  src="cid:logo" alt="Image Not available">
+    <h3>Message</h3>
+    <p>${req.body.Message}</p>
+    `;
+    let transporter = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true, // true for 465, false for other ports
+        auth: {
+        user: 'mpac2022@gmail.com', // generated ethereal user
+        pass: 'Mpac@123', // generated ethereal password
+        },
+        tls:{
+            rejectUnauthorized: false
+        }
+    });
+
+    // send mail with defined transport object
+    let info = transporter.sendMail({
+        from: '"MPAC" <mpac2022@gmail.com>', // sender address
+        to: 'stevinprince29@gmail.com, thejusofficial11@gmail.com, adwaithsamod@gmail.com', // list of receivers
+        subject: "MPAC Contact", // Subject line
+        text: "Contact Message", // plain text body
+        html: output,
+        attachments: [{
+            filename: 'MPAC.png',
+            path: __dirname +'/public/images/MPAC.png',
+            cid: 'logo' //my mistake was putting "cid:logo@cid" here! 
+       }]
+    });
+
+    console.log("Message sent: %s", info.messageId);
+    // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+
+    // Preview only available when sending through an Ethereal account
+    console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+
+    res.redirect('/contact');
+});
+
 //Port Console Log
 app.listen(PORT, () =>{
     console.log(`Server Running on port ${PORT}`);
