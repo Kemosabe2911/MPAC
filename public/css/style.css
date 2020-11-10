@@ -1163,7 +1163,7 @@ html{
 
 .dash-container .dash-item{
     display: flex;
-    border: 2px solid #cccccc;
+    border: 2px solid #000;
     background: #ffffff;
     border-radius: 10px;
     width: 80%;
@@ -1173,7 +1173,7 @@ html{
     width: 380px;
     height: 230px;
     border-radius: 9px 0px 0px 9px;
-    border: #cccccc;
+    border: #000000;
 }
 .dash-container .dash-item .dash-text{
     display: flex;
