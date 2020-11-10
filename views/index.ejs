@@ -15,8 +15,13 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+     <!--AOS cdn-->
+     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+     <!--FLickity-->
+     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 </head>
 <body>
+    <section id="Home">
     <!--Navbar-->
     <nav>
         <ul>
@@ -29,29 +34,122 @@
             <li class="toggle"><span class="bars"></span></li>
         </ul>
     </nav>
-
-    <!--Showcase-->
-    <section id="showcase">
-        <div class="container">
-            <h1 class="animate__animated animate__flash">Welcome <%= user %></h1>
-        </div>
-    </section>
-
-    <!--Tiles Section-->
-    <section id="tiles">
-        <div class="container animate__animated animate__zoomIn">
-            <div id="buy" class="btile">
-                <h2>Buy</h2>
-                <img src="https://img.icons8.com/android/96/000000/buy.png"/>
-                <!--<i class="fas fa-shopping-cart"></i>-->
-            </div>
-            <div id="sell" class="stile">
-                <h2>Sell</h2>
-                <img src="https://img.icons8.com/android/96/000000/sell.png"/>
-                <!--<i class="fas fa-clipboard-check"></i>-->
+    <div class="info-container">
+        <div class="text-content">
+            <h1>Welcome User</h1>
+            <p>A Platform for the Sale and Purchase of</p> 
+            <p>Pre-owned Student Accessories</p>
+            <div class="btns">
+                <a href="/buy">Buy Product</a>
+                <a href="/sell">Sell Product</a>
             </div>
         </div>
+        <div class="image">
+            <img src="images/MPAC.png" alt="Logo">
+        </div>
+    </div>
     </section>
+    <section id="services">
+        <div data-aos="fade-up" data-aos-delay="200">
+        <div class="serv-container">
+            <div class="image2">
+                <img src="images/65819663-handshake-hand-holding-on-black-background.jpg">
+            </div>
+            <div class="service">
+                <h1>Services</h1>
+                <span></span>
+                <div class="serv-text">
+                    <p>We provide the facility of resale of student accessories</p>
+                    <p>Those who are searching for accessories for a limited time use can also find their desired products at a reasonable price</p>
+                    <p>Request a product facility is available in case users can't find their desired product</p>
+                </div>
+                <span></span>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section id="carousal">
+        <div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true }'>
+            <div class="carousel-cell"><img style="width: 800px; height: 500px;" src="images/books_library_old_111388_1280x720.jpg"></div>
+            <div class="carousel-cell"><img style="width: 800px; height: 500px;" src="images/wooden-floor-hand-tools-safety-glasses-wallpaper-preview.jpg"></div>
+            <div class="carousel-cell"><img style="width: 800px; height: 500px;" src="images/calculator-calculation-insurance-finance.jpg"></div>
+            <div class="carousel-cell"><img style="width: 800px; height: 500px;" src="images/book_pen_ruler_70246_1280x720.jpg"></div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="myfooter">
+        <div class="full">
+            <div class="footer-left">
+                <p class="footerMPAC"><span>MPAC</span>
+                MPAC is a website for students of Mar Athanasius college of engineering where they can buy and sell preused student accessories at a reasonable price.</p>
+                <div class="footersocial">
+                    <a href=""><i class="fb fa fa-facebook"> </i></a>
+                    <a href=""><i class="fa fa-instagram"> </i></a>
+                    <a href=""><i class="fa fa-twitter"> </i></a>
+                    <a href="https://github.com/Kemosabe2911/MPAC"><i class="fa fa-github"> </i></a>
+                </div>
+            </div>
+            <div class="footer-center">
+               <div class="top">
+                    <a href="#Home"><i class="fa fa-arrow-up" aria-hidden="true">Back to Top</i></a>
+                </div>
+                <div class="footerlinks">
+                    <a class="link1" href="/home">Home</a>
+                    <a class="link2" href="/about">About Us</a>
+                    <a class="link3" href="/contact">Contact Us</a>
+                </div><br>
+                <!-- <div class="name">
+                    <p>MPAC@2020</p>
+                </div> -->
+            </div>
+            <div class="footer-right">
+                <div class="loc">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>MACE Kothamangalam, Kerala</p>
+                </div><br>
+                <div class="phone"><i class="fas fa-phone"></i>
+                    <p>+91 6235040506</p>
+                </div><br>
+                <div class="mail"><i class="fas fa-envelope"></i>
+                    <p><a href="mailto:mpac2022@gmail.com">mpac2022@gmail.com</a></p>
+                </div>
+            </div>
+           
+        </div>
+        <br>
+        <div class="copy">
+        <p>Copyright &copy; MPAC2020</p>
+    </div>
+    </footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        AOS.init({
+        // Global settings:
+        disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+        startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+        initClassName: 'aos-init', // class applied after initialization
+        animatedClassName: 'aos-animate', // class applied on animation
+        useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+        disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+        debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+        throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+        
+
+        // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+        offset: 120, // offset (in px) from the original trigger point
+        delay: 0, // values from 0 to 3000, with step 50ms
+        duration: 400, // values from 0 to 3000, with step 50ms
+        easing: 'ease', // default easing for AOS animations
+        once: false, // whether animation should happen only once - while scrolling down
+        mirror: false, // whether elements should animate out while scrolling past them
+        anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+
+});
+      </script>
+      <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
 
     <script src="/js/main.js"></script>
     <script src='/js/jquery.js'></script>
