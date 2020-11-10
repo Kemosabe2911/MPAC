@@ -752,3 +752,21 @@ nav ul li:hover a{
         transition: 1s;
     }
     
+    .req-btn{
+        background: #ffffff;
+        font-size: 16px;
+        font-weight: 600;
+        color: #cd0a0a;
+        border: 3px solid #cd0a0a;
+        text-transform: uppercase;
+        padding: 12px 20px;
+        min-width: 150px;
+        margin: 10px;
+        cursor: pointer;
+        transition: 0.5s linear;
+      }
+    
+      .req-btn:hover{
+        color: #ffffff;
+        background: #cd0a0a;
+      }
