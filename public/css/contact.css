@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#contact-section{
+    width: 100vw;
+    height: 100vh;
+}
+
+.contact-container {
+    width: 100vw;
+    background: #000000;         
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    align-items: center;
+    padding: 50px 100px;
+  }
+  .contact-container .contact-image{
+    order: 2;
+  }
+.contact-container .contact-form{
+    order: 1;
+    width: 400px;
+    margin: auto;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+.contact-container .contact-form h1{
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.contact-container .contact-form span{
+  width: 100px;
+  color: #ffffff;
+  margin: 10px 150px;
+  border: 1px solid #ffffff;
+}
+
+.contact-container .contact-form label,h1{
+    color: white;
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+}
+
+.contact-container .contact-form h1, p {
+  text-align: center;
+}
+
+.contact-container .contact-form .input1{
+    height: 30px;
+}
+
+.contact-container .contact-form .input1, textarea {
+  font-size: 16px;
+  width: 100%;
+  margin: 15px;
+  padding: 15px;
+} 
+
+.contact-container .contact-form textarea{
+  border-radius: 2px;
+  height: 200px;
+}
+
+.contact-container .contact-form .contact-btn-container{
+  width: 100px;
+  margin: 10px 125px;
+}
+.contact-container .contact-form .contact-btn-container .contact-btn{
+  font-family: 'Lato', sans-serif;
+  padding: 12px 30px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
+  background: #ffffff;
+  border: 2px solid #000000;
+  transition: 1s;
+}
+
+.contact-container .contact-form .contact-btn-container .contact-btn:hover{
+  background: #000000;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+    
+@media screen and (max-width: 768px) 
+{
+
+    .contact-container {
+      padding: 5%;
+      /* background: #ffffff; */
+      /* border: 6px solid #000000;             */
+      max-width: 520px;
+      margin: auto;
+      font-family: 'Roboto Slab', serif;
+    }
+
+}

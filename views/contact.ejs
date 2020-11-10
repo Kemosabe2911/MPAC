@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MPAC</title>
     <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/contact.css" type="text/css">
     <!--icons api-->
     <a href="https://icons8.com/icon/3260/sell"></a>
     <script src="https://kit.fontawesome.com/087042e108.js" crossorigin="anonymous"></script>
@@ -12,8 +13,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
+    <section id="contact-section">
     <!--Navbar-->
-    <nav>
+    <nav id="navbar">
         <ul>
             <li class="logo">MPAC</li>
             <li class="items"><a href="/home">Home</a></li>
@@ -91,6 +93,30 @@
           </div></div>
         </div>
       </div>	
+    </section>
+        <!--contact form-->
+    <div class="contact-container">
+      <div class="contact-image">
+          <img src="../home-page/images/240_F_211309674_wutVgt4EpBSHhFCDskloGEnuzCQsz0Dl.jpg">
+      </div>
+      <div class="contact-form">
+          <h1>Contact Us</h1>
+          <span></span>
+          <form action="/contact-mail" method="POST" >
+              <label for="name">Name:</label>
+              <input id="name" type="text" name="Name" class="input1" required maxlength="200" placeholder="Enter Name">
+        
+              <label for="email">Email Address:</label>
+              <input id="email" type="email" name="Email" class="input1" required maxlength="200" placeholder="Enter Email-id">
+        
+              <label for="message">Message:</label>
+              <textarea id="message" name="Message" rows="10" maxlength="6000" placeholder="Text Message" required></textarea>
+          <div class="contact-btn-container">
+              <input type="submit" class="contact-btn" value="Send Message">
+          </div>
+          </form>
+      </div>
+    </div>
     <script src="/js/main.js"></script>
     <script src='/js/jquery.js'></script>
 </body>
