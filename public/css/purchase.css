@@ -134,6 +134,16 @@
     background: #f6830f;
 }
 
+#btns .btn3{
+    border: 1px solid #cd0a0a;
+    color: #cd0a0a;
+}
+
+#btns .btn3:hover{
+    color: #fff;
+    background: #cd0a0a;
+}
+
 @media (max-width: 768px){
     .container{
         display: flex;
