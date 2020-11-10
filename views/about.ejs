@@ -10,10 +10,13 @@
     <script src="https://kit.fontawesome.com/087042e108.js" crossorigin="anonymous"></script>
     <!--Jquery cdn-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!--AOS cdn-->
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
+    <section id="about">
     <!--Navbar-->
-    <nav>
+    <nav id="navbar">
         <ul>
             <li class="logo">MPAC</li>
             <li class="items"><a href="/home">Home</a></li>
@@ -37,6 +40,108 @@
             </p>
         </div>
     </div>
+    </section>
+    <div data-aos="fade-right" data-aos-delay="250">
+    <div class="buy-sell-req">
+        <div class="sed">
+           <h4>Buy</h4>
+           <p>
+            For a user to buy a product they can navigate through the buy section according to their needs 
+            and purchase a product which they prefer.An email will be send to the buyer reagarding the details of the seller.
+            They can contact and move on with their dealings after checking the product 
+            Also there is a cart facility which will be enable the user to bookmark a product that they wish to
+            purchase later</p>
+        </div>
+        <div class="sed">
+           <h4>Request</h4>
+           <p>
+            This website contains a request facility which is included in convenience of the user.This facility helps the
+            user to request for a product that is currently unavialable.When that particular product is avialable in sales the product 
+            will be displayed in the request section present in the dashboard.</p>
+        </div>
+        <div class="sed">
+           <h4>Sell</h4>
+           <p>
+            Mainly the user can sell Textbooks,Workshop Tools and
+            Calculator in the sell section according to their respective categories.They can also sell other accessories
+            in the Extras section of the sell section
+            The products that the seller posted in the sell section will be avialable in the MY PRODUCTS section which
+            is provided in the dashboard.</p>
+           </div>
+    </div>
+</div>
+ <!-- FOOTER -->
+ <footer class="myfooter">
+    <div class="full">
+        <div class="footer-left">
+            <p class="footerMPAC"><span>MPAC</span>
+            MPAC is a website for students of Mar Athanasius college of engineering where they can buy and sell preused student accessories at a reasonable price.</p>
+            <div class="footersocial">
+                <a href=""><i class="fb fa fa-facebook"> </i></a>
+                <a href=""><i class="fa fa-instagram"> </i></a>
+                <a href=""><i class="fa fa-twitter"> </i></a>
+                <a href="https://github.com/Kemosabe2911/MPAC"><i class="fa fa-github"> </i></a>
+            </div>
+        </div>
+        <div class="footer-center">
+           <div class="top">
+                <a href="#about"><i class="fa fa-arrow-up" aria-hidden="true">Back to Top</i></a>
+            </div>
+            <div class="footerlinks">
+                <a class="link1" href="/home">Home</a>
+                <a class="link2" href="/about">About Us</a>
+                <a class="link3" href="/contact">Contact Us</a>
+            </div><br>
+            <!-- <div class="name">
+                <p>MPAC@2020</p>
+            </div> -->
+        </div>
+        <div class="footer-right">
+            <div class="loc">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>MACE Kothamangalam, Kerala</p>
+            </div><br>
+            <div class="phone"><i class="fas fa-phone"></i>
+                <p>+91 6235040506</p>
+            </div><br>
+            <div class="mail"><i class="fas fa-envelope"></i>
+                <p><a href="mailto:mpac2022@gmail.com">mpac2022@gmail.com</a></p>
+            </div>
+        </div>
+       
+    </div>
+    <br>
+    <div class="copy">
+    <p>Copyright &copy; MPAC2020</p>
+</div>
+</footer>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        AOS.init({
+        // Global settings:
+        disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+        startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+        initClassName: 'aos-init', // class applied after initialization
+        animatedClassName: 'aos-animate', // class applied on animation
+        useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+        disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+        debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+        throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+        
+
+        // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+        offset: 120, // offset (in px) from the original trigger point
+        delay: 0, // values from 0 to 3000, with step 50ms
+        duration: 400, // values from 0 to 3000, with step 50ms
+        easing: 'ease', // default easing for AOS animations
+        once: false, // whether animation should happen only once - while scrolling down
+        mirror: false, // whether elements should animate out while scrolling past them
+        anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+
+});
+      </script>
     <script src="/js/main.js"></script>
     <script src='/js/jquery.js'></script>
 </body>

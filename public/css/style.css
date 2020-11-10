@@ -1244,5 +1244,81 @@ html{
     }
 
 
+/* about us continuation */
+#about{
+    height: 100vh;
+ }
+
+.buy-sell-req{
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ width: 90vw;
+ height: 100vh;
+ margin: auto;
+ padding: 100px 0px;
+}
+
+.buy-sell-req h4{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.buy-sell-req p{
+    font-family: 'Poppins', sans-serif;
+ font-size: 16px;
+ line-height: 25px;
+ text-align: justify;
+ margin-bottom: 40px;
+}
+
+.buy-sell-req .sed{
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         flex-direction: column;
+   background-color: white;
+   padding: 20px;
+   width: 30%;
+   margin: 20px;
+   border: 10px solid #33ffff;
+   transition: 0.8s;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.buy-sell-req .sed:hover{
+    color: #fff;
+    background-color: #000;
+}
+
+
+@media (max-width:760px){
+ .buy-sell-req{
+    display: block;
+}
+
+.buy-sell-req .sed{
+    width: 100%;
+}
+
+.buy-sell-req .buy-left{
+    padding: 0 25px 0 25px;
+    align-content: center;
+    text-align: center;
+}
+
+
+.buy-sell-req .req-center{
+    padding: 0 16px 0 16px;
+}
+
+.buy-sell-req .sell-right{
+    padding: 0 16px 0 16px;
+}
+}
 
 
