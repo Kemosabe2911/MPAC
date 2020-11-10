@@ -35,10 +35,10 @@
                 <h1>Update Product Data</h1>
                 <input type="hidden" name="prod" value="<%= id %>" />
                 <div class="book-name">
-                    Accessory Name <input type="text" class="input-box" name="bname" id="bname" value="<%= typeof bname != 'undefined' ? bname : ''%>" placeholder="<%= data.bname %>" required="" />
+                    Accessory Name <input type="text" class="input-box" name="bname" id="bname" value="<%= data.bname %>" placeholder="<%= data.bname %>" required="" />
                 </div>
                 <div class="book-price">
-                    Expected Price <input type="number"  class="input-box" name="price" id="price" value="<%= typeof price != 'undefined' ? price : ''%>" placeholder="<%= data.price %>" required="" />
+                    Expected Price <input type="number"  class="input-box" name="price" id="price" value="<%= data.price %>" placeholder="<%= data.price %>" required="" />
                 </div>
                 <!--
                 <div class="input-group mb-3">
