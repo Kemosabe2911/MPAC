@@ -722,16 +722,15 @@ nav ul li:hover a{
     .req-container .req-form .req-btns{
         font-size: 17px;
         padding: 5px;
-        color: #ffffff;
-        background-color: #ff0000;
-        border: 2px solid #ec0101;
-        border-radius: 15px;
+        color: #0162c8;
+        background-color: #ffffff;
+        border: 2px solid #ffffff;
         transition: 1s;
     }
     .req-container .req-form .req-btns:hover{
-        color: #000;
-        background-color: #ccc;
-        border: 2px solid #000;
+        color: #fff;
+        background-color: #0162c8;
+        border: 2px solid #0162c8;
     }
 
     .request{
