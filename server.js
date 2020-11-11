@@ -97,7 +97,7 @@ app.get('/dashboard',checkNotAuthenticated,(req,res) =>{
     });
 });
 
-app.get('/about',checkNotAuthenticated, (req,res) =>{
+app.get('/about', (req,res) =>{
     res.render("about");
 });
 
@@ -1449,7 +1449,8 @@ app.post('/buy-y1-books',(req,res) =>{
     console.log({order});
     pool.query(
         `SELECT * FROM books
-        WHERE year=1 AND subject='${subject}' ORDER BY price ${order}`,(err,results)=>{
+        WHERE year=1 AND subject='${subject}' AND b_id NOT IN(
+            SELECT p_id FROM bookcart) ORDER BY price ${order}`,(err,results)=>{
             if(err){
                 throw err;
             }
@@ -1573,7 +1574,8 @@ app.post('/request-b',(req,res) =>{
         `SELECT * FROM books
         WHERE (year, subject) IN
         (SELECT year, subject FROM reqbook
-        WHERE rb_id=$1);`,[req.body.rb_id],(err, results) =>{
+        WHERE rb_id=$1) AND b_id NOT IN(
+            SELECT p_id FROM bookcart);`,[req.body.rb_id],(err, results) =>{
              if(err){
                  throw err;
              }
@@ -1597,7 +1599,8 @@ app.post('/request-b',(req,res) =>{
                 `SELECT * FROM tools
                 WHERE (branch) IN
                 (SELECT branch FROM reqtool
-                WHERE rt_id=$1);`,[req.body.rt_id],(err, results) =>{
+                WHERE rt_id=$1) AND t_id NOT IN(
+                    SELECT p_id FROM toolcart);`,[req.body.rt_id],(err, results) =>{
                      if(err){
                          throw err;
                      }
@@ -1622,7 +1625,8 @@ app.post('/request-b',(req,res) =>{
                 `SELECT * FROM calculators
                 WHERE (c_type) IN
                 (SELECT c_type FROM reqcalc
-                WHERE rc_id=$1);`,[req.body.rc_id],(err, results) =>{
+                WHERE rc_id=$1) AND c_id NOT IN(
+                    SELECT p_id FROM calccart);`,[req.body.rc_id],(err, results) =>{
                      if(err){
                          throw err;
                      }
@@ -1790,7 +1794,8 @@ app.post('/buy-y2-cs',(req,res) =>{
     console.log({order});
     pool.query(
         `SELECT * FROM books
-        WHERE year=2 AND subject='${subject}' ORDER BY price ${order}`,(err,results)=>{
+        WHERE year=2 AND subject='${subject}' AND b_id NOT IN(
+            SELECT p_id FROM bookcart) ORDER BY price ${order}`,(err,results)=>{
             if(err){
                 throw err;
             }
@@ -1832,7 +1837,8 @@ app.post('/buy-y2-ec',(req,res) =>{
     console.log({order});
     pool.query(
         `SELECT * FROM books
-        WHERE year=2 AND subject='${subject}' ORDER BY price ${order}`,(err,results)=>{
+        WHERE year=2 AND subject='${subject}' AND b_id NOT IN(
+            SELECT p_id FROM bookcart) ORDER BY price ${order}`,(err,results)=>{
             if(err){
                 throw err;
             }
@@ -1874,7 +1880,8 @@ app.post('/buy-y2-ee',(req,res) =>{
     console.log({order});
     pool.query(
         `SELECT * FROM books
-        WHERE year=2 AND subject='${subject}' ORDER BY price ${order}`,(err,results)=>{
+        WHERE year=2 AND subject='${subject}' AND b_id NOT IN(
+            SELECT p_id FROM bookcart) ORDER BY price ${order}`,(err,results)=>{
             if(err){
                 throw err;
             }
@@ -1942,7 +1949,8 @@ app.post('/buy-y3',(req,res) =>{
     console.log({order});
     pool.query(
         `SELECT * FROM books
-        WHERE year=3 AND subject='${subject}' ORDER BY price ${order}`,(err,results)=>{
+        WHERE year=3 AND subject='${subject}' AND b_id NOT IN(
+            SELECT p_id FROM bookcart) ORDER BY price ${order}`,(err,results)=>{
             if(err){
                 throw err;
             }
@@ -2004,7 +2012,8 @@ app.post('/buy-y4',(req,res) =>{
     console.log({order});
     pool.query(
         `SELECT * FROM books
-        WHERE year=4 AND subject='${subject}' ORDER BY price ${order}`,(err,results)=>{
+        WHERE year=4 AND subject='${subject}' AND b_id NOT IN(
+            SELECT p_id FROM bookcart) ORDER BY price ${order}`,(err,results)=>{
             if(err){
                 throw err;
             }
@@ -2046,7 +2055,8 @@ app.post('/buy-tools',(req,res) =>{
     console.log({order});
     pool.query(
         `SELECT * FROM tools
-        WHERE branch='${subject}' ORDER BY price ${order}`,(err,results)=>{
+        WHERE branch='${subject}' AND t_id NOT IN(
+            SELECT p_id FROM toolcart) ORDER BY price ${order}`,(err,results)=>{
             if(err){
                 throw err;
             }
@@ -2086,7 +2096,8 @@ app.post('/buy-calcs',(req,res) =>{
     console.log({order});
     pool.query(
         `SELECT * FROM calculators
-        WHERE c_type='${subject}' ORDER BY price ${order}`,(err,results)=>{
+        WHERE c_type='${subject}' AND c_id NOT IN(
+            SELECT p_id FROM calccart) ORDER BY price ${order}`,(err,results)=>{
             if(err){
                 throw err;
             }
@@ -2116,7 +2127,9 @@ app.post('/buy-calcs',(req,res) =>{
 
 app.get('/buy-exts',(req,res)=>{
     pool.query(
-        `SELECT * FROM extras`,(err,results)=>{
+        `SELECT * FROM extras
+        WHERE e_id NOT IN(
+            SELECT p_id FROM extcart)`,(err,results)=>{
             if(err){
                 throw err;
             }
